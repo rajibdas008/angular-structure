@@ -1,0 +1,84 @@
+<section class="home_banner gintaa-bg-3">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="banner_top">
+          <div class="banner_content float-left">
+            <h1 class="g-font-weight-bold">500+ people are waiting to</h1>
+            <h2 class="g-font-weight-bold">get your Old Phone</h2>            
+            <form #userForm="ngForm" class="register-start" (ngSubmit)="sendOtpWithFirebase()">
+              <div class="input-group custom_control">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">+91</div>
+                </div>
+                <input 
+                  type="text" 
+                  value="+91" 
+                  class="form-control" 
+                  placeholder="Mobile number" 
+                  [(ngModel)]="userInfo.mblNo"
+                  #mblNo="ngModel"
+                  name="mblNo" 
+                  required 
+                  pattern="^\d{10}$" 
+                  maxLength="10" 
+                  minLength="6"
+                  numbersOnly
+                  (keypress)="keyPress($event)"/> 
+                <button type="submit" value="Submit" class="getstarted" [disabled]="isStarted">
+                  {{isStarted ? 'Get started...' : 'Get started'}} <i class="material-icons">chevron_right</i>
+                </button>
+              </div>
+              <div id="recaptcha-container"></div>
+              <div *ngIf="mblNo.invalid && submitted" class="text-danger">
+                <div *ngIf="mblNo.errors.required">Phone number is required</div>
+                <div *ngIf="mblNo.value && mblNo.errors.pattern">Phone number must be 10 digits</div>
+              </div>
+              <div class="text-danger" *ngIf="(fireAuthService.firebaseAuthError$ | async) as firebaseErr">
+                {{firebaseErr.message}}
+              </div>
+            </form>            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <div class="app_store">
+
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="app_dstore">
+            <div class="download_icon">
+              <h1><img src="assets/images/download.png" alt="download" /></h1>
+              <ul class="our_app">
+                <li>Download</li>
+                <li>our app</li>
+              </ul>
+
+            </div>
+            <div class="app_button">
+              <ul class="nav">
+                <li class="nav-item"> <a href="#"><img src="assets/images/app-store.png" alt="app store" /> </a></li>
+                <li class="nav-item"> <a href="#"><img src="assets/images/google-play.png" alt="app store" /> </a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="app_mobile">
+            <img src="assets/images/mobile-app-banner.png" alt="mobile app" />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+   
+  </div>
+</section>

@@ -1,0 +1,436 @@
+<section class="new_offers">
+  <div class="container">
+    <div class="create-new-offer">
+    <div class="row">
+      <div class="col-lg-4 col-md-12 col-sm-12 pr-right">
+        <app-add-offer-images></app-add-offer-images>
+      </div>
+      <div class="col-lg-8 col-md-12 col-sm-12" #createOfferContainer>
+      <div class="offer-type-row">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <h3 class="type_offer">Offer type</h3>
+          </div>
+        </div>
+      </div>
+
+        <div class="newoffers_details">
+          <!-- <form [formGroup]="createOfferForm" class="profile_start" (ngSubmit)="submitOffer()"> -->
+          <form [formGroup]="createOfferForm" class="profile_start">
+
+            <div class="row" *ngIf="!isOfferEdit; else edit">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="input_radioselect">
+                  <mat-radio-group aria-label="Select an option" formControlName="offerType">
+                    <ng-template ngFor let-type [ngForOf]="offerTypes">
+                      <mat-radio-button [value]="type">{{ type }}</mat-radio-button>
+                    </ng-template>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+
+
+
+            <ng-template #edit>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="input_radioselect">
+                    <span>{{ offerType }}</span>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          
+           <div class="name-value-row"> 
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="secondary_group mb-30">
+                  <div class="secondary-wrap validate-input">
+                    <span class="secondary-label">{{
+                      isItem() ? "Item name" : "Service name"
+                    }}</span>
+                    <input class="secondary-input" type="text" formControlName="name" [placeholder]="
+                        isItem()
+                          ? 'Add Item or offer name'
+                          : 'Add Service or offer name'
+                      " />
+                  </div>
+                  <div *ngIf="
+                      f.name.invalid &&
+                      !submitted &&
+                      (f.name.dirty || f.name.touched)
+                    " class="text-danger">
+                    <div class="error" *ngIf="f.name.errors?.required">
+                      Name is required
+                    </div>
+                    <div class="error" *ngIf="f.name.errors?.minlength">
+                      Name must be minimum 8 character long
+                    </div>
+                    <div class="error" *ngIf="f.name.errors.serverError">
+                      {{ f.name.errors["serverError"] }}
+                    </div>
+                  </div>
+                  <div *ngIf="f.name.invalid && submitted" class="text-danger">
+                    <div class="error" *ngIf="f.name.errors?.required">
+                      Name is required
+                    </div>
+                    <div class="error" *ngIf="f.name.errors?.minlength">
+                      Name must be minimum 8 character long
+                    </div>
+                    <div class="error" *ngIf="f.name.errors.serverError">
+                      {{ f.name.errors["serverError"] }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 col-sm-12" *ngIf="isItem()">
+                <div class="offer-value mb-30">
+                  <div class="currency-group">
+                    <label class="currency-sr-only">Item value</label>
+                    <div class="currency-input-group">
+                      <div class="currency-input-group-prepend">
+                        <div class="currency-input-group-text">Rs.</div>
+                      </div>
+                      <input type="text" class="currency-form-control" formControlName="unitOfferValuation"
+                        placeholder="Value per item" numbersOnly />
+                    </div>
+                  </div>
+                  <div *ngIf="f.unitOfferValuation.invalid && submitted" class="text-danger">
+                    <div class="error" *ngIf="f.unitOfferValuation.errors.required">
+                      Offer value is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+           
+           <div class="description-row"> 
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="secondary_group mb-30">
+                  <div class="secondary-wrap validate-input">
+                    <span class="secondary-label label-space">Description</span>
+                    <textarea class="secondary-input" rows="4" formControlName="description" placeholder="Describe your {{
+                        isItem() ? 'item' : 'service'
+                      }} as detail as possible"></textarea>
+                  </div>
+                  <div *ngIf="f.description.invalid && !submitted" class="text-danger">
+                    <div class="error" *ngIf="f.description.errors.serverError">
+                      {{ f.description.errors["serverError"] }}
+                    </div>
+                  </div>
+
+                  <div *ngIf="f.description.invalid && submitted" class="text-danger">
+                    <div class="error" *ngIf="f.description.errors.required">
+                      Description is required
+                    </div>
+                    <div class="error" *ngIf="f.description.errors.serverError">
+                      {{ f.description.errors["serverError"] }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <app-chip-list [type]="offerType" (selectedCustomTag)=selectedCustomTags($event)>
+              <div *ngIf="f.categoryId.invalid && submitted" class="category-invalid text-danger">
+                <div class="error" *ngIf="f.categoryId.errors.required">
+                  Category is required
+                </div>
+                <div class="error" *ngIf="f.categoryId.errors.serverError">
+                  {{ f.categoryId.errors["serverError"] }}
+                </div>
+              </div>
+            </app-chip-list>
+            
+            <div class="con_item" *ngIf="isItem()">
+              <div class="select_radio">
+                <h4>Condition</h4>
+
+                <mat-radio-group aria-label="Select an option" formControlName="itemCondition">
+                  <mat-radio-button value="New">New</mat-radio-button>
+                  <mat-radio-button value="Used">Used</mat-radio-button>
+                </mat-radio-group>
+
+
+
+                <div *ngIf="f.itemCondition.invalid && submitted" class="text-danger con-error">
+                  <div class="error" *ngIf="f.itemCondition.errors.required">
+                    Condition is required
+                  </div>
+                </div>
+              </div>
+             
+             <div class="item-qty-start"> 
+              <div class="qty_item">
+                <h4><span>Item</span> QTY</h4>
+                <div class="input_max">
+                  <input class="mat-element" formcontrolname="amount" matinput="" max="100" min="1" placeholder="1"
+                    step="1" type="number" id="mat-input-0" aria-invalid="false" aria-required="false"
+                    formControlName="quantity" />
+                </div>
+                <div *ngIf="f.quantity.invalid && submitted" class="text-danger">
+                  <div class="error" *ngIf="f.quantity.errors.required">
+                    Quantity is required
+                  </div>
+                </div>
+              </div>
+            </div>   
+
+              <div class="document_upload">
+                <h4>Document</h4>
+                <form #form>
+                  <div class="file-upload-section">
+                    <input type="file" #documentUpload id="invoice" name="documentUpload"
+                      accept="application/pdf" multiple style="display: none;" />
+                    <mat-card-actions>
+                      <button mat-button color="warn" (click)="onDocumentSubmit()">
+                        <i class="material-icons">attachment</i>
+                        Attach Bill, etc
+                      </button>
+                    </mat-card-actions>
+
+                    <ng-container *ngIf="offerDocuments?.length">
+                      <div class="image-preview mb-3" *ngFor="let document of offerDocuments; index as i">
+                        <div class="file-name-url" (click)="previewDocument(document)">
+                          {{ document.previewUrl }}
+                        </div>
+                        <div class="delete-file" (click)="deleteDocument(document, i)">
+                          <i class="material-icons md-18">delete</i>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="time_day" *ngIf="isService()">
+              <div class="row">
+                <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 pr-0-time">
+                  <div class="availability_time">
+                    <h4>Availability time</h4>
+                    <div class="time_box">
+                      <div class="min-time-example">
+                        <input [placeholder]="
+                            createOfferForm.controls.startTime.value
+                              ? createOfferForm.controls.startTime.value
+                              : 'HH:MM'
+                          " class="time_start" [format]="'12'" [ngxTimepicker]="min" name="startTime" readonly />
+                        <ngx-material-timepicker #min (timeSet)="startTimeChange($event)"></ngx-material-timepicker>
+                      </div>
+                      <div class="time_arrow">
+                        <i class="material-icons">
+                          keyboard_arrow_right
+                        </i>
+                      </div>
+                      <div class="max-time-example">
+                        <input [placeholder]="
+                            createOfferForm.controls.endTime.value
+                              ? createOfferForm.controls.endTime.value
+                              : 'HH:MM'
+                          " class="time_end" [format]="12" [ngxTimepicker]="max" name="endTime" readonly />
+                        <ngx-material-timepicker #max (timeSet)="endTimeChange($event)"></ngx-material-timepicker>
+                      </div>
+                    </div>
+                  </div>
+
+                 <div class="time-error-postion">
+                  <div *ngIf="f.startTime.invalid && submitted" class="text-danger serv-error-ex">
+                    <div class="error" *ngIf="f.startTime.errors.required">
+                      Start Time is required
+                    </div>
+                  </div> 
+  
+                  <div *ngIf="f.endTime.invalid && submitted" class="text-danger serv-error-ex mt-10">
+                    <div class="error" *ngIf="f.endTime.errors.required">
+                      End Time is required
+                    </div>
+                  </div>
+                  </div>
+
+                </div>
+
+                
+
+
+                <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12">
+                  <div class="availability_day">
+                    <div class="day-all">
+                      <div class="avail-day">Availability day</div>
+                      <div class="check-day">
+                        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? toggleItem($event) : null"
+                          [checked]="getAllChipState()">
+                          All days
+                        </mat-checkbox>
+                      </div>
+                    </div>
+                    <mat-chip-list multiple id="chipList" [selectable]="true">
+                      <mat-chip *ngFor="let chip of chips" [selected]="chip.state"
+                        (selectionChange)="changeSelected(chip)" (click)="chip.state = !chip.state">{{ chip.name }}
+                      </mat-chip>
+                    </mat-chip-list>
+                    <div *ngIf="f.availableDays.invalid && submitted" class="category-invalid text-danger">
+                      <div class="error" *ngIf="f.availableDays.errors.required">
+                        Please select atleast one day
+                      </div>
+                    </div>
+                  </div>
+                                    
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="doc-upload-group" *ngIf="isService()">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="document-upload-service">
+                    <div class="doc-title">Document</div>
+                    <form #form>
+                      <div class="file-upload-service">
+                        <input type="file" #documentUpload id="invoice" name="documentUpload"
+                          accept="application/pdf" multiple style="display: none;" />
+                        <mat-card-actions>
+                          <button mat-button color="warn" (click)="onDocumentSubmit()">
+                            <i class="material-icons">attachment</i>
+                            Attach Bill, etc
+                          </button>
+                        </mat-card-actions>
+
+                        <ng-container *ngIf="offerDocuments?.length">
+                          <div class="image-preview-service mb-3" *ngFor="let document of offerDocuments; index as i">
+                            <div class="file-service-url">
+                              {{ document.previewUrl }}
+                            </div>
+                            <div class="delete-file-service" (click)="deleteDocument(document, i)">
+                              <i class="material-icons md-18">delete</i>
+                            </div>
+                          </div>
+                        </ng-container>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exchange_you">
+             
+             <div class="exchange-title-row"> 
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="ex_change">
+                    <h4>Exchange with</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+             <div class="exchange-radio-row">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="ex_change-radio">
+                    <mat-radio-group aria-label="Select an option" formControlName="exchangeMode">
+                      <mat-radio-button value="Anything" (click)="setExchange('Anything')">Anything</mat-radio-button>
+                      <mat-radio-button value="Item" (click)="setExchange('Item')">Item</mat-radio-button>
+                      <mat-radio-button value="Service" (click)="setExchange('Service')">Service</mat-radio-button>
+                      <mat-radio-button value="Money" (click)="setExchange('Money')">Money</mat-radio-button>
+                    </mat-radio-group>
+                    <div *ngIf="f.exchangeMode.invalid && submitted" class="text-danger exchange-error">
+                      <div class="error" *ngIf="f.exchangeMode.errors.required">
+                        Exchange is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="looking-exchange-row">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="anything">
+                    <div class="secondary_group">
+                      <div class="validate-input secondary-wrap" *ngIf="!isMoneySelected; else numberText" >
+                        <!-- <span class="secondary-label label-color">Specify what you are looking for</span> -->
+                        <textarea class="secondary-input" rows="5"
+                          name="desire" formControlName="desire" 
+                          placeholder="Specify what you are looking for" >
+                        </textarea>                        
+                      </div>
+                      <ng-template #numberText>
+                        <div class="money">
+                          <div class="currency-input-group">
+                            <div class="currency-input-group-prepend">
+                              <div class="currency-input-group-text">Rs.</div>
+                            </div>
+                            <input type="text" class="currency-form-control" formControlName="desire" numbersOnly
+                              placeholder="" />
+                          </div>
+                        </div>
+                      </ng-template>
+                      <div *ngIf="
+                          f.desire.invalid &&
+                          !submitted &&
+                          (f.desire.dirty || f.desire.touched)
+                        " class="text-danger">
+                        <div class="error" *ngIf="f.desire.errors.serverError">
+                          {{ f.desire.errors["serverError"] }}
+                        </div>
+                      </div>
+                      <div *ngIf="f.desire.invalid && submitted" class="text-danger">
+                        <div class="error" *ngIf="f.desire.errors.required">
+                          Desire is required
+                        </div>
+                        <div class="error" *ngIf="f.desire.errors.serverError">
+                          {{ f.desire.errors["serverError"] }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <!-- <div class="match-suggest">
+              <app-suggestes-match></app-suggestes-match>
+            </div> -->
+            <div class="add_address">
+              <app-addlocation>
+                <div *ngIf="f.location.invalid && submitted" class="text-danger add-address">
+                  <div class="error" *ngIf="f.location.errors.required">
+                    Location is required
+                  </div>
+                  <div class="error" *ngIf="f.location.errors.serverError">
+                    {{ f.location.errors["serverError"] }}
+                  </div>
+                </div>
+              </app-addlocation>              
+            </div>
+            <div class="addoffer-button">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="btn_cancel">
+                    <button type="button" class="btn_primary g-right post-offer-btn" [ngClass]="[isClicked ? 'cursor_wait' : '']" (click)="submitOffer()">
+                      Post Offer
+                    </button>
+                    <button type="button" class="btn-primary-text g-right post-offer-btn" (click)="onReset()">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<app-loading-screen></app-loading-screen>

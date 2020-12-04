@@ -1,0 +1,39 @@
+<div class="secondary-offer-details">
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="offer-description" *ngIf="(sharedService.offerDetailsFetched$ | async) as offerDetails"> 
+          <div class="about-info"> 
+            <h3 class="about-offer">
+                <!-- <span class="material-icons">description</span> -->
+                <img src="assets/images/about-item.png" alt="image" class="img-fluid about-icons" />
+                About {{ offerDetails.offerType === 'Service' ? 'Service' : 'Item' }}
+            </h3>
+            <p class="offer_des">{{offerDetails.description}}</p>
+          </div>    
+
+
+        <!-- service viewer details part start -->
+        <div class="availability-service" *ngIf="offerDetails.offerType === 'Service'">
+            <h3 class="about-offer"><span class="material-icons">calendar_today</span>Availability</h3>
+            <div class="time-days">
+                 <div class="time-swervice mr-22">{{'01/01/1900 ' + offerDetails.startTime | date: 'hh:mm aa'}} to {{'01/01/1900 ' + offerDetails.endTime | date: 'hh:mm aa'}}</div>
+                 <div class="days-service">{{offerDetails.availableDays.join(" , ")}}</div>
+            </div>            
+        </div> 
+         <!-- service viewer details part end -->
+        <div class="upload-doc" *ngIf="offerDetails?.documents.length">
+            <h3 class="attach-doctitle"><span class="material-icons">attachment</span>Document</h3>
+            <ul class="list-attach-doc">
+                <li *ngFor="let document of offerDetails.documents">
+                    <div class="doc-list">
+                        <span class="material-icons">photo_size_select_actual</span>
+                        <h4 (click)="previewDocument(document)">{{document.orgName}}</h4>
+                   </div>
+                </li>                
+            </ul>
+        </div>
+     </div>  
+    </div>  
+</div>
+</div>

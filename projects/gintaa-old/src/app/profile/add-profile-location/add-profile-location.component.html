@@ -1,0 +1,189 @@
+
+<div class="address-title-row">
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <h2 class="address_title">Address</h2>
+  </div>
+</div>
+</div>
+
+<div class="add-address-row">
+<div class="row">
+  <div class="col-lg-6 col-md-12 col-sm-12">
+    <div class="enter_address" *ngIf="!isAddressTypeEnabled && showAddressSearch">
+      <div class="input-group search_input">
+        <span class="material-icons-outlined">location_on</span>             
+        <input
+          placeholder="Search for location"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="off"
+          type="text"
+          class="form-control"
+          #search
+          [readonly]="isReadonly"
+          (keyup)="onSearch(search.value)"
+          [(ngModel)]="addressInput.addressLine"/>
+        <button
+          class="btn_primary_link"
+          type="submit"
+          *ngIf="addressInput.addressLine != null && addressInput.addressLine != '' && isAddressSelected"
+          (click)="showAddressTypeSection()">
+          Save Address
+        </button>
+        <div class="add-removes" (click)="showAddressSearch = false"><span class="material-icons">clear</span></div>   
+      </div>
+
+      <div (click)="useMyLoc()">
+        <h4 class="use_my">
+          <i class="material-icons">gps_fixed</i> Use my location
+        </h4>
+      </div>
+
+      <ul class="loc_list">
+        <li
+          *ngFor="let prediction of googlePlacesResults"
+          class="place-suggestion"
+          (click)="suggestionSelected(prediction)">
+          <i class="material-icons">search</i>{{ prediction.description }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="save_address" *ngIf="isAddressTypeEnabled">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="choose-type-add">
+            
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="selection">
+              <mat-radio-button value="Home"   (change)="addressTypeChange($event)"  name="rdo" >Home</mat-radio-button>
+              <mat-radio-button  value="Office" (change)="addressTypeChange($event)"  name="rdo" >Office</mat-radio-button>
+              <mat-radio-button value="Others" (change)="addressTypeChange($event)"  name="rdo" >Others</mat-radio-button>
+            </mat-radio-group>
+            
+          </div>
+        </div>
+        <div *ngIf="selection === 'Others'" class="col-lg-6 col-md-12 col-sm-12">
+          <div class="others-add-input">
+            <input
+              type="text"
+              name="address type"
+              class="control-others"
+              [(ngModel)]="customOption"
+              placeholder="Type others Address title"
+            />
+          </div>
+        </div>
+        <div *ngIf="serverError" class="text-danger address-type-error">{{ serverError }}</div>
+      </div>      
+      
+
+      <div class="address_edit">
+        <div class="your_address">
+          <span class="material-icons-outlined">location_on</span>
+          {{ addressInput.addressLine }}
+        </div>
+        <button
+          class="btn-edit-address g-right"
+          type="submit"
+          (click)="resetAddressSearch()">
+          edit
+        </button>
+      </div>
+
+      <div (click)="useMyLoc()">
+        <h4 class="use_my">
+          <i class="material-icons">gps_fixed</i> Use my location
+        </h4>
+      </div>
+
+      <div class="save_addtype">
+        <button
+          class="btn_primary g_width"
+          type="submit"
+          *ngIf="isAddressTypeEnabled && !isAEProgress"
+          (click)="saveAddress()">
+          Save and Use this address
+        </button>
+        <button
+          class="btn_primary g_width"
+          type="submit"
+          *ngIf="isAddressTypeEnabled && isAEProgress"
+          (click)="updateAddress()">
+          Save and Use this address
+        </button>
+      </div>
+
+      <ul class="loc_list">
+        <li
+          *ngFor="let prediction of googlePlacesResults"
+          class="place-suggestion"
+          (click)="suggestionSelected(prediction)">
+          <i class="material-icons">search</i>{{ prediction.description }}
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<div class="save-address-row">
+<div class="row">
+  <div class="col-lg-6 col-md-12 col-sm-12">
+    <div class="address_noinput" *ngIf="addresses && !addresses.length && !showAddressSearch">
+      <img
+        src="assets/images/no-address.svg"
+        class="rounded img-fluid"
+        alt="product img"/>
+      <p>There don't have any saved address yet.</p>
+      <a class="add-button" (click)="addNewAddress()">Add Address</a>
+    </div>
+
+    <div class="form_group" *ngIf="addresses && addresses.length">
+      <div  class="new-add" *ngIf="!showAddressSearch" (click)="addNewAddress()"><span class="material-icons-outlined add-icon-custom">add</span> <span class="add-address-custom">Add Address</span></div>      
+      <h2 class="saved-address" >My saved address</h2>
+      <ul>
+        <li *ngFor="let address of addresses; index as i"  [ngClass]="{'defaultAdd':address.default}">
+          <div class="check-input">
+            <mat-radio-button
+              [checked]="isCheckedOnId(address, defaultAddress, i)"
+              (click)="changeDefaultAddress(address.addressId, i)"
+            ></mat-radio-button>
+          </div>
+
+          <div class="label-inputadd">
+
+              <div class="add-type-main">
+                   <div class="title-addtype">{{ address.annotation }}</div>
+                   <div class="default-address" *ngIf="address.default">Default address</div>
+              </div>
+
+            <div class="input-group add_input">
+              <input
+                type="text"
+                name="address"
+                class="form-control custom_add"
+                placeholder="Add new address"
+                disabled
+                [(ngModel)]="address.addressLine"
+              />
+            </div>
+          </div>
+
+          <div class="icon_menus">
+            <button mat-button [matMenuTriggerFor]="beforeMenu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <button mat-menu-item (click)="preEditAddress(address, i)">Edit</button>
+              <button mat-menu-item (click)="deleteAddress(address.addressId)">Delete</button>
+            </mat-menu>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>

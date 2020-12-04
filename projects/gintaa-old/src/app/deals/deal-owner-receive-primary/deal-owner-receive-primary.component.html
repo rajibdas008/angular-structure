@@ -1,0 +1,260 @@
+<div class="deal-owner-wrapper-primary" *ngIf="updateDealResponseObj">
+    <div class="deal-owner-primary">
+        
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 pr-0">
+                    <div class="owner-primary-wrapper">
+                        <div class="owner-take-primary">
+                            <div class="deals-primary-top">
+                                <div class="deals-users-owner">
+                                    <ul class="deals-owner-users owner-ml">
+                                        <li>
+                                            <div class="deals-owner-boxs deals-owner-bg deals-owner-border">
+                                                <div class="online"></div>
+                                                <div class="offline"></div>
+                                                <img [src]="updateDealResponseObj.sender && updateDealResponseObj.sender.imageUrl && updateDealResponseObj.sender.imageUrl !='' ? updateDealResponseObj.sender.imageUrl : 'assets/images/no-image.svg'" 
+                                                    alt="images"
+                                                    class="user-img img-fluid /">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="makes-deals-owner">
+                                        <h2>Sent you a deal</h2>
+                                    </div>
+                                </div>
+                                <div class="deal-datetime">
+                                     <h4>{{updateDealResponseObj.dealSentTimeStamp | formatDate}} at <span>{{updateDealResponseObj.dealSentTimeStamp | formatUTCTime}}</span></h4>
+                                </div>
+                            </div>
+                            <div class="owner-take-primary-container">
+
+
+                                <div class="take-title-ownerpry">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="take-text-primary">
+                                                <h4>give your </h4>
+                                                <h6>{{ updateDealResponseObj.requestedOffers.length }} item 
+                                                    <span *ngIf="updateDealResponseObj.offeredAmount && updateDealResponseObj.offeredAmount > 0">, cash</span>
+                                                </h6>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="give-money-offer">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="offer-take-qtyner">
+                                              <div class="deal-offer-cutom-group">
+                                                <div class="can_get new-card-105">
+                                                    <div class="single-Product" *ngFor="let offer of updateDealResponseObj.requestedOffers">
+                                                        <div class="product-img primary-card-105 ih-100">
+                                                            <img [src]="offer.images.length>0?offer.images[0].url:'assets/images/no-image.svg'"  class="rounded img-fluid "
+                                                                alt="product img"  [routerLink]="['/offer-details', 'view', offer.offerId]"
+                                                                 (click)="onDialogClose()"/>
+                                                            <div class="img-title title-add-card">                                                                
+                                                                <h4>{{ offer.offerName }}</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="offer-time-months">{{ updateDealResponseObj.expiryDatetime | formatDateInDays }}D</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="delivery-insur-owner">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="delivery-req-owner">
+                                                <div class="add-delivery" *ngIf="updateDealResponseObj.includeShipping">
+                                                    <div class="local-shoping-owner">
+                                                        <span class="material-icons-outlined">local_shipping</span>
+                                                    </div>
+                                                    <div class="rights-choose"><span class="material-icons">done_outline</span></div>
+                                                </div>
+                                                <div class="add-delivery" *ngIf="updateDealResponseObj.dropToGintaaJunction">
+                                                    <div class="local-shoping-owner">
+                                                        <span class="material-icons-outlined">storefront</span>
+                                                    </div>
+                                                    <div class="rights-choose"><span class="material-icons">done_outline</span></div>
+                                                </div>
+
+                                                <div class="add-insured" *ngIf="updateDealResponseObj.includeInsurance">
+                                                    <div class="verified-user-owner"><span
+                                                            class="material-icons">verified_user</span></div>
+                                                    <div class="rights-choose"><span class="material-icons">done_outline</span></div>          
+                                                </div>
+                                                <div class="delivery-choose">
+                                                    <h4>{{updateDealResponseObj.sender.name}}</h4>
+                                                    <h4 *ngIf="updateDealResponseObj.includeInsurance"> Insured & </h4>
+                                                    <h6 *ngIf="updateDealResponseObj.includeShipping">
+                                                        want Doorstep Delivery for this offer</h6>
+                                                    <ng-container *ngIf="updateDealResponseObj.dropToGintaaJunction">
+                                                        <h6>meet to junction: {{ updateDealResponseObj.junctionDetailsView.name }}</h6>
+                                                        <h6>on {{ updateDealResponseObj.meetingDate }} - {{ updateDealResponseObj.meetingStartTime }}</h6>
+                                                    </ng-container>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="dealowner-arrow-up">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="owner-arrow-down">
+                                                <span class="material-icons">import_export</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                               <div class="primary-shadow-group">
+                                <div class="primay-title-deal">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="owner-primary-text">
+                                                <h4>and take</h4>
+                                                <h6>{{ updateDealResponseObj.offeredOffers.length }} item <span *ngIf="updateDealResponseObj.requestedAmount && updateDealResponseObj.requestedAmount > 0">, cash</span></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="owner-money-offer">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="money-offer-owner">
+                                                <div class="money-owner-primary" *ngIf="updateDealResponseObj.requestedAmount > 0">
+                                                    <h4>Rs.</h4>
+                                                    <h6>{{ updateDealResponseObj.requestedAmount }}</h6>
+                                                </div>
+
+                                                <div class="offer-qty" *ngFor="let offer of updateDealResponseObj.offeredOffers">
+                                                    <div class="can_get new-card-105">
+                                                        <div class="single-Product"> 
+                                                            <div class="product-img primary-card-105 ih-100">
+                                                                <img [src]="offer.images.length>0?offer.images[0].url:'assets/images/no-image.svg'"  class="rounded img-fluid "
+                                                                alt="product img"  [routerLink]="['/offer-details', 'view', offer.offerId]"  (click)="onDialogClose()"/>
+                                                                <div class="img-title title-add-card">                                                                   
+                                                                    <h4>{{ offer.offerName }}</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="qty-owner-primary">qty {{ offer.offerCount }}</div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                            </div>
+
+                        </div>
+
+
+                        <div class="primary-expire-bottom">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="owner-delivery-main">
+                                        <div class="expires-change-owner">
+                                            <div class="calendar-icons-priowner"><img
+                                                    src="assets/images/timer-clock.png" alt="images" class="img-fluid">
+                                            </div>
+                                            <div class="expire-texts-ownerpy">
+                                                <h2> <span>Deal Expire in</span> {{ updateDealResponseObj.expiryDatetime | formatDateInDays }} Days</h2>
+
+                                            </div>
+                                        </div>
+                                       <div class="accept-reject-group"> 
+                                        <div class="not-accept-owner">
+                                            <button class="btn_primary g-right" (click)="acceptDeal(updateDealResponseObj.dealRefId)">Accept Deal</button>
+                                        </div>
+                                        <div class="deal-reject-btn">
+                                            <button class="btn-reject" (click)="rejectDeal(updateDealResponseObj.dealRefId)">Reject deal</button>                                  
+                                        </div> 
+                                       </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 pl-0">
+                    <div class="owner-msg-primary">
+                        <div class="chat-msg-recall">
+                            <div class="update-deal-wait" *ngIf="updateDealSnapshotObj">
+                                <div class="row" *ngFor="let transaction of updateDealSnapshotObj.transactionStates">
+                                    <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="transaction.comments">
+                                        <div class="g-flex justify-content-end-primary mb-24" *ngIf="transaction.status !== 'UPDATE_REQUESTED'">
+                                            <div class="chat-time-name">
+                                                <div class="msg-time-secondary">{{ transaction.datetime | formatChatDate }}</div>                                     
+                                            </div>
+                                            <div class="msg-cotainer-secondary">
+                                                <div class="block-menu">
+                                                    <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                                                        expand_more </span></button>
+                                                    <mat-menu #beforeMenu="matMenu" xPosition="before">
+                                                    <button mat-menu-item><span class="material-icons custom-icons">warning
+                                                        </span> Report Message</button>
+                                                    <button mat-menu-item><span class="material-icons custom-icons">
+                                                        block </span> Block user</button>
+                                                    </mat-menu>            
+                                                </div>
+                                                <p class="msg-text">{{ transaction.comments || 'Deal Got Updated' }}</p>
+                                            </div>
+                                        </div>
+        
+                                        <div class="g-flex justify-content-start-primary mb-24" *ngIf="transaction.status === 'UPDATE_REQUESTED'">
+                                            <div class="msg-cotainer">
+                                                <div class="mgs-text-box">
+                                                    <h2>Deal update request</h2>
+                                                    <p class="deal-textpara">
+                                                        {{ transaction.comments || 'Update Request Needed' }}
+                                                    </p>
+                                                </div>
+                                                <div class="update-block-menu block-menu">
+                                                    <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                                                        expand_more </span></button>
+                                                    <mat-menu #beforeMenu="matMenu" xPosition="before">
+                                                    <button mat-menu-item><span class="material-icons custom-icons">warning
+                                                        </span> Report Message</button>
+                                                    <button mat-menu-item><span class="material-icons custom-icons">
+                                                        block </span> Block user</button>
+                                                    </mat-menu>
+                                                </div>
+                                            </div>
+                                            <div class="chat-time-name">         
+                                                <div class="msg-time">{{ transaction.datetime | formatChatDate }}</div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <app-deal-msg-chat
+                            *ngIf="!dealUpdateReqSeent"
+                            [dealButton]="dealButton"
+                            (updatedComment)="onUpdateComment($event)"
+                            (dealSubmitted)="onDealUpdateRequest()"></app-deal-msg-chat>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+    <div class="deal-sidebar-2">
+        <app-chat-sidebar (chatSidebarClose)="onDialogClose();"></app-chat-sidebar>
+    </div>
+</div>

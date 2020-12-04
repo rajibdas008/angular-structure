@@ -1,0 +1,103 @@
+.offers_part{
+  padding-top: 50px;
+  float: left;
+    width: 100%;
+}
+.item_top { 
+    padding: 10px 0;        
+    background: #f6f6f6;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    margin: 20px 0px 75px 0px;
+  }
+  
+  .item_top.header-scrolled,
+  .item_top.header-pages {
+    height: 70px;
+    padding: 15px 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+  }
+  
+  
+  .main-pages {
+    margin-top: 60px;
+  }
+  .main-nav,
+  .main-nav * {    
+    list-style: none;
+  }
+  
+  .main-nav > ul > li {
+    position: relative;
+    white-space: nowrap;
+    float: left;
+  }  
+ 
+  .main-nav a {
+    display: block;
+    position: relative;
+    color: #413e66;
+    padding: 10px 15px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;    
+    font-weight: 700;
+  }
+  
+  .main-nav a:hover,
+  .main-nav .active > a,
+  .main-nav li:hover > a { 
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .count-0, .count-1, .count-2, .count-3{
+    background-color: #c7c7c7;
+    color: #0b2239;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    margin-right: 5px;
+    min-width: 32px;
+    width: auto;
+}
+
+.count-1{background-color: #51c878;}
+.count-2{background-color: #fbcf00;}
+.count-3{background-color: #ff6262;}
+
+.no-content{
+  width: 100%;
+  background: #f3f3f3;
+  padding: 40px;
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  margin-bottom: 50px;
+}
+.no-content img {
+  display: inline-block;
+  width: 40px;
+  height: auto;
+  margin-right: 15px;
+}
+.no-content h4 {
+  display: inline-block;
+  width: auto;
+  font-size: 16px;
+}
+.dh_offers_title h2{
+  color: #0b2239;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}

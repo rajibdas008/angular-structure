@@ -1,0 +1,153 @@
+.chat-small-view-main{
+    width: 420px;
+    height: 105px;    
+    position: absolute;
+    z-index: 999;
+    top: 70px;
+    right: 380px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    background: #efefef; 
+    padding: 24px;
+}
+
+.call-small-sub{
+    float: left;
+    width: 100%;
+}
+
+.call-small-sub .user-section{
+    float: left;
+    display: inline-flex;
+}
+
+.call-small-sub .call-section{
+    float: right;
+    display: inline-flex;
+    padding-top: 10px;
+}
+
+
+.audio-user-smallimg img{
+    width: 65px;
+    height: 65px;
+    border: 8px solid #e2efe2;
+    border-radius: 50%;
+}
+
+.user-talk-times{
+    margin-left: 15px;
+}
+
+.user-talk-times h4{
+    color: #49596a;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 60px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.call-section ul{
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.call-section ul li{
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+}
+
+.call-section ul li:last-child{
+    margin-right: 0px;
+}
+
+.chat-audio-calls .audio-on{
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #7d7d7d;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.chat-audio-calls .audio-off{
+    width: 44px;
+    height: 44px;
+    background: #1d344d;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.chat-call-ends .call-start{
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #7d7d7d;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.chat-call-ends .call-end{
+    width: 44px;
+    height: 44px;
+    background: #f15049;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.remove-small-page{
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #7d7d7d;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}

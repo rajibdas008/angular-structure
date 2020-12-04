@@ -1,0 +1,126 @@
+<div class="close-deal-frame">
+    <div class="remove-close-page">
+        <span class="material-icons"
+          (click)="onDialogClose()">close</span>
+    </div>
+
+    <div class="close-top-frame">
+        <div class="otp-close-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="otpclose-title">
+                        <h4>Ask {{ userFullName }} for OTP to close the deal</h4>
+                    </div>
+                  
+                </div>  
+           </div>
+         </div>
+
+         <div class="deal-user-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                     <div class="close-user-deal">
+                          <img [src]="userProfileImage"
+                              alt="image"
+                              class="img-fluid custom-user-img"
+                              [title]="userFullName" />
+                     </div>                
+                </div>  
+           </div>
+         </div>
+
+         <div class="otp-user-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                     <div class="otp-input-deal">
+                          <div class="otp-custom">
+                              <ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="otpConfig"></ng-otp-input>
+                          </div>                         
+                     </div>
+                </div>  
+           </div>
+         </div>
+
+         <div class="verify-close-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                     <div class="verify-close-deal">
+                        <button class="btn_primary custom-primary"
+                              type="submit"
+                              (click)="onSubmitCloseDeal()">Verify and close deal</button>
+                     </div>                
+                </div>  
+           </div>
+         </div>
+
+         <div class="row" *ngIf="responseErrorObject.showError">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+                <!-- <div class="alert alert-danger fade show mt-1" role="alert">
+                     <strong>ERROR!</strong> {{ responseErrorObject.message }}
+                </div> -->
+                <div class="close-deal-msg">
+                <div class="text-danger">                    
+                     <div class="error">  <strong>ERROR!</strong> {{ responseErrorObject.message }} </div>
+                 </div>
+                 </div>
+          </div>
+     </div>
+
+         <div class="report-user-row">
+               <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                         <div class="report-user">
+                         <h4>Something went wrong ? <span><a href="#">Report user</a></span></h4>
+                         </div>
+                    </div>
+               </div>
+         </div>
+
+         
+
+    </div>
+
+    <div class="close-bottom-frame">
+        <div class="how-close-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                     <div class="how-close-deal">
+                        <h4>how to close a deal</h4>
+                     </div>                
+                </div>  
+           </div>
+         </div>
+
+         <div class="reciver-close-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                     <div class="reciver-close-deal">
+                        <h6>Take Close Deal OTP from your deal receiver and Verify the OTP</h6>
+                     </div>                
+                </div>  
+           </div>
+         </div>
+         
+         <div class="why-close-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                     <div class="why-close-deal">
+                        <h4>why need to close your deal</h4>
+                     </div>                
+                </div>  
+           </div>
+         </div>
+
+         <div class="process-close-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                     <div class="process-close-deal">
+                        <h6>This is an verify process that confirm your deal.</h6>
+                     </div>                
+                </div>  
+           </div>
+         </div>
+
+    </div>
+
+</div>    

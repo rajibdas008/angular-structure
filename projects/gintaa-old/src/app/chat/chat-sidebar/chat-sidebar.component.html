@@ -1,0 +1,73 @@
+<div class="chat-sidebar-wrapper">
+<div class="remove-view-page">
+     <span class="material-icons" (click)="close();">close</span>
+</div>
+<div class="offer-deal-box" *ngIf="connect && connect.isChatModal">
+  <div class="ch-hand" (click)="openDeal()">
+    <img src="assets/images/chat-hand.png" alt="Image">
+  </div>
+  <p class="offer-text">Send Deal</p>
+</div>
+<div class="audio-video">
+  <div class="sidebar-chat-menu">
+     <ul>
+       <li>
+         <div class="document_upload">            
+          <form #documentUploadForm>
+            <input type="file" #documentUpload name="documentUpload"  accept="application/pdf|image/*" multiple style="display:none;"/>
+            <button class="icon-btn-primary file-attach" type="button" (click)="uploadDocument()">
+              <div class="hr-line"></div>
+              <span class="material-icons"> attach_file </span>              
+            </button> 
+                     
+          </form>
+         </div>
+       </li>
+       <li>
+         <div class="collec-chat">
+          <form #imageUploadForm>
+            <input type="file" #imageUpload name="imageUpload"  accept="image/*" multiple style="display:none;"/>
+            <span class="material-icons" (click)="uploadChatImage()">collections</span>
+          </form>
+         </div>  
+       </li>
+       <li>
+        <div class="video-library">
+          <form #videoUploadForm>
+            <input type="file" #videoUpload name="videoUpload"  accept="video/*" multiple style="display:none;"/>
+            <span class="material-icons" (click)="uploadChatVideo()">video_library</span>
+          </form>
+        </div>
+       </li>
+       <li>
+         <div class="chat-audio">
+            <div class="audio-on">
+              <span class="material-icons"> mic</span>
+            </div>
+            <!-- <div class="audio-off"><span class="material-icons">mic_off</span></div> -->
+        </div>
+      </li>
+       <li>
+          <div class="add-library" (click)="openOfferModal()">
+            <span class="material-icons">add</span>
+          </div>        
+        </li>
+     </ul>
+</div>
+<div class="sidebar-call">
+     <ul>
+       <li>
+          <div class="video-call">
+            <div class="vcall-on"><span class="material-icons">video_call</span></div>
+            <!-- <div class="vcall-off"><span class="material-icons">videocam_off</span></div> -->
+          </div>      
+        </li>
+       <li>
+        <div class="chat-call">
+          <div class="call-start"><span class="material-icons">call</span></div>
+          <!-- <div class="call-end"><span class="material-icons">call_end</span></div> -->
+        </div>         
+       </li>
+     </ul>
+ </div>
+</div>

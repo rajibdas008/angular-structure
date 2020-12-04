@@ -1,0 +1,54 @@
+<div class="send-deal-owner">
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="chat-user">
+            <div class="user-area">
+             <div class="me-box">                
+                <div class="active"></div> 
+                <h4>me</h4>
+             </div>
+            <!-- <div class="chat-now">
+                <button
+                    class="btn_primary_icon btn-primary-bg"
+                    type="button"
+                    (click)="chatNow()">
+                    <span class="material-icons">
+                        chat_bubble_outline
+                    </span>
+                    Chat now
+                </button>
+            </div> -->
+            <!-- use for initial check chat end -->
+             
+             <!-- service details owner part start -->
+             <!-- <div class="me-box">                
+                <div class="active"></div> 
+                <h4>you</h4>
+             </div> -->
+             <!-- service details owner part end -->
+            
+             <div class="talking-with">Talking with</div>
+
+             <div class="user-list-chat">
+
+              <ul>
+                 <li *ngFor="let user of roomUserDetails">
+                    <div class="users-box">                
+                        <!-- <div class="online"></div> -->
+                        <div class="offline"></div>
+                        <img [src]="user.initiatorDisplayImage || 'assets/images/sm-dp.jpg'" alt="images" class="user-img img-fluid ">
+                        <!-- <div class="count-user"><h4>10</h4></div> -->
+                     </div>
+                 </li>
+             </ul>
+            </div>
+
+             <div class="view-all">
+                <!-- <button class="btn-primary-text" type="button">view all</button> -->
+             </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+</div>

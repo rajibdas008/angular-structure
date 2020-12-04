@@ -1,0 +1,335 @@
+.head_up {
+    padding: 63px 0px 134px 0px;
+  }
+  
+  .head_profile {
+    padding: 70px 149px 0px 37px;
+    width: 100%;
+    float: left;
+  }
+  .login-start-top, .headsup-description, .login-start, .social_login, .reset-password-hint{
+      float: left;
+      width: 100%;
+  }
+  .btn-started{
+      font-size: 18px;
+      font-weight: 600;
+      color: #f3f3f3;
+      font-family: "Open Sans", sans-serif;
+      width: 100%;
+      cursor: pointer;
+      padding: 18px 0px;
+  }
+  .auth_term {
+    margin-top: 25px;
+    font-size: $txt-sm-14;
+    font-weight: $txt-regular;
+    text-align: center;
+    float: left;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    color: #000000;
+  }
+  .otp-verify-add{
+    margin: 0em;
+    padding: 45px 0px 33px 0px;
+  }
+  .btn_app {
+	padding-left: 85px;
+	margin-top: 20px;
+	ul {
+		li {
+			a {
+				margin-right: 10px;
+			}
+		}
+	}
+	img {
+        width: 160px;
+        height: 48px;
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+	}
+}
+
+.user_store {
+    padding: 0 55px;
+  }
+
+.login-start-top .login-title {    
+    font-weight: bold;    
+    color: #0b2239;    
+    font-size: 48px;
+    font-family: Lora;
+    text-transform: lowercase;
+    float: left;
+    width: 100%;
+}
+
+.login-start-top .login-prar {
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;    
+    color: #0b2239;
+    margin: 0em;
+    font-size: 14px;  
+    float: left;
+    width: 100%;  
+}
+
+.social-auth {
+    font-size: 14px;
+    text-align: center;
+    color: #404f5b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    padding: 34px 0px 26px 0px;
+    float: left;
+    width: 100%;
+}
+
+
+.social-login-row{
+    width: 100%;
+    padding: 0px 40px;
+    float: left;
+}
+
+.or-btn{
+    padding: 9px 13px 11px 13px;
+}
+
+.auth-term {
+    margin-top: 43px;
+    font-size: 0.875em;
+    font-weight: 400;
+    text-align: center;
+    color:#afafaf;
+    float: left;
+    width: 100%;
+}
+
+.auth-term a{
+    cursor: pointer;
+    color:#afafaf;
+    }
+
+.form-control-custom{
+    width: 100%;
+    padding: 18px 0px 18px 15px;
+    background-color: #ffffff;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    color: #0b2239;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+}
+
+.form_group{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-form{
+    margin-top: 50px;
+    float: left;
+    width: 100%;
+}
+
+.social-login-inline{
+    width: 370px;
+    margin-left: -14px;    
+    padding: 0px
+}
+
+.btn-style-resend{
+    background: transparent;
+}
+
+.lpr-custom{
+    padding-right: 76px;
+}
+.btn_primary span{
+    text-transform: capitalize;
+}
+.pt-43{    
+    margin-top: 0px;
+    padding: 42px 0px;
+}
+#partitioned {
+	padding-left: 0.938em;
+	letter-spacing: 2.625em;
+	border: 0;
+	background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+	background-position: bottom;
+	background-size: 3.125em 0.063em;
+	background-repeat: repeat-x;
+	background-position-x: 2.188em;
+	width: 13.75em;
+}
+.otp_control {
+	margin-bottom: 1.875em;
+}
+button.verify-btn {
+	&:disabled {
+		opacity: 0.7;
+	}
+}
+button.resend-btn {
+	&:disabled {
+		opacity: 0.7;
+	}
+}
+.bcktnumb {
+	font-size: 0.875em;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	padding: 1.25em 0em;
+	width: 100%;
+	text-align: center;
+	color: #0b2239;
+	a {
+		text-decoration: underline;
+	}
+}
+
+.padding-primarys{
+    padding: 1.125em 0em;
+    color: #f3f3f3;
+    font-size: 18px!important;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+}
+.email-face-group{
+    width: 100%;    
+    margin: 0px 0px 30px 0px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+.user-email h2{
+    float: left;
+    color: #0b2239;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+}
+
+.user-face span{
+    font-size: 27px;
+    color: #afafaf;
+    margin-right: 7px;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.email-arrow span{
+    color: #afafaf;
+    vertical-align: bottom;
+}
+
+.login-start-top .reset-password{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 42px;
+}
+
+.reset-password-hint h4{
+    width: 100%;
+    color: #afafaf;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    padding: 0px 0px 30px 0px;
+}
+
+.login_form {
+    // margin-top: 40px;
+    float: left;
+    width: 100%;
+  }
+
+.des-primary{
+    float: left;
+    width: 100%;
+    margin-top: 36px;
+}
+
+.des-primary h2, .des-primary h6, .des-secondary h2, .des-secondary h6{
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    color: #000000;
+}
+
+.des-primary h6{
+    padding: 22px 0px 24px 16px;
+}
+.des-secondary h6{
+    padding: 22px 0px 0px 16px;
+}
+.des-primary h6 span, .des-secondary h6 span{
+    text-transform: uppercase;
+}
+
+.mt-36{
+    margin-top: 36px;
+}
+
+.login-start-top .mt-10{
+    margin-top: 10px;
+}
+
+.ptb-c{
+    padding: 40px 0px 28px 0px;
+}
+.ptb-cc{
+    padding: 42px 0px 28px 0px;
+}
+.plr-48{
+    padding: 0px 48px;
+}
+
+.mt-34{
+    margin-top: 34px;
+}
+
+.or-btn i {
+    margin-right: 0.375em;
+}
+.mt-33{
+    margin-top: 33px;
+}
+
+.gmr-14{
+    margin-right: 14px;
+}
+.pt-0{
+    padding: 0px 0px 28px 0px;
+}
+.mt-32{
+    margin-top: 32px;
+}
+.mb-60{
+    margin-bottom: 60px;
+}
+
+.at-custom{
+    margin-top: 42px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+}
+
+.login-bg{
+    background-color: #eceeef;
+}

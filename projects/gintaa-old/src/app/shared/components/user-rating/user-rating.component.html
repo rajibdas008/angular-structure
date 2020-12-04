@@ -1,0 +1,146 @@
+<div class="close-deal-rating-frame">
+    <div class="remove-close-page">
+        <span class="material-icons"
+            (click)="onDialogClose()">close</span>
+    </div>
+
+    <div class="user-rating-wrapper">
+
+        <div class="user-rating-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="con-title-group">
+                        <h2>Congratulations!</h2>
+                        <h4>You & {{ userFullName }} complete a deal</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-image-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="rating-user">
+                        <div class="user-img-1 user-primary">
+                            <img [src]="userOneProfileImage" alt="Profile Image" class="img-fluid rounded-circle custom-round"/>
+                        </div>
+                        <div class="user-img-2 user-secondary">
+                            <img [src]="userTwoProfileImage" alt="Profile Image" class="img-fluid rounded-circle custom-rounds"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="deal-rating-row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="rateing-deal-user">
+                        <h6>Rate this deal with {{ userFullName }}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ng-container *ngIf="ratingContexts && ratingContexts.length > 0">
+            <ng-container *ngFor="let ratingContext of ratingContexts">
+
+                <div class="review-rating-row" *ngIf="ratingContext.contextId">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="rateing-star">
+                                <star-rating
+                                    [value]="ratingContext.minRating"
+                                    [totalstars]="ratingContext.maxRating"
+                                    [checkedcolor]="ratingConfig.checkedcolor"
+                                    [uncheckedcolor]="ratingConfig.uncheckedcolor"
+                                    [size]="ratingConfig.size"
+                                    [readonly]="ratingConfig.readonly"
+                                    (rate)="onRate($event, ratingContext.contextId)"></star-rating>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ng-container *ngIf="ratingContext.questions">
+                    <ng-container *ngFor="let question of ratingContext.questions">
+
+                        <div class="review-question-row">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="rating-question">
+                                        <h5>{{ question.question }}?</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chips-list-row" *ngIf="question.options.length > 0">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="listing-chips">
+                                        <mat-chip-list aria-label="Select Answers" [multiple]="true">
+                                            <mat-chip
+                                                *ngFor="let option of question.options; let i = index;"
+                                                    color="accent"
+                                                    [selected]="question.selectedOptions[i]"
+                                                    (click)="question.selectedOptions[i] = !question.selectedOptions[i]">
+                                                {{ option }}
+                                            </mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-area-row">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="comment-area">
+                                        <div class="secondary_group">
+                                            <div class="secondary-wrap validate-input">
+                                                <span class="secondary-label label-space add-style">Add Comments/reviews</span>
+                                                <textarea class="secondary-input"
+                                                    formcontrolname="description"
+                                                    rows="2"
+                                                    [maxLength]="question.answerCharLimit"
+                                                    (keyup)="question.answerCharLeft = question.answerCharLimit - $event.target.value.length"
+                                                    [(ngModel)]="question.answer"></textarea>
+                                                <span style="color: #616161;margin-top: 10px;float: right;">
+                                                    {{ question.answerCharLeft }} character(s) remaining
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-container>
+                </ng-container>
+
+            </ng-container>
+        </ng-container>
+
+        <div class="review-submit-row mt-1">
+            <div class="row" *ngIf="responseErrorObject.showError">
+                <div class="col-sm-12">
+                    <div class="alert alert-danger alert-dismissible show mt-1" role="alert">
+                        <strong>ERROR!</strong> {{ responseErrorObject.message }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="review-submit-btn">
+                        <button class="btn_primary g-right rating-submit"  type="submit"
+                            (click)="saveUserRating()"> Submit </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

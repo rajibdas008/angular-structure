@@ -1,0 +1,73 @@
+<section class="offers_part">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="dh_offers_title offers_title">
+        <h2>offers</h2>
+      </div>
+    </div> 
+  </div>
+  
+  
+  <div class="my_profile_sticky" *ngIf="draftCount !== 0 || activeCount !== 0 || underReviewOffersCount !== 0 || rejectedOffersCount !== 0">  
+    <div class="item_top">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <nav class="main-nav">
+            <ul>
+              <li class="active"><a href="#"><span class="count-0">{{ draftCount }}</span> Draft</a></li>
+              <li><a href="#"><span class="count-1">{{ activeCount }}</span> Active</a></li>
+              <li><a href="#"><span class="count-2">{{ underReviewOffersCount }}</span> Under Review</a></li>
+              <li><a href="#"><span class="count-3">{{ rejectedOffersCount }}</span> Rejected</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>  
+  
+  
+    <div class="draft_item">
+      <app-draft></app-draft>
+    </div>
+    <div class="row" *ngIf="draftCount === 0 ">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+          <!-- <div class="not-avail">Draft offers not available</div>         -->
+      </div>  
+    </div>
+  
+    <div class="active_item">
+      <app-active></app-active>
+    </div>
+    <div class="row" *ngIf="activeCount === 0 ">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+          <!-- <div class="not-avail">Active offers not available</div>         -->
+      </div>  
+    </div>
+
+    <div class="unpub_item">
+      <app-unpublished></app-unpublished>
+    </div>
+    <div class="row" *ngIf="underReviewOffersCount === 0">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+          <!-- <div class="not-avail">Unpublished offers not available</div>         -->
+      </div>  
+    </div>
+
+    <div class="unpub_item">
+      <app-rejected></app-rejected>
+    </div>
+    <!-- <div class="row" *ngIf="underReviewOffersCount === 0">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="not-avail">Unpublished offers not available</div>        
+      </div>  
+    </div> -->
+  
+  </div>   
+
+
+  <div class="row" *ngIf="draftCount === 0 && activeCount === 0 && underReviewOffersCount === 0 && rejectedOffersCount === 0">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="no-content">You don't have any offer yet. <strong><a [routerLink]="['/add-new-offer']" routerLinkActive="router-link-active">Create New Offer</a></strong></div>        
+    </div>  
+  </div>
+  
+  </section>

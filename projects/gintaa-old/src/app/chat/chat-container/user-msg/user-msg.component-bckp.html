@@ -1,0 +1,530 @@
+<div class="primary-card-body msg-card-body">
+    <ng-container>
+    <div class="g-flex justify-content-start-primary mb-24" *ngFor="let msg of chatHistoryMsg">       
+        <!-- user images -->
+        <div class="user-img-cont user-bg">                
+            <div class="online"></div>
+            <!-- <div class="offline"></div> -->
+            <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+            <!-- <div class="user-name">st</div>                             -->
+        </div>
+
+        <!-- user chat text -->
+        <div class="msg-cotainer" *ngIf="loggedInUserId !== msg.senderId">
+            <p class="msg-text">{{ msg.messageBody }}</p>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div>
+
+         <!-- user chat video -->
+        <!-- <div class="msg-video-attach">
+            <div class="video-icon"><span class="material-icons">video_library</span></div>
+            <div class="file-count-att">2 <span class="material-icons">attachment</span></div>
+             <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div> 
+        </div> -->
+
+        <!-- user chat text -->
+        <!-- <div class="msg-audio-attach">
+            <div class="audio-icon"><span class="material-icons"> mic</span></div>
+            <div class="audio-playon">audio</div>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div> -->
+ 
+        <!-- user chat time -->
+        <div class="chat-time-name">         
+            <div class="msg-time">8:40 AM</div> 
+         </div>    
+
+    </div>
+
+
+
+    <div class="g-flex justify-content-end-primary mb-24" *ngFor="let msg of chatHistoryMsg">
+
+        <!-- user chat time -->
+        <div class="chat-time-name">
+            <div class="msg-time-secondary">{{msg.messageTime}}</div> 
+            <div class="msg-user-name">@ Anup</div>
+        </div>
+        <!-- user chat text -->
+        <div class="msg-cotainer-secondary" *ngIf="loggedInUserId === msg.senderId">            
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+            <p class="msg-text">{{ msg.messageBody }}</p>
+
+        </div>       
+    </div>
+
+
+    <div class="g-flex justify-content-start-primary mb-24"> 
+        
+        <!-- user images -->
+        <div class="user-img-cont user-bg">                
+            <div class="online"></div>
+            <!-- <div class="offline"></div> -->
+            <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+            <!-- <div class="user-name">st</div>                             -->
+         </div>
+
+        <!-- user chat text -->
+        <!-- <div class="msg-cotainer">
+            <p class="msg-text">Hi, how are you samim?</p>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div> -->
+
+         <!-- user chat video -->
+        <div class="msg-video-attach">
+            <div class="video-icon"><span class="material-icons">video_library</span></div>
+            <div class="file-count-att">2 <span class="material-icons">attachment</span></div>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                  <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                  <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div>
+
+        <!-- user chat text -->
+        <!-- <div class="msg-audio-attach">
+            <div class="audio-icon"><span class="material-icons"> mic</span></div>
+            <div class="audio-playon">audio</div>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div> -->
+ 
+        <!-- user chat time -->
+        <div class="msg-time">8:40 AM</div>   
+
+    </div>
+
+
+    <div class="g-flex justify-content-end-primary mb-24">    
+        <div class="chat-time-name">
+            <div class="msg-time-secondary">8:40 AM</div> 
+            <div class="msg-user-name">@ Anup</div>
+        </div>
+        <!-- user chat text -->
+        <div class="msg-cotainer-secondary">            
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+            <p class="msg-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            
+        </div>    
+    </div>
+
+    <div class="g-flex justify-content-start-primary mb-24"> 
+        
+        <!-- user images -->
+        <div class="user-img-cont user-bg">                
+            <div class="online"></div>
+            <!-- <div class="offline"></div> -->
+            <!-- <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid ">  -->
+            <div class="user-name">st</div>                            
+         </div>
+
+        <!-- user chat text -->
+        <!-- <div class="msg-cotainer">
+            <p class="msg-text">Hi, how are you samim?</p>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div> -->
+
+         <!-- user chat video -->
+        <!-- <div class="msg-video-attach">
+            <div class="video-icon"><span class="material-icons">video_library</span></div>
+            <div class="file-count-att">2 <span class="material-icons">attachment</span></div>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div> -->
+
+        <!-- user chat text -->
+        <div class="msg-audio-attach">
+            <div class="audio-icon"><span class="material-icons"> mic</span></div>
+            <div class="audio-playon">audio</div>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                  <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                  <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div>
+ 
+       <!-- user chat time -->
+       <div class="chat-time-name">         
+        <div class="msg-time">8:40 AM</div> 
+     </div>  
+
+    </div>
+
+
+    <div class="g-flex justify-content-end-primary mb-24">
+        <!-- user chat time -->
+        <div class="chat-time-name">
+            <div class="msg-time-secondary">8:40 AM</div> 
+            <div class="msg-user-name">@ Anup</div>
+        </div>
+        <!-- user chat text -->
+        <div class="msg-cotainer-secondary offer-send-box">            
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+            <div class="product-offer-text">
+                <p class="msg-text">Nikon DSLR Camara sale <span>used</span></p>
+                <p class="offer-price">Rs. 4500 / 2Month ago</p>
+            </div>
+            <div class="product-img-user"><img src="assets/images/8.jpg" alt="image" class="img-fluid" /></div>
+        </div>        
+    </div>
+    
+   
+   <!-- send deal chat part start -->
+    
+    <div class="g-flex justify-content-start-primary mb-24"> 
+        
+        <!-- user images -->
+        <div class="user-img-cont user-bg">                
+            <div class="online"></div>
+            <!-- <div class="offline"></div> -->
+            <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+            <!-- <div class="user-name">st</div>                             -->
+         </div>
+
+        <!-- user chat text -->
+        <div class="msg-send-deal">
+             <div class="ch-view-deal-primary">
+                  <div class="deal-primary-img"><img src="assets/images/hand.png" alt="image" class="img-fluid" /></div>
+                  <div class="deal-text-group-primary">
+                       <h2>neel</h2>
+                       <h4>Sent you a deal</h4>
+                  </div>
+             </div>
+             <div class="ch-view-deal-secondary">
+                  <h6>view deal</h6>
+             </div>
+        </div>
+
+         <!-- user chat video -->
+        <!-- <div class="msg-video-attach">
+            <div class="video-icon"><span class="material-icons">video_library</span></div>
+            <div class="file-count-att">2 <span class="material-icons">attachment</span></div>
+             <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div> 
+        </div> -->
+
+        <!-- user chat text -->
+        <!-- <div class="msg-audio-attach">
+            <div class="audio-icon"><span class="material-icons"> mic</span></div>
+            <div class="audio-playon">audio</div>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div> -->
+ 
+        <!-- user chat time -->
+        <div class="chat-time-name">         
+            <div class="msg-time">8:40 AM</div> 
+         </div>  
+
+    </div>
+
+
+
+    <div class="g-flex justify-content-start-primary mb-24"> 
+        
+        <!-- user images -->
+        <div class="user-img-cont user-bg">                
+            <div class="online"></div>
+            <!-- <div class="offline"></div> -->
+            <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+            <!-- <div class="user-name">st</div>                             -->
+         </div>
+
+        <!-- user chat text -->
+        <div class="msg-send-deal">
+            <div class="ch-view-deal-primary reject-deal">
+                 <div class="deal-primary-img"><img src="assets/images/hand.png" alt="image" class="img-fluid" /></div>
+                 <div class="deal-text-group-primary">
+                      <h2>neel</h2>
+                      <h4>Sent you a deal</h4>
+                 </div>
+            </div>
+            <div class="ch-view-deal-secondary">
+                 <h6>view deal</h6>
+            </div>
+       </div>
+
+         <!-- user chat video -->
+        <!-- <div class="msg-video-attach">
+            <div class="video-icon"><span class="material-icons">video_library</span></div>
+            <div class="file-count-att">2 <span class="material-icons">attachment</span></div>
+             <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div> 
+        </div> -->
+
+        <!-- user chat text -->
+        <!-- <div class="msg-audio-attach">
+            <div class="audio-icon"><span class="material-icons"> mic</span></div>
+            <div class="audio-playon">audio</div>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div> -->
+        
+      <div class="chat-time-name">
+        <!-- Rejected deal text -->
+        <div class="rejected-deal">Rejected</div>
+        <!-- user chat time -->
+        <div class="msg-time">8:40 AM</div> 
+     </div>  
+        
+
+    </div>
+
+
+    <div class="g-flex justify-content-start-primary mb-24"> 
+        
+        <!-- user images -->
+        <div class="user-img-cont user-bg">                
+            <div class="online"></div>
+            <!-- <div class="offline"></div> -->
+            <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+            <!-- <div class="user-name">st</div>                             -->
+         </div>
+
+        <!-- user chat text -->
+        <div class="chat-update-deal">
+            <div class="update-deal-img"><img src="assets/images/hand.png" alt="image" class="img-fluid" /></div>
+            <div class="deal-update-group-primary">
+                 <h2>Surajit Sent you an</h2>
+                 <h4>Update deal request</h4>                   
+            </div>
+            <div class="deal-update-group-secondary">
+                <h6>view</h6>
+            </div>
+        </div>
+
+         <!-- user chat video -->
+        <!-- <div class="msg-video-attach">
+            <div class="video-icon"><span class="material-icons">video_library</span></div>
+            <div class="file-count-att">2 <span class="material-icons">attachment</span></div>
+             <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div> 
+        </div> -->
+
+        <!-- user chat text -->
+        <!-- <div class="msg-audio-attach">
+            <div class="audio-icon"><span class="material-icons"> mic</span></div>
+            <div class="audio-playon">audio</div>
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+        </div> -->
+ 
+        <!-- user chat time -->
+        <div class="chat-time-name">         
+            <div class="msg-time">8:40 AM</div> 
+         </div> 
+
+    </div>
+    
+
+
+
+    <div class="g-flex justify-content-end-primary mb-24">
+
+        <!-- user chat time -->
+        <div class="chat-time-name">
+            <div class="block-menu-deal">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+            <div class="msg-time-secondary">8:40 AM</div> 
+            <div class="msg-user-name">@ Anup</div>
+        </div>
+        <!-- user chat text -->
+            <div class="msg-send-deal">
+                <div class="ch-view-deal-primary">
+                    <div class="deal-primary-img"><img src="assets/images/hand.png" alt="image" class="img-fluid" /></div>
+                    <div class="deal-text-group-primary">
+                        <h2>You send a Deal</h2>
+                        <h4>to Sofikul</h4>
+                    </div>
+                </div>
+                <div class="ch-view-deal-secondary">                    
+                    <h6>view deal</h6>
+                </div>
+            </div>
+
+        <!-- <div class="msg-cotainer-secondary">            
+            <div class="block-menu">
+                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                    expand_more </span></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item><span class="material-icons custom-icons">warning
+                    </span> Report Message</button>
+                <button mat-menu-item><span class="material-icons custom-icons">
+                    block </span> Block user</button>
+                </mat-menu>            
+            </div>
+            <p class="msg-text">Hi, how are you prabiran?</p>
+
+        </div>        -->
+
+
+    </div>
+
+    <!-- send deal chat part end -->
+</ng-container>
+
+
+   
+
+
+
+
+
+
+    
+    
+</div>

@@ -1,0 +1,119 @@
+.mobile-wrapper{
+    width: 450px;
+    position: absolute;
+    background-color: #ffffff;    
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;   
+}
+
+
+.otp_profile {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+.remove-popup {
+    color: #fa0e25;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    cursor: pointer;
+}
+
+.remove-popup span {
+    color: #fa0e25;
+}
+
+.plr-27{
+    padding: 0px 23px 0px 27px;
+}
+
+
+.profile-tile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 100%;
+    margin-top: 72px;
+}
+
+.profile-tile h1{
+    color: #414f5c;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.profile-des{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 100%;
+    margin: 25px 0px 90px 0px;
+    padding: 0px 10px;
+}
+
+.profile-des h2{
+    color: #797979;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    line-height: 22px;
+}
+
+.profile-des h2 span{
+    text-transform: uppercase;
+}
+
+.profile-input{
+    float: left;
+    width: 100%;
+    // margin-bottom: 40px;
+}
+
+.next-btn-bottom{
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.next-btn{
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: capitalize;
+    background-color: #51c878;
+    border: none;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    padding: 15px 43px;
+    cursor: pointer;
+    position: absolute;    
+    right: 0;
+    z-index: 999;
+    top: 151px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.profile-bottom-bg{
+    position: relative;
+    margin-left: -42px;
+    margin-top: 40px;
+    float: left;
+    width: 100%;
+}
+
+.input-form{
+    float: left;
+    width: 100%;
+    position: relative;
+}

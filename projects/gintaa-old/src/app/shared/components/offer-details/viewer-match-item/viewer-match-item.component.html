@@ -1,0 +1,34 @@
+<div class="match-item-viewer" *ngIf="(sharedService.offerDetailsFetched$ | async) as offerDetails">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="desire-details">
+            <h2 class="ng-star-inserted">{{offerDetails.user.name}} Wants</h2>
+            <p>{{offerDetails.desire}} </p>
+        </div>    
+    </div> 
+    <div class="col-lg-6 col-md-12 col-sm-12 border-lefts" *ngIf="((categoryService.categoryDetails$ | async)?.searchResult) as searchResults else noResult">
+        <div class="match_items">
+         <h2>{{ searchResults.length ? 'Match with my items' : 'No Potential Match found'}}</h2>
+         <div class="match-product-row">
+          <div class="row row-margin-0" *ngIf="searchResults.length">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-padding-0 match-left" *ngFor="let item of searchResults | slice: 0:4">
+                <img [src]="(item.images?.slice(0, 1))[0].url || 'assets/images/pro-s1.png'" 
+                     class="primary-card-img primary-card-77" 
+                     alt="image" 
+                     [routerLink]="['/offer-details', 'view', item.oid]"/>        
+            </div> 
+            
+          </div>
+          </div>
+        </div>       
+        
+    </div> 
+    <ng-template #noResult>
+        <div class="col-lg-6 col-md-12 col-sm-12 border-lefts">
+          <div class="match-login-now">
+            <button class="btn_primary login-now-match" type="button"> Login Now </button>
+          </div>
+        </div>
+    </ng-template>
+</div>
+</div>

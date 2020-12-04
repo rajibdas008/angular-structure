@@ -1,0 +1,130 @@
+.close-deal-frame{
+    width: 582px;
+    float: left;
+    background-color: #ffffff;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    height: auto;
+    position: absolute;
+    top: 30px;
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+    padding-top: 30px;
+    margin-left: 118px;
+}
+
+.remove-close-page {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 99;
+    color: #ff7f7f;
+}
+
+.remove-close-page:hover {
+    cursor: pointer;
+}
+
+.close-bottom-frame{
+    float: left;
+    width: 100%;
+    background-color: #efefef;
+    padding: 35px 228px 25px 30px;
+    border-radius: 0px 0px 7px 7px;
+    -webkit-border-radius: 0px 0px 7px 7px;
+    -moz-border-radius: 0px 0px 7px 7px;
+}
+
+.close-top-frame{
+    float: left;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.otp-close-row, .deal-user-row, .otp-user-row, .verify-close-row, .verify-close-row, .report-user-row, .how-close-row,
+.reciver-close-row, .why-close-row, .process-close-row{
+    float: left;
+    width: 100%;
+}
+
+.otpclose-title, .close-user-deal, .otp-input-deal, .verify-close-deal, .report-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.otpclose-title h4{
+   color: #0b2239;
+   font-size: 18px;
+   font-weight: normal;
+   font-family: 'Montserrat', sans-serif;
+   padding: 17px 0px 35px 0px;
+}
+
+.close-user-deal img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+}
+
+
+.otp-custom{
+    width: 265px;    
+    padding: 30px 0px 35px 0px;
+}
+
+.custom-primary{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    padding: 18px 33px;
+}
+
+.report-user h4{
+    color: #b0b0b0;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    padding: 25px 0px;
+}
+
+.report-user span a{
+    color: #23384c;
+}
+
+.how-close-deal h4, .why-close-deal h4{
+    color: #0b2239;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.reciver-close-deal h6, .process-close-deal h6{
+    color: #0b2239;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+    text-align: left;       
+}
+
+.reciver-close-deal h6{
+    margin-bottom: 25px;
+}
+
+.close-deal-msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-deal-msg .text-danger {    
+    margin-top: 2.188em;
+}

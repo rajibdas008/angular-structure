@@ -1,0 +1,140 @@
+.trans_part{
+	padding-top: 15px;
+}
+
+.dash_tran{
+    float: left;
+    width: 100%;
+}
+
+.dash_tran .tran_sation{
+    float: left;
+}
+
+.dash_tran .tran_sation h2{
+	font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #0b2239;
+    text-transform: uppercase;
+    line-height: 2.25em;
+    margin-right: 1.875em;
+    
+}
+.trans_list{
+    line-height: 1.875em;
+}
+.trans_list h4{
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #5c5c5c;
+    text-align: left;
+    line-height: 2.188em;
+}
+
+.trans_list h2{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #0b2239;
+    text-align: left;
+}
+.trans_list h2.active_price{color: #50c878;}
+.list_trans{margin-top: 45px;}
+
+.trans_graph{      
+	margin: 3.438em 0em 2.5em 0em;	
+}
+.trans_graph img {
+    width: 100%;
+    height: 306px;
+}
+.trans_graph h4{
+	text-align: center;
+	padding-top: 125px;
+}
+.social_tran {
+	margin-top: 0em;
+	float: left;
+	width: 100%;	
+	h4 {
+		float: left;		
+		font-size: 1.125em;
+        line-height: 3.438em;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+	}
+}
+ul.tran_social {
+	float: left;
+	margin: 0.625em 0em 0em 1.25em;
+	padding: 0em;
+	li {
+		margin: 0em;
+		padding: 0em;
+		float: left;
+		a {
+			font-size: 24px;
+			margin-right: 16px;
+			padding: 0em;
+			text-decoration: none;
+			float: left;
+			display: block;
+			&:hover {	
+				cursor: pointer;
+			}	
+		}
+		&:nth-child(1) {
+			a {
+				color: #0c2239;
+			}
+		}
+		&:nth-child(2) {
+			a {
+				color: #0c2239;
+			}
+		}
+		&:nth-child(3) {
+			a {
+				color: #0c2239;
+			}
+		}
+		&:nth-child(4) {
+			a {
+				color: #0c2239;
+			}
+		}
+		&:nth-child(5) {
+			a {
+				color: #0c2239;
+				margin: 0em;
+			}
+		}
+	}
+}
+
+  .select_month{
+	float: left;
+    width: 7.813em;
+    margin-top: 0.688em;
+  }
+  
+  .my-select {
+	background-color: #edeef0;
+    color: #5f6162;
+    border: 0em none;
+    border-radius: 1.25em;
+    padding: 0.188em 0.938em;
+    font-size: 0.875em;
+    height: 2.313em;
+    line-height: 0.75em;
+  }
+.custom-select:focus {
+    box-shadow:none;
+}
+ul.tran_social li img {
+    height: 1em;
+    width: 1em;
+}
+ 

@@ -1,0 +1,63 @@
+<app-share-offer></app-share-offer>
+<ng-container *ngIf="((categoryService.categoryDetails$ | async)?.searchResult) as searchResults; else noResult">
+  
+  <div class="row" *ngIf="searchResults.length else noSearchResult">
+    <div class="col-md-12">
+      <h2 class="your_pottitle">
+        {{
+          searchResults.length
+        }}
+        Potential matchs for you
+      </h2>
+    </div>
+  </div>
+  <ng-template #noSearchResult>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <h2 class="finding-match">{{ searchResults.length ? 'Finding potential matchs for you' : 'No Result found'}}</h2> -->
+        <h2 class="finding-match">
+          No Result found
+        </h2>
+      </div>
+    </div>
+  </ng-template>
+  <div class="can_get">
+    <div class="match_trading">
+      <ul #potentialMatch>
+        <li *ngFor="let item of searchResults | slice: 0:3">
+          <div class="box matching-Product">
+            <div class="product-img">
+              <img
+                [src]="
+                  (item.images?.slice(0, 1))[0].url || 'assets/images/3.jpg'
+                "
+                class="img-fluid rounded primary-card-184"
+                alt="images"
+                [routerLink]="['/offer-details', 'view', item.oid]"
+              />
+              <div class="img-title">
+                <h3>{{ item.name }}</h3>
+                <div class="product_des">
+                  <span class="price"
+                    >Rs. {{ item?.unitOfferValuation || 0 }}</span
+                  >
+                  <span class="location">{{
+                    categoryService.showLocation(item)
+                  }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noResult>
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="finding-match">No Potential Match found</h2>
+    </div>
+  </div>
+</ng-template>
+

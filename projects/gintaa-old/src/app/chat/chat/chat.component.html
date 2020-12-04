@@ -1,0 +1,43 @@
+
+      <!-- <app-chat-call-select-user></app-chat-call-select-user> -->     
+      <!-- <app-chat-video-call></app-chat-video-call> -->
+      <!-- <app-chaat-call-small-view></app-chaat-call-small-view> -->
+      <!-- <app-chat-audio-call></app-chat-audio-call> -->
+      <!-- <app-chat-view-image></app-chat-view-image> -->
+      <!-- <app-chat-attach-image></app-chat-attach-image> -->
+
+<div class="chat-wrapper" >
+    <section class="content-wrapper">
+        <div class="chat-header-top">
+             <app-chat-top (chatSidebarClose)="onDialogClose();"></app-chat-top>
+        </div>
+        <div #progressBar>
+            <mat-progress-bar 
+                [mode]="mode"
+                [color]="color">
+            </mat-progress-bar>
+        </div>
+        <div class="chat-container-content"  infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollUpDistance]="1.5"
+        [infiniteScrollThrottle]="50"
+        (scrolled)="onScrollDown()"
+        (scrolledUp)="onScrollUp()"
+        [scrollWindow]="false">
+            <app-chat-container></app-chat-container>
+        </div>
+        <div class="chat-footer-bottom">
+            <app-chat-bottom></app-chat-bottom>            
+       </div>
+      
+    </section>
+
+    <aside class="sidebar-wrapper">
+        <app-chat-sidebar (chatSidebarClose)="onDialogClose();" [connect]="connectObj"></app-chat-sidebar>            
+    </aside>
+
+
+
+
+  
+  </div>

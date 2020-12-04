@@ -1,0 +1,433 @@
+<div class="deal-send-wrapper-scroll">
+
+    <div class="deal-send-main">
+        <div class="remove-dealp-page" (click)="onDialogClose()">
+            <span class="material-icons">close</span>
+        </div>
+
+        <div class="deal-header-top">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="deal-user">
+                        <div class="deal-users-area">
+                            <div class="make-deals">
+                                <h2>make a deal with</h2>
+                            </div>
+                            <ul class="deal-all-users deal-ml">
+                                <li>
+                                    <div class="deal-boxs deal-bg deal-box-border">
+                                        <div [ngClass]="offerOwnerStatus"></div>
+                                        <img [src]="offerOwnerProfileIage" [alt]="data.user.name"
+                                            class="user-img img-fluid" [title]="data.user.name">
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="deal-container-main">
+            <div class="give-matched-row">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="give-offer-title">
+                            <h2>give your</h2>
+                            <div class="mat-toggle-offer">
+                                <mat-slide-toggle></mat-slide-toggle>
+                            </div>
+                            <h4>Matched offers</h4>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="give-deal-list">
+                <ng-container *ngIf="data.myOffers.length > 0">
+                    <app-give-offers-slider (emittedOffers)="onEmittedOffers($event)"
+                        (emitDialogClose)="onDialogClose()"></app-give-offers-slider>
+                </ng-container>
+                <ng-container *ngIf="data.myOffers && data.myOffers.length === 0">
+                    <div class="text-danger" role="alert">                    
+                        <div class="error">
+                            <strong>You don't have any offer!</strong>
+                            You can still give money.
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="row" *ngIf="responseErrorObject.showError">
+                <div class="col-sm-12" role="alert">
+                    <!-- <div class="alert alert-danger alert-dismissible fade show mt-1" role="alert">
+                        <strong>ERROR!</strong> {{ responseErrorObject.message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div> -->
+                    <div class="deal-msg-error">
+                        <div class="text-danger">                    
+                            <div class="error"> {{ responseErrorObject.message }} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="give-add-money">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="money-add-section">
+                            <div class="currency-input-group">
+                                <div class="currency-input-group-prepend prepend-add">
+                                    <div class="currency-input-group-text currency-add">
+                                        <div class="checkbox-money">
+                                            <span class="checkbox-rs">
+                                                <input class="checkbox-rs__input" type="checkbox" id="checkbox11"
+                                                    [checked]="requestObject.sender.giveMoney"
+                                                    (change)="onChangeGiveMoney($event, 'sender')" />
+                                                <label for="checkbox11"></label>
+                                            </span>
+                                        </div>
+                                        <div class="rs-add">Rs.</div>
+                                    </div>
+                                </div>
+                                <div (click)="toggleInputState('sender')">
+                                    <input class="currency-form-control"
+                                        placeholder="You can also give money"
+                                        type="number"
+                                        #senderGiveMoneyInput
+                                        [disabled]="!requestObject.sender.giveMoney"
+                                        [(ngModel)]="senderGiveMoneyAmount"
+                                        pattern="[0-9]*"
+                                        min="0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matched-offer-row">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="give-offer-title give-title-add">
+                            <h2>and take</h2>
+                            <div class="mat-toggle-offer">
+                                <mat-slide-toggle [checked]="requestObject.receiver.selected"
+                                    (change)="onChangeMatchedOfferToggle($event, 'receiver')"></mat-slide-toggle>
+                            </div>
+                            <h4>Matched offers</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="and-take-offer">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="can_get take-ofefr-rws">
+                            <ng-container *ngIf="!showAllReceiverOffers">
+                                <div class="single-Product mr-10s">
+                                    <div class="product-img primary-card-155">
+                                        <!-- assets/images/7.jpg -->
+                                        <img [src]="selectedOfferDetails.image" class="rounded img-fluid"
+                                            alt="product image" [title]="selectedOfferDetails.name"
+                                            [routerLink]="['/offer-details', 'view', selectedOfferDetails.offerId]"
+                                            (click)="onDialogClose()" />
+                                        <div class="img-title">
+                                            <h2>{{ selectedOfferDetails.name }}</h2>
+                                            <h4>{{ selectedOfferDetails.description }}</h4>
+                                        </div>
+                                        <div class="checkbox-container">
+                                            <span class="checkbox">
+                                                <input class="checkbox__input" type="checkbox"
+                                                    [id]="selectedOfferDetails.offerId"
+                                                    [checked]="requestObject.receiver.selected"
+                                                    (change)="onChangeMatchedOffer($event)" />
+                                                <label for="{{ selectedOfferDetails.offerId }}"></label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="showAllReceiverOffers">
+                                <div class="single-Product mr-10s"
+                                    *ngFor="let selectedOfferDetails of siblingOfferDetails">
+                                    <div class="product-img primary-card-155">
+                                        <img [src]="selectedOfferDetails.image" class="rounded img-fluid"
+                                            alt="product image" [title]="selectedOfferDetails.name"
+                                            [routerLink]="['/offer-details', 'view', selectedOfferDetails.offerId]"
+                                            (click)="onDialogClose()" />
+                                        <div class="img-title">
+                                            <h2>{{ selectedOfferDetails.name }}</h2>
+                                            <h4>{{ selectedOfferDetails.description }}</h4>
+                                        </div>
+                                        <div class="checkbox-container">
+                                            <span class="checkbox">
+                                                <input class="checkbox__input" type="checkbox"
+                                                    [id]="selectedOfferDetails.offerId" (change)="onChooseReceiverOffer(
+                                                        $event,
+                                                        selectedOfferDetails.offerId,
+                                                        selectedOfferDetails.quantity,
+                                                        selectedOfferDetails.offerType
+                                                    )" />
+                                                <label for="{{ selectedOfferDetails.offerId }}"></label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="give-add-money">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="money-add-section money-custom">
+                            <div class="currency-input-group">
+                                <div class="currency-input-group-prepend prepend-add">
+                                    <div class="currency-input-group-text currency-add">
+                                        <div class="checkbox-money">
+                                            <span class="checkbox-rs">
+                                                <input class="checkbox-rs__input" type="checkbox" id="checkbox-11"
+                                                    [checked]="requestObject.receiver.giveMoney"
+                                                    (change)="onChangeGiveMoney($event, 'receiver')" />
+                                                <label for="checkbox-11"></label>
+                                            </span>
+                                        </div>
+                                        <div class="rs-add">Rs.</div>
+                                    </div>
+                                </div>
+                                <div (click)="toggleInputState('receiver')">
+                                    <input class="currency-form-control"
+                                        placeholder="You can also take money"
+                                        type="number"
+                                        #receiverGiveMoneyInput
+                                        [disabled]="!requestObject.receiver.giveMoney"
+                                        [(ngModel)]="reciverGiveMoneyAmount"
+                                        pattern="[0-9]*"
+                                        min="0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="delivery-section">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="delivery-options">
+                            <h4>Pick a Delivery option</h4>
+                            <span class="delivery-options-line" style="backface-visibility: hidden;"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 cp-r">
+                        <div class="inputGroup">
+                            <input id="option-doorstep-delivery" name="option-doorstep-delivery" type="checkbox"
+                                [checked]="requestObject.defaultDeliveryOption.doorStepDelivery"
+                                (change)="modifyDeliveryOption($event, 'doorStepDelivery')" />
+                            <label for="option-doorstep-delivery">
+                                <div class="doorstep-delivery"
+                                    [ngClass]="requestObject.defaultDeliveryOption.doorStepDelivery ? 'chosen-delivery-date': ''">
+                                    <div class="delivery-icon-shopping"
+                                        [ngClass]="requestObject.defaultDeliveryOption.doorStepDelivery ? 'chosen-delivery-icons': ''">
+                                        <span class="material-icons-outlined">local_shipping</span>
+                                    </div>
+                                    <div class="delivery-text">
+                                        <h2>Doorstep delivery</h2>
+                                        <h4>Take Delivery to my doorstep.</h4>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 cp-r">
+                        <div class="inputGroup">
+                            <input id="option2" name="option2" type="checkbox"
+                                [checked]="requestObject.defaultDeliveryOption.selfPickup"
+                                (change)="modifyDeliveryOption($event, 'selfPickup')" />
+                            <label for="option2">
+                                <div class="doorstep-delivery"
+                                    [ngClass]="requestObject.defaultDeliveryOption.selfPickup ? 'chosen-delivery-date': ''">
+                                    <div class="delivery-icon-shopping icon-color"
+                                        [ngClass]="requestObject.defaultDeliveryOption.selfPickup ? 'chosen-delivery-icons': ''">
+                                        <!-- <span class="material-icons">escalator_warning</span> -->
+                                        <mat-icon>wc</mat-icon>
+                                    </div>
+                                    <div class="delivery-text">
+                                        <h2>Self pickup</h2>
+                                        <h4>Meet and exchange your item</h4>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+
+
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-12 cp-r">
+                        <div class="inputGroup" >
+                            <input id="option4" name="option4" type="checkbox"
+                                [checked]="requestObject.defaultDeliveryOption.selfPickup"
+                                (change)="modifyDeliveryOption($event, 'selfPickup')" />
+                            <label for="option4">
+                        <div class="doorstep-delivery" [ngClass]="requestObject.defaultDeliveryOption.selfPickup ? 'chosen-delivery-date': ''">
+                            <div class="delivery-icon-shopping icon-color-secondary" [ngClass]="requestObject.defaultDeliveryOption.selfPickup ? 'chosen-delivery-icons': ''">                                
+                                <span class="material-icons-outlined">storefront</span>
+                            </div>
+                            <div class="delivery-text">
+                                <h2>Meet at GINTAA junction</h2>
+                                <h4>Meet at GI</h4>
+                            </div>
+                        </div>
+                    </label>
+                        </div>
+                    </div> -->
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 cp-r">
+                        <div class="inputGroup">
+                            <input id="option4" name="option4" type="checkbox"
+                                [checked]="requestObject.defaultDeliveryOption.dropToGintaaJunction"
+                                (change)="modifyDeliveryOption($event, 'dropToGintaaJunction')" />
+                            <label for="option4">
+                                <div class="doorstep-delivery" (click)="openGintaaJunctionsModal()"
+                                    [ngClass]="requestObject.defaultDeliveryOption.dropToGintaaJunction ? 'chosen-delivery-date': ''">
+                                    <div class="delivery-icon-shopping icon-color-secondary"
+                                        [ngClass]="requestObject.defaultDeliveryOption.dropToGintaaJunction ? 'chosen-delivery-icons': ''">
+                                        <span class="material-icons-outlined">storefront</span>
+                                    </div>
+                                    <div class="delivery-text">
+                                        <h2>Meet at <span class="gintaa-upper"><span>G</span>INTAA</span> junction</h2>
+                                        <h4>Meet at GI</h4>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 cp-l">
+                        <div class="inputGroup">
+                            <input id="option3" name="option3" type="checkbox"
+                                [checked]="requestObject.includeInsurance"
+                                (change)="requestObject.includeInsurance = !requestObject.includeInsurance" />
+                            <label for="option3">
+                                <div class="insure-deals"
+                                    [ngClass]="requestObject.includeInsurance ? 'chosen-delivery-date': ''">
+                                    <div class="delivery-icon-shopping icon-color-insure"
+                                        [ngClass]="requestObject.includeInsurance ? 'chosen-delivery-icons': ''">
+                                        <span class="material-icons">verified_user</span>
+                                    </div>
+                                    <div class="insure-text">
+                                        <h2>Insure deal</h2>
+                                        <h4>Insure deal for fraud activity</h4>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="chat-msg-box">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="expire-chaange">
+                        <div class="calendar-icon"><span class="material-icons">calendar_today</span></div>
+                        <div class="expire-text">
+                            <h2>
+                                Expire on
+                                <span class="change-date">
+                                    <mat-form-field class="mat-datepicker-customs" appearance="fill">
+                                        <input matInput [matDatepicker]="picker"
+                                            style="width: 75px; font-weight: bold;font-family: 'Montserrat', sans-serif;"
+                                            [value]="requestObject.expiryDate" [min]="minMatDate"
+                                            (dateChange)="setDealExpiryDate($event)" readonly />
+                                        <mat-datepicker [startAt]="requestObject.expiryDate" #picker
+                                            panelClass="datepicker-one-custom"></mat-datepicker>
+                                    </mat-form-field>
+                                    <button mat-raised-button (click)="picker.open()"
+                                        class="date-change">change</button>
+                                </span>
+                            </h2>
+
+                            <h4>For quick deal action </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="msg-group-sends">
+
+                        <app-deal-msg-chat [dealButton]="dealButtonState" [(comment)]="requestObject.comments"
+                            (dealSubmitted)="onSubmitDeal()" (updatedComment)="onSetUpdatedComment($event)">
+                        </app-deal-msg-chat>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="deal-sidebar-1">
+        <app-chat-sidebar (chatSidebarClose)="onDialogClose()"></app-chat-sidebar>
+    </div> -->
+
+</div>
+
+<div class="modal qty-modal" role="dialog" *ngIf="showItemQuantityBox" style="display: block;">
+    <div class="modal-dialog qty-modal-dialog" role="document">
+        <div class="modal-content qty-modal-content">
+            <div class="remove-quantity-popup">
+                <span class="material-icons" (click)="onCloseQuantityPopup()">close</span>
+            </div>
+            <div class="modal-header qty-modal-header">
+                <h5 class="modal-title qty-modal-title">Select Quantity</h5>
+            </div>
+            <div class="qty-modal-body">
+                <input type="number" class="qty-input-max" id="quantity" name="quantity" min="1"
+                    [max]="updatedOfferQuantity.offerItemCount" [placeholder]="updatedOfferQuantity.offerUpdatedCount"
+                    [(ngModel)]="updatedOfferQuantity.offerUpdatedCount" (ngModelChange)="onQuantityChange()">
+                <button type="button" class="btn-qty-custom"
+                    [ngClass]="{'btn-qty-custom-disabled': updatedOfferQuantity.invalid}"
+                    (click)="modifyOfferQuantity()" [disabled]="updatedOfferQuantity.invalid ">Done</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+.close-deal-rating-frame{
+    width: 580px;
+    float: left;
+    background-color: #ffffff;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    height: auto;
+    position: absolute;
+    top: 25px;
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+    padding-top: 20px;
+    margin-left: 118px;
+}
+
+.remove-close-page {
+    position: absolute;
+    right: -22px;
+    top: -24px;
+    z-index: 99;
+    color: #ff7f7f;
+}
+
+.remove-close-page:hover {
+    cursor: pointer;
+}
+
+
+.user-rating-wrapper{
+    float: left;
+    width: 100%;
+    background-image: url(/assets/images/rating-bg.png);
+    background-position: top center;
+	background-origin: border-box;	
+	background-repeat: no-repeat;
+}
+
+
+
+.user-rating-row, .user-image-row, .user-image-row, .deal-rating-row, .review-rating-row, .review-question-row,
+.chips-list-row, .comment-area-row, .review-submit-row{
+    float: left;
+    width: 100%;
+}
+
+
+.rating-user{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.user-img-1{
+    z-index: 99;
+    margin-right: -20px;
+}
+.user-img-1 img{
+    width: 105px;
+    height: 105px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border: 3px solid #ffffff;
+    object-fit: cover;
+    position: relative;
+    background: #ffffff;
+}
+
+.user-img-2 img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.con-title-group h2, .con-title-group h4, .rateing-deal-user h6, .review-rating-row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.con-title-group h2{
+   color: #51c878;
+   font-weight: bold;
+   font-size: 30px;
+   font-family: 'Montserrat', sans-serif;
+   margin: 30px 0px 12px 0px;
+}
+
+.con-title-group h4{
+    color: #0b2239;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px 0px 30px 0px;
+}
+
+.rateing-deal-user h6{
+    margin: 12px 0px 24px 0px;
+    color: #696969;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rating-question{
+    float: left;
+    width: 100%;
+    padding: 40px 65px 0px 70px;
+}
+
+.rating-question h5{
+    color: #0b2239;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.listing-chips{
+    float: left;
+    width: 100%;
+    padding: 24px 65px 30px 70px;
+}
+
+.comment-area{
+    float: left;
+    width: 100%;
+    padding: 0px 65px 0px 70px;
+}
+
+.review-submit-btn{
+    float: right;
+    width: 100%;
+    padding: 0px 20px 17px 0px;
+}
+
+.add-style{
+    color: #959595;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.rating-submit{
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.mat-chip.mat-standard-chip {
+    background-color: #eceeef;
+    color: #23384c;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+    padding: 10px;
+    border-radius: 7px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+// .mat-selected-chip .mat-chip.mat-standard-chip {
+//     background-color: #0c2239 !important;
+//     color: #fff;
+// }

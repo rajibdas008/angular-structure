@@ -1,0 +1,81 @@
+<div class="others-offers-owner">
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <h3 class="match-titles">My other offers</h3>    
+    </div>  
+</div>
+
+
+<ng-container *ngIf="(ownerOtherOffers$ | async) as otherOfferDetails">
+<div class="row can_get" *ngIf="otherOfferDetails.length">
+    <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let offer of otherOfferDetails">
+        <div class="single-Product">
+            <div class="product-img primary-card-184">
+                <img _ngcontent-jlu-c11="" alt="images"
+                    class="rounded img-fluid " 
+                    [src]="offer && offer.images.length ? offer.images[0].url : 'assets/images/2.jpg'"
+                    [routerLink]="['/offer-details', 'view', offer.offerId]">
+                <div class="img-title">
+                    <h3>{{ offer.name }}</h3>
+                    <div class="product_des">
+                        <span class="price">{{ offer.desire }}</span>
+                        <span class="location">{{ offerService.showLocation(offer) }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="single-Product">
+            <div class="product-img primary-card-184">
+                <img _ngcontent-jlu-c11="" alt="images"
+                    class="rounded img-fluid " 
+                    src="assets/images/2.jpg">
+                <div class="img-title">
+                    <h3>Lorem Ipsum is simply dummy text of the printing </h3>
+                    <div class="product_des">
+                        <span class="price">Rs. 2563.0</span>
+                        <span class="location">Baligori Road</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="single-Product">
+            <div class="product-img primary-card-184">
+                <img _ngcontent-jlu-c11="" alt="images"
+                    class="rounded img-fluid " 
+                    src="assets/images/2.jpg">
+                <div class="img-title">
+                    <h3>Lorem Ipsum is simply dummy text of the printing </h3>
+                    <div class="product_des">
+                        <span class="price">Rs. 2563.0</span>
+                        <span class="location">Baligori Road</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="single-Product">
+            <div class="product-img primary-card-184">
+                <img _ngcontent-jlu-c11="" alt="images"
+                    class="rounded img-fluid " 
+                    src="assets/images/2.jpg">
+                <div class="img-title">
+                    <h3>Lorem Ipsum is simply dummy text of the printing </h3>
+                    <div class="product_des">
+                        <span class="price">Rs. 2563.0</span>
+                        <span class="location">Baligori Road</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+</ng-container>
+</div>

@@ -1,0 +1,51 @@
+<div class="mobile-wrapper">
+
+  <div class="remove-popup">
+    <span class="material-icons" (click)="closeDialog()">close</span>
+  </div>
+
+<div class="otp_profile">
+    <div class="otp-top-bg">
+        <img src="assets/images/otp-email-bg.png" alt="image" class="img-fluid" />
+      </div>
+
+      <div class="otp_Title">
+        <h4>We have send the otp at</h4>
+        <p>
+           <span> {{profileObj.email}} </span>
+        </p>
+      </div>
+      
+      <div class="otp_form">
+        <form #otpForm="ngForm" class="otp-start" (ngSubmit)="verifyEmailOtp()">
+          <div class="form_group">
+            <div class="otp_box">
+              <ng-otp-input
+                #ngOtpInputEmail
+                (onInputChange)="onOtpChange($event)" 
+                [config]="config"
+                (paste)="onPasteEmailOtp($event)">
+              </ng-otp-input>
+              <div *ngIf="serverEmailError" class="text-danger primary-error">
+                <div>{{ serverEmailError }}</div>
+              </div>            
+            </div>
+          </div>
+          <div class="otp_button">
+            <button class="verify_otp">Verify OTP</button>
+          </div>
+        </form>
+        <div class="otp_term">
+          <div class="otp_resend">
+            <p>If you didn't receive code!</p>
+            <span *ngIf="showTimer && counter !== 0">
+              {{ countDown | async | formatTimer }}
+            </span>
+            <button *ngIf="counter === 0" type="button" class="resend_otp" (click)="resendOtpForEmail()">Resend</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+</div>

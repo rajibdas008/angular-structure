@@ -1,0 +1,113 @@
+<div class="select_tag">
+  <div class="row" *ngIf="categories.length">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+          <h2># Selected Tags</h2>
+          <div class="selected-tags">
+          <mat-form-field class="example-chip-list add-tags">
+            <mat-chip-list class="mat-selected-chip" #chipList aria-label="Tag selection">
+                <mat-chip
+                  *ngFor="let category of categories; index as i"
+                  #tagRef='matChip'
+                  [selectable]="selectable"
+                  [removable]="removable"
+                  (removed)="remove(category, i)">
+                  {{category.label}}
+                <span  matChipRemove *ngIf="removable" class="material-icons">close</span>
+              </mat-chip>
+            <input
+                #tagInput
+                [formControl]="tagCtrl"
+                readonly
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>   
+          </div>                              
+      </div>  
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+     <div class="suggested_tags">
+       <div class="sugted-tags">Suggested #tags</div>
+       <div class="mat-chiplist-group">
+       <mat-chip-list aria-label="Suggested Tag selection">
+           <ng-container *ngIf="!itemTagPresent && (allCategories$ | async) as itemArray">
+             <mat-chip matChipRemove
+                   #chip='matChip'
+                   *ngFor="let item of itemArray; index as i"
+                   [selectable]="selectable"
+                   [removable]="removable"
+                   (removed)="removeSelectedCategories(item, i)"
+                   (selectionChange)="changeSelected($event, item)">
+               {{ item.label }}
+           </mat-chip>
+           <!-- <mat-chip class="mat-add-tag" *ngIf="!addTagPresent" (click)="addTagPresent = true"><mat-icon>add</mat-icon> ADD TAGS</mat-chip> -->
+           <div class="add-tags-button">
+            <div class="mat-add-tags" *ngIf="!addTagPresent" (click)="addTagPresent = true">
+              <span class="material-icons">add</span> ADD TAGS</div>
+           </div> 
+           </ng-container>
+            <ng-template [ngIf]="itemTagPresent">              
+                <div class="tag-group-row" *ngFor="let tag of (allTags$ | async) as tagArray; index as primaryTagIndex">
+                  <div class="row">
+                      <div class="col-lg-2 col-md-12 col-sm-12">
+                           <div class="tag-name-title">
+                                <h4>{{ tag.name || tag.label }}:</h4>
+                           </div>
+                      
+                      </div>  
+                      <div class="col-lg-10 col-md-12 col-sm-12">
+                        <div class="tag-listing-group">
+                          <mat-chip matChipRemove
+                            #chip='matChip'
+                            *ngFor="let value of tag.values as tagValues; index as secondaryTagValueIndex"
+                            [selectable]="selectable"
+                            [removable]="removable"
+                            (removed)="removeSelectedTags(value, secondaryTagValueIndex, primaryTagIndex, tagArray)">
+                            {{ value }}
+                          </mat-chip>  
+                          </div>                      
+                      </div> 
+                 </div>
+               </div>
+             <mat-chip class="mat-add-tag" *ngIf="!addTagPresent" (click)="addTagPresent = true"><mat-icon>add</mat-icon> ADD TAGS</mat-chip>            
+           </ng-template>           
+       </mat-chip-list>  
+       </div>       
+     </div>
+     </div>
+  </div>
+  <div class="row" *ngIf="addTagPresent">
+    <div class="col-lg-12 col-md-12">
+      <div class="input-tags-box">
+      <mat-form-field class="example-chip-list add-tags-box">
+        <mat-placeholder class="placeholder">Add #tags to increase search visibility. ( Separate by ; )</mat-placeholder>
+        <mat-chip-list #chipChildList class="mat-selected-chip" aria-label="Add Tag selection">
+          <mat-chip *ngFor="let tag of customTags" 
+                   [selectable]="selectable"
+                   [removable]="removable" 
+                   (removed)="removeTag(tag)">
+            {{ tag }}
+            <mat-icon matChipRemove *ngIf="removable" class="material-icons">cancel</mat-icon>
+          </mat-chip>
+              <input  matInput
+                #addTagInput
+                class="add-tag-input"
+                [formControl]="addTagCtrl"
+                [matChipInputFor]="chipChildList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlurTagInput"
+                (matChipInputTokenEnd)="addTag($event)">
+                <mat-chip class="mat-add-tag mat-add-input" (click)="addTags()"><mat-icon>add</mat-icon> ADD TAGS</mat-chip>
+          </mat-chip-list>
+      </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="!categories.length">
+    <ng-content select="div.category-invalid.text-danger"></ng-content>
+  </ng-container>
+</div>
+

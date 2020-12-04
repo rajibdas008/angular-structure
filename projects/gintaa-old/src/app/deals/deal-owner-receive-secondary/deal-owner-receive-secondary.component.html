@@ -1,0 +1,214 @@
+<div class="deal-owner-wrapper-secondary" *ngIf="updateDealResponseObj">
+
+
+<div class="deal-secondary-owner">
+
+    
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 pr-0">
+               <div class="deal-owner-secondarysub"> 
+                <div class="owner-confirm">
+
+                    <div class="choose-title">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                 <div class="choose-confirm-title">
+                                    <h2><span class="material-icons" (click)="back(updateDealResponseObj.dealRefId)">navigate_before</span> choose and confirm</h2>
+                                 </div>
+                            
+                            </div>  
+                       </div>
+                     </div>
+
+                    
+                    <div class="choose-list" style="pointer-events: none;">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="deli-ins">
+                                    <div class="inputGroup">
+                                        <input id="option5" name="option5" type="checkbox" readonly />                        
+                                        <label for="option5">
+                                            <div class="doorstep-ins" [ngClass]="updateDealResponseObj.includeInsurance? 'chosen-delivery-dates': ''">
+                                                <div class="verified-user-icon" [ngClass]="updateDealResponseObj.includeInsurance ? 'chosen-delivery-icons': ''"><span class="material-icons">verified_user</span></div>
+                                                <div class="deli-text">
+                                                    <h2>Insure  deal </h2>                                                   
+                                                    <h4>Insure deal for fraud activity</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>  
+                       </div>
+                    </div>
+
+                     <div class="delivery-option-row">
+                        <div class="give-title">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                     <div class="delivery-options">
+                                          <h6>Pick a delivery option</h6>
+                                     </div>
+                                
+                                </div>  
+                           </div>
+                         </div>
+
+                        <div class="door-delivery-row" style="pointer-events: none;">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">           
+                                     
+                                    <div class="inputGroup">
+                                        <input id="option6" name="option6" type="checkbox" readonly />                        
+                                        <label for="option6">
+                                            <div class="doorstep-ins" [ngClass]="updateDealResponseObj.defaultDeliveryOption.doorStepDelivery ? 'chosen-delivery-dates': ''">
+                                                <div class="local-shoping-icon" [ngClass]="updateDealResponseObj.defaultDeliveryOption.doorStepDelivery ? 'chosen-delivery-icons': ''"><span class="material-icons-outlined">local_shipping</span></div>
+                                                <div class="deli-text">
+                                                    <h2>Doorstep delivery </h2>                                                   
+                                                    <h4>Take Delivery to my doorstep.</h4>
+                                                </div>
+                                            </div>
+                                      </label>
+                                    </div>
+                                    
+                                </div>  
+                           </div>
+                        </div>
+
+                        <div class="door-delivery-row">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="doorstep-ins" [ngClass]="updateDealResponseObj.defaultDeliveryOption.gintaJunction ? 'chosen-delivery-dates': ''">
+                                        <div class="local-shoping-icon jun-icon" [ngClass]="updateDealResponseObj.defaultDeliveryOption.gintaJunction ? 'chosen-delivery-icons': ''"><span class="material-icons-outlined">storefront</span></div>
+                                        <div class="deli-text">
+                                            <h2>Meet at GINTAA junction</h2>
+                                            <h4>Meet at GI</h4>
+                                        </div>
+                                    </div>                                
+                                </div>  
+                           </div>
+                        </div>
+
+                        <div class="door-delivery-row" style="pointer-events: none;">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">                        
+                                    
+                                    <div class="inputGroup">
+                                        <input id="option3" name="option3" type="checkbox" readonly />                        
+                                        <label for="option3">
+                                            <div class="doorstep-ins" [ngClass]="updateDealResponseObj.defaultDeliveryOption.selfPickup ? 'chosen-delivery-dates': ''">
+                                                <div class="local-shoping-icon self-icon" [ngClass]="updateDealResponseObj.defaultDeliveryOption.selfPickup ? 'chosen-delivery-icons': ''"><span class="material-icons">escalator_warning</span></div>
+                                                <div class="deli-text">
+                                                    <h2>Self pickup</h2>
+                                                    <h4>Meet and exchange your item</h4>
+                                                </div>
+                                            </div>
+                                      </label>
+                                    </div>
+
+                                </div>  
+                           </div>
+                        </div>
+
+                     </div>
+
+                </div>
+
+
+                <div class="owner-expire-bottom">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="deals-delivery-owner">
+                                <div class="expires-chaange-owner">
+                                    <div class="calendar-icon-owner"><img src="assets/images/timer-clock.png" alt="images" class="img-fluid"></div>
+                                    <div class="expire-text-owner">
+                                        <h2><span>Deal Expire in</span> {{ updateDealResponseObj.expiryDatetime | formatDateInDays }} Days</h2>                                           
+                                        
+                                    </div>
+                                </div>
+                               <div class="reject-accept-group">
+                                <div class="deal-accept">
+                                    <button class="btn_primary g-right" (click)="confirmDeal(updateDealResponseObj.dealRefId)">Confirm Deal</button>
+                                </div>
+                                <div class="deal-reject-btn">
+                                     <button class="btn-reject" (click)="rejectDeal(updateDealResponseObj.dealRefId)">Reject deal</button>                                           
+                                </div>                                     
+                               </div> 
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 pl-0">
+                <div class="chat-msg-owner">
+                    <div class="owner-msg-recall">
+                        <div class="update-deal-wait" *ngIf="updateDealSnapshotObj">
+                            <div class="row" *ngFor="let transaction of updateDealSnapshotObj.transactionStates">
+                                <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="transaction.comments">
+                                    <div class="g-flex justify-content-end-primary mb-24" *ngIf="transaction.status !== 'UPDATE_REQUESTED'">
+                                        <div class="chat-time-name">
+                                            <div class="msg-time-secondary">{{ transaction.datetime | formatChatDate }}</div>                                     
+                                        </div>
+                                        <div class="msg-cotainer-secondary">            
+                                            <div class="block-menu">
+                                                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                                                    expand_more </span></button>
+                                                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                                                <button mat-menu-item><span class="material-icons custom-icons">warning
+                                                    </span> Report Message</button>
+                                                <button mat-menu-item><span class="material-icons custom-icons">
+                                                    block </span> Block user</button>
+                                                </mat-menu>            
+                                            </div>
+                                            <p class="msg-text">{{ transaction.comments || 'Deal Got Updated' }}</p>
+                                        </div>
+                                    </div>
+    
+                                    <div class="g-flex justify-content-start-primary mb-24" *ngIf="transaction.status === 'UPDATE_REQUESTED'">
+                                        <div class="msg-cotainer">
+                                            <div class="mgs-text-box">
+                                                <h2>Deal update request</h2>
+                                                <p class="deal-textpara">
+                                                    {{ transaction.comments || 'Update Request Needed' }}
+                                                </p>
+                                            </div>
+                                            <div class="update-block-menu block-menu">
+                                                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                                                    expand_more </span></button>
+                                                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                                                <button mat-menu-item><span class="material-icons custom-icons">warning
+                                                    </span> Report Message</button>
+                                                <button mat-menu-item><span class="material-icons custom-icons">
+                                                    block </span> Block user</button>
+                                                </mat-menu>
+                                            </div>
+                                        </div>
+                                        <div class="chat-time-name">         
+                                            <div class="msg-time">{{ transaction.datetime | formatChatDate }}</div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <app-deal-msg-chat></app-deal-msg-chat>
+
+                </div>
+
+            </div>
+        </div>
+    
+
+</div>
+
+
+<div class="deal-sidebar-3">    
+        <app-chat-sidebar (chatSidebarClose)="onDialogClose();"></app-chat-sidebar>    
+</div>
+
+
+</div>
+

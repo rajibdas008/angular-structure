@@ -1,0 +1,14 @@
+<section class="category">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-5 col-sm-12">
+                <app-all-category></app-all-category>
+            </div>
+            <div class="col-lg-9 col-md-7 col-sm-12">
+                <app-category-item></app-category-item>
+            </div>
+        </div>
+        <app-new-offer-link *ngIf="isLoggedIn"></app-new-offer-link>
+    </div>
+
+</section>

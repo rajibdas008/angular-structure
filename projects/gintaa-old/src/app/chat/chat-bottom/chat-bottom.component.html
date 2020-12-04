@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="chat-input"> 
+            <div class="type-massage" *ngIf="isTyping">
+                <h2>typing...</h2>
+           </div>        
+            <div class="input-upload-group">
+              <div class="input-group-bg">
+                <!-- start massage part -->
+                <div class="primary-input-group">
+                    <!-- <app-reply-user></app-reply-user> -->
+                    <input 
+                        type="text" 
+                        class="primary-form-control" 
+                        placeholder="Type your message" 
+                        #message 
+                        (keyup)="startTyping()" 
+                        (keyup.enter)="sendMessage()">
+                    <div class="primary-group-append">
+                        <button class="icon-btn-primary" type="button" *ngIf="message.value.length>0">
+                            <!-- <i class="material-icons" (click)="sendMessage()">send</i> -->
+                            <div class="chat-send-btn" (click)="sendMessage()" ><img src="assets/images/chat-send-icon.png" class="img-fluid send-icon-btn"/></div>
+                        </button>
+                    </div>
+                </div>   
+                <!-- end massage part -->
+
+            <!-- start audio record part     -->
+                <!-- <div class="audio-record-group">
+                    <div class="audio-component-group">
+                        <div class="record-icon-prepend">
+                            <span class="material-icons"> mic</span>
+                        </div>
+                        
+                        <div class="record-box-group">
+                            <div class="record-control">
+                                <div class="record-time-start">0:00</div>
+                                <div class="record-status">
+                                    <img src="assets/images/audio-line.jpg" class="img-fluid"/>
+                                </div>                                       
+                                <div class="record-time-end">10:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="record-component-append">
+                                <div class="record-btn">
+                                <button type="button" class="btn-record">Record</button>
+                                </div> 
+                                <div class="record-btn-group">
+                                <button type="button" class="btn-record-pause">
+                                    <span class="material-icons">pause </span>
+                                </button>
+                                <button type="button" class="btn-record-stop">
+                                    <span class="material-icons">stop</span>
+                                </button>
+                                </div>    
+                                <div class="record-send">
+                                <button type="button" class="btn-record-cancel">Cancel</button>
+                                <button class="icon-btn-primary padding-o" type="button"><i class="material-icons">send</i></button>
+                                </div>                               
+                        </div>
+
+                    </div>
+                </div>    -->
+                <!-- end audio record part     -->
+                </div>                    
+            </div>        
+        </div>                       
+    </div>
+</div>

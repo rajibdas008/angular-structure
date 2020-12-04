@@ -1,0 +1,135 @@
+.secondary-offer-details{
+	float: left;
+	width: 100%;
+}
+
+.offer_des {
+	font-size: 0.875em;
+	font-weight: normal;
+	color: #000000;
+	font-family: "Open Sans", sans-serif;
+	margin: 0em;
+	width: 100%;
+    // text-transform: lowercase;
+}
+// .offer_des::first-letter{
+// 	text-transform: capitalize;
+// }
+.about-offer {
+	font-size: 1.125em;
+	color: #0b2239;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	margin-bottom: 1.563em;
+	text-transform: capitalize;
+	float: left;
+	width: 100%;
+	display: inline-flex;
+	span {
+		color: #d3d3d3;
+		font-size: 1.25em;
+		vertical-align: bottom;
+		margin-right: 0.313em;
+	}
+	.about-icons{
+		float: left;
+		width: 18px;
+		height: 23px;
+		margin-right: 8px;
+	}
+}
+.offer-description {
+	float: left;
+	width: 100%;
+	padding: 1.25em;
+	border: 0.063em solid #ccc;
+	margin-bottom: 2.375em;
+}
+.about-info {
+	float: left;
+	width: 100%;
+	border-bottom: 0.063em solid #ccc;
+	padding-bottom: 2.375em;
+}
+.attach-doctitle {
+	font-size: 1.125em;
+	color: #0b2239;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	margin: 1.563em 0em;
+	text-transform: capitalize;
+	span {
+		color: #d3d3d3;
+		font-size: 1.563em;
+		vertical-align: middle;
+		margin-right: 0.313em;
+	}
+}
+.upload-doc {
+	float: left;
+	width: 100%;
+}
+.doc-list {
+	float: left;
+	display: inline-flex;
+	background-color: #dddcdc;
+	cursor: pointer;
+	border-radius: 0.438em;
+	-webkit-border-radius: 0.438em;
+	-moz-border-radius: 0.438em;
+	padding: 0.313em 0.625em;
+	margin-right: 0.625em;
+	span {
+		color: #ef3e36;
+		font-size: 1.25em;
+		margin-right: 0.313em;
+	}
+	h4 {
+		color: #0c2239;
+		font-size: 0.875em;
+		font-weight: normal;
+		font-family: 'Open Sans', sans-serif;
+		line-height: 1.188em;
+		line-height: 20px;
+		// text-transform: lowercase;
+	}
+}
+ul.list-attach-doc {
+	float: left;
+	width: 100%;
+	li {
+		float: left;
+		margin: 0em;
+		padding: 0em;
+	}
+}
+
+
+.availability-service{
+	float: left;
+    width: 100%;
+    border-bottom: 0.063em solid #ccc;
+    padding: 20px 0px 22px 0px;
+}
+
+.time-days{
+	float: left;
+    width: 100%;
+    display: inline-flex;
+}
+
+.time-days .time-swervice, .time-days .days-service{	
+	color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+    // text-transform: lowercase;
+}
+
+.mr-22{
+    margin-right: 22px;
+}
+
+// .doc-list h4::first-letter{
+// 	text-transform: capitalize;
+// }

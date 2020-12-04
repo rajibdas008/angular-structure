@@ -1,0 +1,501 @@
+<section class="my_profile" *ngIf="userInfo.chatUUID">
+  <div class="container profile-bg">
+   
+   <div class="profile-row"> 
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <app-profilephoto [profileImageUrl]="profileImageUrl" [profileName]="userInfo.name || userInfo.displayName" [userInfo]="userInfo"></app-profilephoto>
+
+        <div class="profile-title-row">
+             <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                       <div class="prifile-title-top">
+                            <h1>Basic information</h1>
+                            <h2>Complete your basic information to upload item/service 
+                              and get more benefits from <span>GINTAA</span></h2>
+                       </div>
+                  </div>
+             </div>
+        </div>
+
+
+
+
+
+        <form class="profile_start" [formGroup]="profileForm">
+
+        <div class="name-row">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="form_group">
+                <label class="profile-label change-label">Name</label>
+                <div class="input-group auth_btn">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control pro_custom"
+                    placeholder="Enter Your Name"
+                    formControlName="name" [readonly]="FormReadMode"/>
+                </div>
+                <div *ngIf="isFormSubmitted && f.name.invalid"
+                  class="text-danger primary-error">
+                  <div *ngIf="f.name.errors.required">Name is required</div>
+                </div>
+                <div
+                *ngIf="isFormSubmitted && f.name.errors"
+                class="text-danger primary-error"
+              >
+                <div *ngIf="f.name.errors.serverError">
+                  {{ f.name.errors["serverError"] }}
+                </div>
+              </div>
+                <!-- <div *ngIf="isFormSubmitted && f.lastName.errors && !f.name.errors?.required"
+                  class="text-danger primary-error">
+                  <div *ngIf="f.lastName.errors.serverError">
+                    {{ f.lastName.errors["serverError"] }}
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="phone-email-row">
+          <div class="row">
+            <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12">
+              <div class="form_group">
+                <label class="profile-label change-label">Phone</label>
+                <div class="input-group auth_btn">
+                  <div class="pro-groups">
+                    <div class="input-group-text">+91</div>
+                  </div>
+                  <input
+                    type="text"
+                    (keypress)="keyPress($event)"
+                    name="phoneNo"
+                    class="form-control pro_custom"
+                    placeholder="Enter Your Mobile No"
+                    pattern="[0-9]*"
+                    maxLength="10"
+                    formControlName="phoneNo"
+                    inputmode="numeric"
+                    numbersOnly
+                    [readonly]="FormReadMode"/>
+
+                
+                  <div class="otp_pop"
+                    *ngIf="(f.phoneNo.value && f.phoneNo.value != newMobileNo) ||
+                      (f.phoneNo.value && userInfo.mobileVerified === false)">
+                    <a
+                      class="otp-btn"
+                      data-toggle="modal"
+                      (click)="getOtp()"
+                      *ngIf="f.phoneNo.value.length == 10"
+                      >verify</a>
+                    <a
+                      #modalOpenBtn
+                      href="#mobotp"
+                      class="otp-btn"
+                      data-toggle="modal"
+                      style="display: none;"
+                      >verify
+                    </a>
+                  </div>
+                  <div id="mobotp" class="modal fade custom_model">
+                    <div class="modal-dialog modal-otp">
+                      <div class="modal-content">
+                        <div class="modal-header otp_header">
+                          <button
+                            type="button"
+                            class="close close-custom"
+                            data-dismiss="modal"
+                            #closeModalBtn
+                            aria-hidden="true"
+                            (click)="counter = 60">
+                            &times;
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="otp_profile">
+                            <div class="otp-top-bg">
+                                 <img src="assets/images/otp-mobile-bg.png" alt="image" class="img-fluid" />
+                            </div>
+                            <div class="otp_Title">
+                              <h4>We have send the otp at <span> {{ f.phoneNo.value }} </span></h4>                              
+                            </div>
+                            <div class="otp_form">
+                              <form #OtpForm="ngForm" class="otp-start">
+                                <div class="form_group">
+                                  <div class="otp_box">
+                                    <ng-otp-input
+                                      #ngOtpInput
+                                      (onInputChange)="onOtpChange($event)"
+                                      [config]="config"
+                                      (paste)="onPasteOtp($event)"></ng-otp-input>
+                                    <div *ngIf="isOtpInvalid" class="text-danger primary-error">
+                                      <div>{{ serverError }}</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="otp_button">
+                                  <button
+                                    type="submit"
+                                    [disabled]="!OtpForm.form.valid"
+                                    class="verify_otp"
+                                    (click)="verifyOtp()">
+                                    Verify OTP
+                                  </button>
+                                </div>
+                              </form>
+                              <div class="otp_term">
+                                <div class="otp_resend">
+                                  <p>If you didn't receive code!
+                                    <span *ngIf="showTimer && counter !== 0">
+                                      {{ countDown | async | formatTimer }}
+                                    </span>
+                                  </p>
+                                  <button
+                                    *ngIf="counter === 0"
+                                    type="button"
+                                    class="resend_otp"
+                                    (click)="resendOtp()">
+                                    Resend
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <span
+                    class="mob_verified"
+                    *ngIf="f.phoneNo.value === newMobileNo && userInfo.mobileVerified === true"><span class="material-icons">
+                      check
+                      </span></span>
+                </div>
+                <div *ngIf="isFormSubmitted &&
+                    f.phoneNo.invalid &&
+                    (f.phoneNo.dirty || f.phoneNo.touched)" class="text-danger primary-error"
+                >
+                  <div *ngIf="f.phoneNo.errors.required">
+                    Phone number is required
+                  </div>
+                  <div *ngIf="f.phoneNo.errors.maxLength">
+                    Phone number must be 10 digits
+                  </div>
+                  <div *ngIf="f.phoneNo.errors.pattern">
+                    Phone number is invalid
+                  </div>
+                </div>
+                <div
+                  *ngIf="!f.phoneNo.invalid && isOtpInvalid"
+                  class="text-danger primary-error"
+                >
+                  <div>{{ serverError }}</div>
+                </div>
+                <div
+                  *ngIf="isFormSubmitted && f.phoneNo.errors"
+                  class="text-danger primary-error"
+                >
+                  <div *ngIf="f.phoneNo.errors.serverError">
+                    {{ f.phoneNo.errors["serverError"] }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12">
+              <div class="form_group">
+                <label class="profile-label change-label">Email</label>
+                <div class="input-group auth_btn">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control pro_custom"
+                    placeholder="Enter Your E-mail"
+                    (keyup)="keyPressEmail($event)"
+                    (blur)="keyPressEmail($event)"
+                    formControlName="email"
+                    [readonly]="FormReadMode"
+                  />
+                 
+                  <div class="otp_pop"
+                    *ngIf="((f.email.value) ||
+                      (f.email.value && userInfo.emailVerified === false)) && f.email.errors == null && f.email.value != oldEmail && isInvalidEmail === false">
+                    <a
+                      class="otp-btn"
+                      data-toggle="modal"
+                      (click)="getOtpEmail()"
+                      *ngIf="f.email.errors === null"
+                      >verify</a>
+                    <a
+                      #modalOpenBtn
+                      href="#emailotp"
+                      class="otp-btn"
+                      data-toggle="modal"
+                      style="display: none;"
+                      >verify
+                    </a>
+                  </div>
+                  <div id="emailotp" class="modal fade custom_model">
+                    <div class="modal-dialog modal-otp">
+                      <div class="modal-content">
+                        <div class="modal-header otp_header">
+                          <button
+                            type="button"
+                            class="close close-custom"
+                            data-dismiss="modal"
+                            #closeModalBtn1
+                            aria-hidden="true"
+                            (click)="counter = 60">
+                            &times;
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="otp_profile">
+                            <div class="otp-top-bg">
+                              <img src="assets/images/otp-email-bg.png" alt="image" class="img-fluid" />
+                            </div>
+                            <div class="otp_Title">
+                              <h4>We have send the otp at</h4>
+                              <p>
+                                 <span> {{ f.email.value }} </span>
+                              </p>
+                            </div>
+                            <div class="otp_form">
+                              <form #OtpForm="ngForm" class="otp-start">
+                                <div class="form_group">
+                                  <div class="otp_box">
+                                    <ng-otp-input
+                                      #ngOtpInputEmail
+                                      (onInputChange)="onOtpChange($event)"
+                                      [config]="config"
+                                      (paste)="onPasteOtp($event)"></ng-otp-input>
+                                    <div *ngIf="isEmailOtpInvalid" class="text-danger primary-error">
+                                      <div>{{ serverEmailError }}</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="otp_button">
+                                  <button
+                                    type="submit"
+                                    [disabled]="!OtpForm.form.valid"
+                                    class="verify_otp"
+                                    (click)="verifyOtpWithEmail()">
+                                    Verify OTP
+                                  </button>
+                                </div>
+                              </form>
+                              <div class="otp_term">
+                                <div class="otp_resend">
+                                  <p>If you didn't receive code!
+                                    <span *ngIf="showTimer && counter !== 0">
+                                      {{ countDown | async | formatTimer }}
+                                    </span>
+                                  </p>
+                                  <button
+                                    *ngIf="counter === 0"
+                                    type="button"
+                                    class="resend_otp"
+                                    (click)="resendOtpForEmail()">
+                                    Resend
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <span
+                    class="mob_verified"
+                    *ngIf="
+                      oldEmail === f.email.value &&
+                      userInfo.emailVerified === true
+                    "
+                    ><span class="material-icons">
+                      check
+                      </span></span
+                  >
+                </div>
+                <div
+                  *ngIf="isFormSubmitted && f.email.invalid"
+                  class="text-danger primary-error"
+                >
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">
+                    Enter a valid email address
+                  </div>
+                </div>
+                <div
+                  *ngIf="!f.email.invalid && isEmailOtpInvalid"
+                  class="text-danger primary-error"
+                >
+                  <div>{{ serverEmailError }}</div>
+                </div>
+                <div>
+                  <div
+                    class="text-danger primary-error"
+                    *ngIf="isInvalidEmail && serverEmailError"
+                  >
+                    {{ serverEmailError }}
+                  </div>
+                </div>
+                <div
+                  *ngIf="isFormSubmitted && f.email.errors"
+                  class="text-danger primary-error"
+                >
+                  <div *ngIf="f.email.errors.serverError">
+                    {{ f.email.errors["serverError"] }}
+                  </div>
+                </div>
+                <!-- <div *ngIf="isDisplayEmailVerifyText()">
+                  <small class="guide-info"
+                    >Check your email for verification link</small
+                  >
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="others-infor-row">
+             <div class="row">
+                 <div class="col-lg-12 col-md-12 col-sm-12">
+                      <h3 class="others-title">Others information</h3>
+                 </div> 
+             </div>      
+        </div>
+
+
+
+
+         <div class="date-birth-row">
+          <div class="row">
+            <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12">
+              <!-- <label class="profile-label">Date of Birth</label> -->
+              <mat-form-field class="date_picker adddob" floatLabel="never">
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  name="dob"
+                  formControlName="dob"
+                  [placeholder]="datePlaceholder"
+                  (keypress)="keyPressAge($event)"
+                  [max]="minDatePicker"
+                  onkeyup="
+            var v = this.value;
+            if (v.match(/^\d{2}$/) !== null) {
+                this.value = v + '/';
+            } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                this.value = v + '/';
+            }"
+                [readonly]="true"/>
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                  [disabled]="!active"
+                >
+                <span class="material-icons">
+                  calendar_today
+                  </span>
+              </mat-datepicker-toggle>
+                <mat-datepicker
+                  #picker
+                  panelClass="datepickerOne"
+                ></mat-datepicker>
+              </mat-form-field>
+              <div
+                *ngIf="isFormSubmitted && f.dob.errors"
+                class="text-danger primary-error"
+              >
+                <div *ngIf="f.dob.errors.serverError">
+                  {{ f.dob.errors["serverError"] }}
+                </div>
+              </div>
+              <div
+                *ngIf="isFormSubmitted"
+                class="text-danger primary-error dob-error"
+              >
+                <div *ngIf="isInvalidAge && serverDobError">
+                  {{ serverDobError }}
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-xl-7 col-lg-12 col-md-6 col-sm-12">
+              <div class="custom_radio">
+                <!-- <label class="profile-label">Gender</label> -->
+
+                <div class="mat-custom">
+                  <mat-radio-group aria-label="Select an option" formControlName="gender">
+                    <mat-radio-button value="Male" (click)="active">Male</mat-radio-button>
+                    <mat-radio-button value="Female" (click)="active">Female</mat-radio-button>
+                    <mat-radio-button value="Other" (click)="active">Other</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="save-details-row"> 
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">           
+
+              <div class="edit_cancel">
+                <div class="cancel_details" *ngIf="!FormReadMode">
+                  <button
+                    type="button"
+                    class="btn-cancel-save"
+                    (click)="discardChanges()">
+                    Cancel
+                  </button>
+                </div>
+                <div class="save_details"  *ngIf="!FormReadMode">
+                  <button
+                    type="button"
+                    class="btn-save-profile"
+                    (click)="editProfile($event)"
+                  >
+                    <i class="material-icons">save</i>Save details
+                  </button>
+                </div>
+
+                <div class="edit-details-btn" *ngIf="FormReadMode">
+                  <button type="button" class="btn-edit-profile" (click)="readyToEdit()">
+                    <mat-icon>edit</mat-icon> Edit details
+                  </button>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div> 
+        </form>
+      </div>
+
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <app-profileshare (childMessage)="getShareCompMsg($event)"></app-profileshare>
+      </div>
+    </div>
+  </div> 
+    
+    <div class="user-profile-address">
+    <div class="row" *ngIf="isUserProfileComplete">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <app-add-profile-location></app-add-profile-location>
+      </div>
+    </div>
+    </div>
+
+  </div>
+</section>
+<!-- <app-new-offer-link></app-new-offer-link> -->

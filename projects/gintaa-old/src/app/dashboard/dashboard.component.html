@@ -1,0 +1,59 @@
+<app-sub-header></app-sub-header>
+
+<div class="container">
+   <div class="row">
+      <nav class="col-xl-2 col-lg-3 col-md-12 col-sm-12 scroll_spy" id="myScrollspy" >
+         <ul class="nav nav-pills flex-column sidebar_menu">
+            <li class="nav-item" (click)="onMenuItemsClick($event, 'transaction')">
+               <a class="nav-link" href="#transaction"
+                  [ngClass]="{'active': isDashboard.has('transaction')}"
+                  (click)="$event.preventDefault()">
+                  <span class="material-icons">dashboard</span> Transaction</a>
+            </li>
+            <li class="nav-item" (click)="onMenuItemsClick($event, 'deals')">
+               <a class="nav-link" href="#deals" [ngClass]="{'active': isDashboard.has('deals')}"
+                  (click)="$event.preventDefault()">
+                  <span class="material-icons">sync_alt</span> Deals
+               </a>
+            </li>
+            <li class="nav-item" (click)="onMenuItemsClick($event, 'ongoing')">
+               <a class="nav-link" href="#ongoing" [ngClass]="{'active': isDashboard.has('ongoing')}"
+                  (click)="$event.preventDefault()">
+                  <span class="material-icons">chat_bubble_outline</span> Ongoing Offers
+               </a>
+            </li>
+            <li class="nav-item" (click)="onMenuItemsClick($event, 'offers')">
+               <a class="nav-link" href="#offers" [ngClass]="{'active': isDashboard.has('offers')}"
+                  (click)="$event.preventDefault()">
+                  <span class="material-icons">receipt</span> Offers
+               </a>
+            </li>
+            <!-- <li class="nav-item">
+               <a class="nav-link active" href="#profile">
+               <i class="material-icons-outlined">account_circle</i> Profile</a>
+            </li> -->
+         </ul>
+      </nav>
+      <div class="col-xl-10 col-lg-9 col-md-12 col-sm-12 col-padding" data-spy="scroll" data-target="#myScrollspy" data-offset="0">
+         <div id="transaction" [ngClass]="{'isActive': isDashboard.has('transaction')}" #transaction>
+            <app-transaction></app-transaction>
+         </div>
+         <div id="deals" [ngClass]="{'isActive': isDashboard.has('deals')}" #deals>
+            <app-deals></app-deals>
+         </div>
+         <div id="ongoing" [ngClass]="{'isActive': isDashboard.has('ongoing')}"  #ongoing>
+            <app-ongoing-offers></app-ongoing-offers>
+         </div>
+         <div id="offers" [ngClass]="{'isActive': isDashboard.has('offers')}" #offers>
+            <app-myoffers></app-myoffers>
+         </div>
+         <!-- <div #profile id="profile">
+            <app-profile></app-profile>
+         </div> -->
+      </div>
+   </div>
+</div>   
+
+
+
+<app-new-offer-link></app-new-offer-link>

@@ -1,0 +1,69 @@
+
+.match_trading {
+	float: left;
+	ul {
+		float: left;
+		width: 100%;
+		margin: 0em;
+		padding: 0em;
+		li {
+			float: left;
+			&:nth-child(1) {
+				display: block;
+				margin: 0em 0.875em 2.125em 1.75em;
+				img {
+					width: 11.563em;
+					height: 11.563em;
+				}
+			}
+			&:nth-child(2) {
+				float: right;
+				margin-bottom: 1.563em;
+				img {
+					height: 25.125em;
+					width: 24.938em;
+					max-width: 24.938em;
+				}
+			}
+			&:nth-child(3) {
+				margin-left: 1.813em;
+				width: 11.563em;
+				height: 11.563em;
+				img {
+					width: 11.563em;
+					height: 11.563em;
+				}
+			}
+		}
+	}
+}
+.matching-Product {
+	position: relative;
+}
+
+.matching-Product:hover{
+	cursor: pointer;
+}
+
+.finding-match {
+	font-size: 1.125em;
+    font-weight: bold;    
+    color: #0b2239;
+    font-family: 'Montserrat', sans-serif;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 5em;  
+}
+
+.your_pottitle {
+	font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;    
+    color: #7700e0;
+    font-family: 'Montserrat', sans-serif;
+    float: left;
+    width: 100%;
+    margin: 75px 0px;
+    text-align: center;  
+}

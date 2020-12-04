@@ -1,0 +1,22 @@
+<div class="offer_success">      
+    <div class="custom_card">
+        <div class="custom_card-imgcont">
+            <img *ngIf="offerDetail && offerDetail.images && offerDetail.images.length > 0" [src]="offerDetail.images[0].url" class="img-fluid card-img-tops" 
+        (click)="showDetail(offerDetail)" alt="pro" />
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"><a target="_blank" [routerLink]="['/offer-details', 'share', offerDetail.seOId ]">{{offerDetail?.name}}</a></h5>
+            <h4 class="card_link"><a target="_blank" [routerLink]="['/offer-details', 'share', offerDetail.seOId ]">{{publicUrl}}/offer-details/share/{{offerDetail?.seOId}}</a></h4>
+            <p class="card-text">{{offerDetail?.description}}</p>
+        </div>
+    </div>
+    <ng-content></ng-content>
+    <!-- <div class="match-man" *ngIf="!showArrow">
+        <img src="assets/images/offer-success-you.png" alt="image" class="img-fluid" />
+    </div>  -->
+   
+    <!-- arrow -->
+    <!-- <div class="match-arrow" *ngIf="showArrow">
+        <img src="assets/images/offer-success-arrow.png" alt="image" class="img-fluid" />
+    </div> -->
+</div>  

@@ -1,0 +1,90 @@
+
+        <div class="chat-msg-rebox">
+
+          <!-- request to update buttons -->
+          <div class="btn-update-request" *ngIf="showRequestToUpdateButton">
+              <button class="btn-update" type="submit" (click)="onRequestToUpdate()">Request to update</button>
+          </div> 
+
+
+         <!-- request to update msg   -->
+          <div class="update-request-msg" *ngIf="showRequestToUpdateSection">
+               <div class="update-msg-text">
+                   <span class="material-icons msg-reply">reply</span>
+                         <h6>Sending an update request</h6>
+                   <span class="material-icons msg-close">close</span>
+               </div>
+          </div>
+
+
+
+          <div class="msg-group-send">
+            <div class="chat-input">         
+              <div class="input-upload-group">
+                <div class="input-group-bg">
+
+                <!-- start massage part     -->
+                <div class="primary-input-group">                        
+                    <input type="text" class="primary-form-control" 
+                      placeholder="Type your message" 
+                      (input)="onCommentUpdate($event.target.value)" >
+                    <div class="primary-group-append" *ngIf="!showDealBlockButton && showRequestToUpdateSection">
+                      <button class="icon-btn-primary" type="button" (click)="onSubmitDeal()">
+                        <i class="material-icons">send</i>
+                      </button>
+                    </div>
+                </div>   
+                <!-- end massage part     -->
+              </div>                    
+            </div>        
+            </div>
+          </div>
+
+
+          <!-- send deal buttons -->
+          <ng-container *ngIf="showDealBlockButton">
+            <div class="send-deal-btn" (click)="onSubmitDeal()">
+              <h2>{{ dealButtonName }}</h2>
+              <img src="assets/images/hand.png" class="img-fluid hand-custom" alt="image" />
+            </div>
+          </ng-container>
+          
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

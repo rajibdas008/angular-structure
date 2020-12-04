@@ -1,0 +1,44 @@
+<div class="product_content" *ngIf="(sharedService.offerDetailsFetched$ | async) as offerDetails">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <h1 class="offer-title-details">
+        {{offerDetails.name}} <span>{{offerDetails.itemCondition | uppercase}}</span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="primary-details">
+        <div class="details-group-primary">
+        <div class="add_details" *ngIf="offerDetails.location">
+          <i class="material-icons-outlined">location_on</i> {{ offerService.showLocation(offerDetails)}}
+          <!-- <span class="material-icons-outlined">location_on</span> {{ offerDetails.location?.addressLine }} -->
+        </div>
+        <div class="client_name">
+          <i class="material-icons">face</i> {{offerDetails.user.name}} / {{offerDetails.activeSince}}
+        </div>
+        
+        <div class="share-btn-group">
+        <div class="share-buttons" (click)="showSharingOptions = !showSharingOptions">
+          <span class="material-icons">share</span>Share
+        </div>
+        <ng-template [ngIf]="showSharingOptions">
+         <div class="share-btn-list"> 
+          <share-buttons 
+              [include]="socialMediums"
+              [theme]="'modern-dark'"
+              (opened)="openShare($event)"
+              (closed)="closeShare($event)"
+          ></share-buttons>
+        </div>
+        </ng-template>
+        </div>
+      </div>
+        <div class="report-issue">
+              <app-report-issue></app-report-issue>             
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

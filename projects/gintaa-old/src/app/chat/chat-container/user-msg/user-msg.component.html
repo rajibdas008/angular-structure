@@ -1,0 +1,170 @@
+<div class="primary-card-body msg-card-body">
+    <ng-container *ngFor="let chat of chatHistoryMsg">
+        <div class="g-flex chat-day-view mb-24" *ngIf="chat.key">
+            <h2>{{ chat.key }}</h2>
+        </div>
+        <div *ngFor="let msg of chat.msg">
+            <div class="g-flex mb-24" [ngClass]="loggedInUserId == msg.senderId? 'justify-content-end-primary': 'justify-content-start-primary'">       
+                <!-- <div class="user-img-cont user-bg">                
+                    <div class="online"></div>
+                    <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+                </div> -->
+                <div class="msg-cotainer" *ngIf="msg.messageType === 'HTML'">
+                    <p class="msg-text">{{ msg.messageBody }}</p>
+                    <div class="block-menu">
+                        <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                            expand_more </span></button>
+                        <mat-menu #beforeMenu="matMenu" xPosition="before">
+                        <button mat-menu-item><span class="material-icons custom-icons">warning
+                            </span> Report Message</button>
+                        <button mat-menu-item><span class="material-icons custom-icons">
+                            block </span> Block user</button>
+                        </mat-menu>            
+                    </div>                    
+                </div>
+        
+                <!-- user image text -->
+                <ng-container *ngIf="msg.messageType === 'IMAGE'">
+                    <div class="chat-send-check" *ngIf="loggedInUserId == msg.senderId">         
+                        <div class="singal-check" *ngIf="msg.isSent && msg.delivered==false"><span class="material-icons">done</span></div> 
+                        <div class="double-check" *ngIf="msg.delivered && msg.readFlag==false"><span class="material-icons">done_all</span></div>
+                        <div class="double-check-send" *ngIf="msg.readFlag"><span class="material-icons">done_all</span></div>
+                    </div>
+                    <!-- user chat time -->
+                    <div class="chat-time-name">
+                        <div class="msg-time-secondary">{{ showTime(msg.messageTime) }}</div>             
+                    </div>
+                    <div class="msg-cotainer-view-image">  
+                        <div class="msg-cotainer msg-custom" *ngIf="msg.messageBody">
+                            <p>{{ msg.messageBody }}</p>
+                        </div>                                                  
+                        <div class="send-image-view">
+                            <div class="block-menu ab-menu">
+                                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                                    expand_more </span></button>
+                                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                                <button mat-menu-item><span class="material-icons custom-icons">warning
+                                    </span> Report Message</button>
+                                <button mat-menu-item><span class="material-icons custom-icons">
+                                    block </span> Block user</button>
+                                </mat-menu>            
+                            </div>
+                            <div class="image-1" *ngFor="let image of msg.messageAttr.mediaUrls | slice: 0: (msg.messageAttr.mediaUrls.length > 4 ? 4 : msg.messageAttr.mediaUrls.length); index as i">
+                                <img [src]="image" alt="image" class="img-fluid view-cimg" (click)="openImageViewModal('view', msg.messageAttr.mediaUrls, false)"/>
+                                <ng-container *ngIf="i === 3 && msg.messageAttr.mediaUrls.length > 4">
+                                    <div class="all-image-attach" (click)="openImageViewModal('view', msg.messageAttr.mediaUrls, false)">
+                                        <div class="attach-image-list">
+                                            <span class="material-icons">attachment</span> 
+                                            <!-- <span class="list-image">{{ msg.messageAttr.mediaUrls.length -4 }}</span> -->
+                                            <span class="list-image">{{ msg.messageAttr.mediaUrls.length }}</span>
+                                         </div>
+                                   </div>  
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div> 
+                </ng-container>
+
+                <ng-container *ngIf="msg.messageType === 'OFFER'">
+                    <!-- user chat time -->
+                    <div *ngIf="msg.messageBody">
+                        <span>{{ msg.messageBody }}</span>
+                    </div>
+                    <!-- <ng-template ngFor let-offer [ngForOf]="msg.messageAttr.mediaUrls"> -->
+                        <div class="chat-time-name">
+                            <div class="msg-time-secondary">{{ showTime(msg.messageTime) }}</div> 
+                            <div class="msg-user-name">@ Anup</div>
+                        </div>                    
+                        <!-- user chat text -->
+                        <div class="msg-cotainer-secondary offer-send-box">            
+                            <div class="block-menu">
+                                <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                                    expand_more </span></button>
+                                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                                <button mat-menu-item><span class="material-icons custom-icons">warning
+                                    </span> Report Message</button>
+                                <button mat-menu-item><span class="material-icons custom-icons">
+                                    block </span> Block user</button>
+                                </mat-menu>            
+                            </div>
+                            <div class="product-offer-text">
+                                <p class="msg-text">{{msg.messageAttr.offerName[0]}} <span>{{msg.messageAttr.offerCondition[0]}}</span></p>
+                                <p class="offer-price">Rs. {{msg.messageAttr.offerPrice[0]}} / {{msg.messageAttr.offerActive[0]}}</p>
+                                <div class="view-item"><a [routerLink]="['/offer-details', 'view', msg.messageAttr.offerId[0]]" target="_blank">view item</a></div>
+                            </div>
+                            <div class="product-img-user"><img [src]="msg.messageAttr.offerUrl[0]" alt="image" class="img-fluid" /></div>                            
+                        </div>   
+                    <!-- </ng-template>  -->
+                </ng-container>
+
+                 <!-- send deal chat part start -->
+                <ng-container *ngIf="msg.messageType === 'DEAL'">                    
+                    <!-- user images -->
+                    <div class="user-img-cont user-bg">                
+                        <div class="online"></div>
+                        <!-- <div class="offline"></div> -->
+                        <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+                        <!-- <div class="user-name">st</div>  -->
+                    </div>
+                    <!-- user chat text -->
+                    <div class="msg-send-deal">
+                        <div class="ch-view-deal-primary">
+                            <div class="deal-primary-img">
+                                <img src="assets/images/hand.png" alt="image" class="img-fluid" />
+                            </div>
+                            <div class="deal-text-group-primary">
+                                <h2>neel</h2>
+                                <h4>Sent you a deal</h4>
+                            </div>
+                        </div>
+                        <div class="ch-view-deal-secondary">
+                            <h6>view deal</h6>
+                        </div>
+                    </div>
+                </ng-container>
+
+                <div class="msg-video-attach" *ngIf="msg.messageType === 'FILE'">
+                    <div class="video-icon"><span class="material-icons">video_library</span></div>
+                    <div class="file-count-att" (click)="previewDocument(msg)"><span class="material-icons">attachment</span></div>
+                    <div class="block-menu">
+                        <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                            expand_more </span></button>
+                        <mat-menu #beforeMenu="matMenu" xPosition="before">
+                            <button mat-menu-item><span class="material-icons custom-icons">warning
+                            </span> Report Message</button>
+                            <button mat-menu-item><span class="material-icons custom-icons">
+                            block </span> Block user</button>
+                        </mat-menu>            
+                    </div>
+                </div>
+
+                <div class="msg-video-attach" *ngIf="msg.messageType === 'VIDEO'">
+                    <div class="video-icon" (click)="openImageViewModal('view', msg.messageAttr.mediaUrls, true)"><span class="material-icons">video_library</span></div>
+                    <div class="file-count-att">
+                        <span class="file-att-count" *ngIf="msg.messageAttr.mediaUrls.length > 1">{{ msg.messageAttr.mediaUrls.length }}</span>
+                        <span class="material-icons attach-ment-icon"> attach_file </span> 
+                    </div>
+                    <div class="block-menu">
+                        <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+                            expand_more </span></button>
+                        <mat-menu #beforeMenu="matMenu" xPosition="before">
+                            <button mat-menu-item><span class="material-icons custom-icons">warning
+                            </span> Report Message</button>
+                            <button mat-menu-item><span class="material-icons custom-icons">
+                            block </span> Block user</button>
+                        </mat-menu>            
+                    </div>
+                </div>
+                <!-- user chat time -->
+                <div class="chat-time-name" *ngIf="msg.messageType !== 'IMAGE'">          
+                    <div class="msg-time">{{ showTime(msg.messageTime) }}</div> 
+                </div>
+                <div class="chat-send-check" *ngIf="loggedInUserId == msg.senderId && msg.messageType !== 'IMAGE'">         
+                    <div class="singal-check" *ngIf="msg.isSent && msg.delivered==false"><span class="material-icons">done</span></div> 
+                    <div class="double-check" *ngIf="msg.delivered && msg.readFlag==false"><span class="material-icons">done_all</span></div>
+                    <div class="double-check-send" *ngIf="msg.readFlag"><span class="material-icons">done_all</span></div>
+                </div>
+            </div> 
+        </div>
+    </ng-container>    
+</div>

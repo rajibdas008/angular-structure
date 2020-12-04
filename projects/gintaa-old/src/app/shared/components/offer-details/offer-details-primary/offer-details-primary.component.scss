@@ -1,0 +1,116 @@
+.app_prostore {
+	padding: 1.375em 3.125em;
+	background: #ffffff;
+	margin-top: 1em;
+	.nav {
+		.nav-item {
+			img {
+				width: 8.125em;
+				margin-right: 0.5em;
+			}
+			&:last-child {
+				img {
+					margin: 0em;
+				}
+			}
+		}
+	}
+}
+.product_content {
+	h1 {
+		color: #010101;
+		font-size: 1.5em;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 500;		
+		span {
+			font-size: 0.625em;
+			text-transform: uppercase;
+			color: #6455c2;
+			font-family: "Montserrat", sans-serif;
+			margin-left: 0.5em;
+			font-weight: bold;
+		}
+	}
+	.pro_price {
+		font-size: 1.125em;
+		color: #010101;
+		font-family: 'Montserrat', sans-serif;
+		margin: 1.25em 0em;
+		font-weight: 500;
+	}
+	
+}
+
+
+.add_details {
+	font-size: 0.875em;
+	color: #000000;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	margin-left: -2px;
+	i {
+		font-size: 26px;
+		vertical-align: middle;
+		color: #2b2b2b;
+	}
+}
+.offer-title-details {
+	padding: 0em 0em 1em 0em;
+}
+.client_name {
+	font-size: 0.875em;
+	color: #000000;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	margin-left: 0.938em;
+	i {
+		font-size: 22px;
+		vertical-align: middle;
+		color: #000000;
+	}
+}
+.share-buttons {
+	float: left;
+    display: inline-flex;
+    color: #000000;    
+    margin-left: 0.938em;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+	span {
+		font-size: 24px;
+		float: left;
+		margin-right: 0.313em;
+		color: #000000;
+	}
+}
+.share-btn-group {
+	float: left;
+}
+.share-btn-list {
+	position: absolute;
+	top: -0.563em;
+	margin-left: 6.875em;
+	background: #ffffff;
+	border-radius: 0.438em;
+	-webkit-border-radius: 0.438em;
+	-moz-border-radius: 0.438em;
+	box-shadow: 0.063em 0.25em 0.688em 0em #c6c6c6;
+	-webkit-box-shadow: 0.063em 0.25em 0.688em 0em #c6c6c6;
+	-moz-box-shadow: 0.063em 0.25em 0.688em 0em #c6c6c6;
+}
+.primary-details {	
+	float: left;
+	width: 100%;
+	margin-bottom: 1.125em;
+}
+
+.details-group-primary{
+	float: left;
+	display: inline-flex;
+}
+
+.report-issue{
+	float: right;
+}

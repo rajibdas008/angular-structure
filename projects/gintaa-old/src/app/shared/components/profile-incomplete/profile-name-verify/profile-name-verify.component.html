@@ -1,0 +1,52 @@
+<div class="mobile-wrapper">
+
+    <div class="remove-popup">
+        <span class="material-icons" (click)="closeDialog()">close</span>
+    </div>
+
+    <div class="otp_profile plr-27">
+        <div class="profile-tile">
+            <h1>Your are just 1Step Away</h1>
+        </div>
+        <div class="profile-des">
+            <h2>Complete your basic information to upload item/service
+                and get more benefits from <span>GINTAA</span></h2>
+        </div>
+        <div class="profile-input">
+            <form class="input-form" name="form" #f="ngForm" novalidate (ngSubmit)="f.form.valid && onSubmit()">
+                <div class="secondary_group">
+                    <div class="secondary-wrap validate-input">
+                        <span class="secondary-label">Name</span>
+                        <input class="secondary-input" type="text" name="profileName"
+                        [(ngModel)]="profileName" placeholder="Enter your full name"
+                        #userName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && userName.invalid }" 
+                        minlength="2" required pattern="[a-zA-Z ]*"/>
+                        <!-- <span class="secondary-focus"></span> -->                             
+                    </div>
+                    <div *ngIf="f.submitted && userName.invalid" class="text-danger primary-error">
+                        <div *ngIf="userName.errors.required">Profile Name is required</div>
+                        <div *ngIf="userName.errors.pattern">Profile Name contain invalid characters</div>
+                        <div *ngIf="userName.errors.minlength">Profile Name needs to be at least two character long</div>
+                    </div>
+                    <div class="text-danger primary-error" *ngIf="serverNameError">{{ serverNameError }}</div>
+                </div>  
+                           
+               <div class="next-btn-bottom">
+                   <button class="next-btn g-right">Next</button>
+               </div>
+            
+            </form>
+          
+           
+            <div class="profile-bottom-bg">
+                <img src="assets/images/incom-bg.png" alt="image" class="img-fluid prolie-bg-custom" />
+           </div>
+         
+
+        </div>
+        
+    </div>
+</div>
+
+
+

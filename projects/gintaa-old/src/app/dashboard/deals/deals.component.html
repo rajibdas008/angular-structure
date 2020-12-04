@@ -1,0 +1,223 @@
+<section class="deals_part">
+  <div class="month-check-group">
+  <div class="row">
+    <div class="col-xl-7 col-lg-6 col-md-6 col-sm-12">
+      <div class="deals_months">    
+        <div class="deal_title">
+          <h2>Deals</h2>
+        </div> 
+        <div class="select_month">
+          <select class="custom-select my-select" (change)="onChangeDateFilter($event.target.value)">
+            <option value="1">All</option>
+            <option value="2">7 Days</option>
+            <option value="3">30 days</option>
+            <option value="4">Custom</option>   
+          </select>
+        </div> 
+        <div class="start-end-group" [hidden]="!showCustomDate">
+         <div class="start-date">
+              
+            <mat-form-field class="start-date-modal" appearance="fill"> 
+              <div class="cstart-date">Choose start date</div>             
+              <input matInput [matDatepicker]="picker1"
+                placeholder="Start Date"
+                [formControl]="selectedStartDate"
+                #refStartDate
+                (dateChange)="dateValueChange(refStartDate.value, 'Start')"
+                [max]="maxToday"
+                readonly />
+              <mat-datepicker-toggle matSuffix [for]="picker1" class="date-picker-toggle">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker1 panelClass="datepicker-four"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="end-date">
+            
+            <mat-form-field class="end-date-modal" appearance="fill"> 
+              <div class="end-date-choose">Choose end date</div>             
+              <input matInput [matDatepicker]="picker2"
+                placeholder="End Date"
+                [formControl]="selectedEndDate"
+                #refEndDate
+                (dateChange)="dateValueChange(refEndDate.value, 'End')"
+                [max]="maxToday"
+                [min]="minEndDate"
+                readonly />
+              <mat-datepicker-toggle matSuffix [for]="picker2" class="date-picker-toggles">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker2 panelClass="datepicker-two"></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+       <h2>
+         <!-- Expire on 
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>   -->
+        
+   </h2> 
+    </div> 
+    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12">
+      <form class="checked_deals chec_margin">
+        <!-- <div class="custom-check-box mr-14">
+          <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+          <label for="styled-checkbox-1">Closed Deals</label>
+        </div> -->
+        <div class="custom-check-box mr-14">
+          <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" [checked]="isCheckedReceivedDeals" (click)="changeDealType('Received',$event)" name="isCheckedReceivedDeals" [(ngModel)]="isCheckedReceivedDeals">
+          <label for="styled-checkbox-2">Received Deals</label>
+        </div>
+        <div class="custom-check-box">
+          <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" [checked]="isChekedSendDeals" (click)="changeDealType('Sent',$event)" [(ngModel)]="isChekedSendDeals" name="isChekedSendDeals">
+          <label for="styled-checkbox-3">Sent Deals</label>
+        </div>
+
+
+
+
+        <!-- <div class="checkbox-group">
+          <input type="checkbox" id="closed_deals">
+          <label for="closed_deals">Closed Deals</label>
+        </div> -->
+        
+        <!-- <div class="checkbox-group">
+          <input type="checkbox" id="received_deals" [checked]="isCheckedReceivedDeals" (click)="changeDealType('Received',$event)" name="isCheckedReceivedDeals" [(ngModel)]="isCheckedReceivedDeals" class="checkbox-rs__input">
+          <label for="received_deals">Received Deals</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="send_deals" [checked]="isChekedSendDeals" (click)="changeDealType('Sent',$event)" [(ngModel)]="isChekedSendDeals" name="isChekedSendDeals">
+          <label for="send_deals">Sent Deals</label>
+        </div> -->
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="all_deals">
+    <!-- <div *ngFor="let item of deals;let i=index" (click)="highlightClass[i]=!highlightClass[i]" style="cursor: pointer;" class="" [ngClass]="highlightClass[i]?'highlight_row':''"> -->
+    <div *ngFor="let item of deals;let i=index" class="highlight_row border_box">  
+     <div class="deal-title-row">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <!-- <div class="secondary-deal-box"  [ngClass]="highlightClass[i]?'':'border_box'"> -->
+          <div class="secondary-deal-box">                          
+            <div class="deal_left">
+                  <div class="deal_name">{{item.dealType}} Deal : <span>{{item.dealUser}}</span></div>
+                 
+            </div>
+            <div class="deal_right">
+              <!-- <div class="deal_call class_{{item.dealStatus.dealStatus.toLowerCase()}}" [hidden]="highlightClass[i]">{{item.dealStatus.dealStatus}}</div> -->
+             
+              <div class="deal_call">Deal Value . <span>{{item.dealValue}}</span></div>
+              <div class="deal_chat" 
+                *ngIf="
+                  item.dealStatus.dealStatus == 'INITIATED'
+                  || item.dealStatus.dealStatus == 'UPDATE_REQUESTED'
+                  ||item.dealStatus.dealStatus == 'UPDATED'
+                  ||item.dealStatus.dealStatus == 'PARTIAL_CLOSED'
+                  ||item.dealStatus.dealStatus == 'ACCEPTED'
+                  ||item.dealStatus.dealStatus == 'CLOSED' ">
+                <a (click)="openDealDialog(item.dealRefId, item.dealStatus.dealStatus, item.dealType);$event.preventDefault();">
+                  View Deal <span></span>
+                </a>
+              </div>
+            </div>
+            
+          </div>            
+        </div>  
+      </div>
+    </div>
+    <div class="deal-details-row">
+      <div class="row">
+        <!-- <div class="col-lg-12 col-md-12 col-sm-12" [hidden]="!highlightClass[i]">  -->
+        <div class="col-lg-12 col-md-12 col-sm-12">  
+          <div class="deal_details">
+            <div class="deal_give">
+              <div class="deal-give-img">
+                <span *ngFor="let row of item.offeredOffers;let j= index">
+                  <span class="deal_plus" [hidden]="j===0"><i class="material-icons">add</i></span>
+                  <img [src]="row.images && row.images.length>0 ? row.images[0].url : 'assets/images/no-image.svg'" 
+                  [routerLink]="['/offer-details', 'view', row.offerId]" alt="image" class="img-fluid-give"/>
+                </span>
+              </div>
+              <div class="deal_plus" [hidden]="item.offeredAmount===0  || item.offeredOffers.length==0"><i class="material-icons">add</i></div>
+                  <div class="add_deals" [hidden]="item.offeredAmount===0">
+                    <span>Rs. {{item.offeredAmount}}</span> 
+                  </div>
+            </div>
+            <div class="arrow_alt">
+                <i class="material-icons">sync_alt</i>
+            </div>
+            <div class="deal_give">
+                <div class="take_details">
+                  <div class="deal-take-img">
+                    <span *ngFor="let row of item.requestedOffers;let j= index">
+                      <span class="deal_plus" [hidden]="j===0"><i class="material-icons">add</i></span>
+                      <img [src]="row.images && row.images.length>0 ? row.images[0].url : 'assets/images/no-image.svg'" 
+                      [routerLink]="['/offer-details', 'view', row.offerId]" alt="image" class="img-fluid-give"/>
+                    </span>
+                  </div>
+                  <div class="deal_plus" [hidden]="item.requestedAmount===0 || item.requestedOffers.length==0"><i class="material-icons">add</i></div>
+                  <div class="add_deals" [hidden]="item.requestedAmount===0">
+                    <span>Rs. {{item.requestedAmount}}</span> 
+                  </div>
+                </div>
+            </div>
+            <div class="deal_note">
+                <div class="give_note">
+                    give <span *ngFor="let row of item.offeredOffers;let j= index">{{j>0?'+  ':''}}{{row.offerName}}</span><span [hidden]="item.offeredAmount===0"><span [hidden]="item.offeredOffers.length==0">+</span>  Rs.{{item.offeredAmount}}</span>
+                </div>
+                <div class="take_note">
+                    take <span *ngFor="let row of item.requestedOffers;let j= index">{{j>0?'+  ':''}}{{row.offerName}}</span> <span [hidden]="item.requestedAmount===0"><span [hidden]="item.offeredOffers.length==0">+</span>  Rs.{{item.requestedAmount}}</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+     
+      <div class="deal-bottom-row">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="status-date-deal">
+              <div class="deal_date">
+                {{ item.dealSentTimeStamp | formatDate }}
+                {{ item.dealSentTimeStamp | formatUTCTime }}
+              </div>
+              <div class="dashboard-deal-status">
+                <div class="deal_call class_{{item.dealStatus.dealStatus.toLowerCase()}}">{{item.dealStatus.dealStatus}}</div>
+              </div> 
+              </div>
+            </div>  
+       </div>
+       </div>
+
+
+    </div>
+  </div>
+
+  <div class="load-more-row">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 mb-4 text-center">
+      <button *ngIf="isShowLoadMore()" type="button" class="btn_primary_border" (click)="loadMoreItems()">Load more</button>
+    </div>
+  </div>
+</div>
+<div class="no-more-row">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="no-content" *ngIf="deals.length===0">
+          <img alt="No Deals" class="" src="/assets/images/no-image-sad.svg"/>
+          <h4><strong>OOPS!!!</strong> you have no deals yet</h4>
+        </div>        
+    </div>  
+  </div>
+</div>
+</section>

@@ -1,0 +1,366 @@
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 320px){
+  [override] app-home-slider .col-lg-secondary {flex: 100%; max-width: 100%; width: 100%; padding-right: 15px; padding-left: 15px; }
+  [override] app-home-slider .col-lg-primary { display: none; }  
+  [override] app-user-slider .col-lg-secondary {flex: 100%; max-width: 100%; width: 100%; padding-right: 15px; padding-left: 15px; }
+  [override] app-user-slider .col-lg-primary { display: none; }
+  [override] app-create-offer .ex_change-radio .mat-radio-button ~ .mat-radio-button { margin-left: 0px!important; width: 100%;}
+  [override] app-unpublished .offer-line { width: 50%; }
+} 
+@media only screen and (min-device-width: 321px) and (max-device-width: 360px){
+  [override] app-home-slider .col-lg-secondary {flex: 100%; max-width: 100%; width: 100%; padding-right: 15px; padding-left: 15px; }
+  [override] app-home-slider .col-lg-primary { display: none; } 
+  [override] app-user-slider .col-lg-secondary {flex: 100%; max-width: 100%; width: 100%; padding-right: 15px; padding-left: 15px; }
+  [override] app-user-slider .col-lg-primary { display: none; }
+  [override] app-create-offer .ex_change-radio .mat-radio-button ~ .mat-radio-button { margin-left: 0px!important; width: 100%;}
+  [override] app-unpublished .offer-line { width: 50%; }
+} 
+@media only screen and (min-device-width: 361px) and (max-device-width: 480px){
+  [override] app-profilephoto .profile-rating-user { margin: 13px 0px 0px 15px; width: 170px; }
+  [override] app-create-offer .ex_change-radio .mat-radio-button ~ .mat-radio-button { margin-left: 8px!important; }
+  [override] app-unpublished .offer-line { width: 55%; }
+} 
+@media only screen and (min-device-width: 481px) and (max-device-width: 576px){
+  [override] app-profilephoto .profile-rating-user { margin: 13px 0px 0px 15px; width: 170px; }
+  [override] app-unpublished .offer-line { width: 67%; }
+} 
+@media only screen and (min-device-width: 577px) and (max-device-width: 640px){
+  [override] app-unpublished .offer-line { width: 70%; }
+} 
+
+@media only screen and (min-device-width: 641px) and (max-device-width: 767px){
+  [override] app-unpublished .offer-line { width: 71%; }
+} 
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 480px){
+  [override] app-offer-details-primary .details-group-primary { display: block; width: 100%;}
+  [override] app-report-issue .btn-issue { float: left; }
+  [override] app-offer-details-primary .report-issue { float: left; width: 100%; position: relative; border-bottom: 0.125em solid #dddcdc; padding: 10px 0px;}
+  [override] app-offer-details-primary .share-btn-list { top: inherit; }
+  [override] app-offer-details-primary .add_details { width: 100%; border-bottom: 0.125em solid #dddcdc; padding: 10px 0px; }
+  [override] app-offer-details-primary .client_name { width: 100%; border-bottom: 0.125em solid #dddcdc; padding: 10px 0px; margin-left: 0em; }
+  [override] app-offer-details-primary .share-btn-group { width: 100%; border-bottom: 0.125em solid #dddcdc; padding: 10px 0px; }
+  [override] app-offer-details-primary .share-buttons { margin-left: 0em; }
+  [override] app-viewer-match-item .match-item-viewer { border: none; }
+  [override] app-offer-details-primary .offer-title-details { margin-top: 30px; }
+  [override] app-viewer-send-deal .viewer-send-deals-btn { float: none; width: 248px; justify-content: center; align-items: center; text-align: center; display: flex; margin: 0 auto; }
+  [override] app-viewer-send-deal .viewer-user-engage { display: flex; width: 100%; justify-content: center; align-items: center; margin: 10px 0px 0px 0px;}
+  [override] app-viewer-send-deal .send-engage-group { display: block; width: 100%; }
+  [override] app-viewer-send-deal .talking-group { display: flex; width: 100%; justify-content: center; align-items: center; margin-top: 20px;}
+  [override] app-viewer-send-deal .chat-now .btn_primary_icon { width: 248px; margin: 0 auto; }
+  [override] app-viewer-send-deal .chat-now { width: 100%; justify-content: center; align-items: center; display: flex; }
+  [override] app-viewer-send-deal .viewer-user-area { display: block; width: 100%; }
+  [override] app-viewer-send-deal .viewer-me-counts h4 { margin-top: 0px!important; }
+  [override] app-viewer-send-deal .viewer-me-box h3 { margin-top: 0px!important; }
+  [override] app-viewer-send-deal .viewer-me-count h3 { margin-top: 0px!important; }
+  [override] app-offer-slider .slider-height .carousel-inner { min-height: 20em !important; height: auto!important; }
+  [override] app-viewer-send-deal .talking-group-service {margin-bottom: 20px; }
+  [override] app-owner-offer-edit-hide .hide-edit { width: 100%;}  
+  [override] app-owner-offer-edit-hide .send-deals-btn { border-bottom: 0.125em solid #dddcdc; width: 100%;}
+  [override] app-owner-offer-edit-hide .owner-user-engage { margin: 0em; border-bottom: 0.125em solid #dddcdc; width: 100%; }
+  [override] app-owner-offer-edit-hide .offer-price { margin-right: 0px; border-bottom: 0.125em solid #dddcdc; width: 100%; }
+  [override] app-chip-list .mat-add-tag.mat-add-input { float: left; width: 100%; }
+  [override] app-chip-list .add-tag-input { width: 100%; }
+  .primary-offers-list .offer_left .offer_des { line-height: 17px; padding-top: 11px; float: left; }
+  .primary-offers-list .offer_right .offer_chat a {line-height: 10px; padding-top: 16px; float: left; }
+} 
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 576px){
+  [override] app-addlocation .user_addpop { border-bottom: 0em solid #c2c2c2;}
+  [override] app-addlocation .user_address { width: 100%; border-bottom: 0.063em solid #c2c2c2; }
+  [override] app-addlocation .add_pop { text-align: center; margin: 0em; float: right; width: 100%; padding-top: 5px; border-bottom: 0.063em solid #c2c2c2; }
+  [override] app-create-offer .btn_cancel { margin-top: 1em; float: left; width: 100%;}
+  [override] app-dashboard .scroll_spy .flex-column { flex-direction: row !important; }
+  [override] app-dashboard .sidebar_menu .nav-item {width: 100%; float: left;}
+} 
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 360px){
+  [override] app-profileshare .my_social { display: block; } 
+  [override] app-profileshare .social-tile-pro {margin-right: 0em; line-height: 60px; width: 100%; display: flex;
+    align-items: center; justify-content: center;}
+  [override] app-profileshare .nav_custom {margin: 0em; padding: 0em; width: 100%;  align-items: center;
+    justify-content: center;}
+  [override] app-profileshare .social-tile-pro h2{ padding-left: 10px!important;}
+  [override] app-profileshare .nav_custom li:last-child { margin-left: 0em !important; margin-top: 10px; width: 100% !important;}
+  [override] app-profileshare .nav_custom li:first-child { width: 100% !important }
+  .btn_app img {width: 130px!important; height: auto;} 
+  .lpr-custom { padding-right: 0px; }
+  [override] app-profilephoto .profile-rating-user { margin: 13px 0px 0px 15px; width: 170px; }
+  [override] app-create-offer .post-offer-btn { width: 100%; }
+  [override] app-create-offer .offer_img { max-height: 17.5em; min-height: 17.5em; }
+  [override] app-create-offer .add-slider-height .carousel-inner { height: auto!important; }
+  [override] app-create-offer .money { width: 100%;}
+  .checkbox-hr, .chec_margin { display: block; }
+  .mr-14 { margin-right: 0px; width: 100%; float: left; }
+  .checked_deals .custom-check-box{width: 100%; float: left;}
+  .start-end-group { float: left; width: 100%; display: block;}
+  .start-end-group .start-date, .start-end-group .end-date{ width: 100%; float: left; display: flex; justify-content: center; align-items: center; }
+}
+
+@media only screen and (min-device-width: 361px) and (max-device-width: 576px){
+  [override] app-profileshare .my_social { display: block; } 
+  [override] app-profileshare .social-tile-pro {margin-right: 0em; line-height: 60px; width: 100%; display: flex;
+    align-items: center; justify-content: center;}
+  [override] app-profileshare .nav_custom {margin: 0em; padding: 0em; width: 100%; display: flex; align-items: center;
+    justify-content: center;}
+  [override] app-profileshare .social-tile-pro h2{ padding-left: 10px!important;} 
+} 
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 430px){
+  [override] app-home-slider .row-custom{width: 100%; margin-right: 0px; margin-left: 0px;}
+  [override] app-home-slider .col-lg-primary { padding-right: 0px; padding-left: 0px;}
+  [override] app-home-slider .col-lg-secondary {padding-right: 0px; padding-left: 0px;}
+
+  [override] app-user-slider .row-custom{width: 100%; margin-right: 0px; margin-left: 0px;}
+  [override] app-user-slider .col-lg-primary { padding-right: 0px; padding-left: 0px;}
+  [override] app-user-slider .col-lg-secondary {padding-right: 0px; padding-left: 0px;}
+} 
+@media only screen and (min-device-width: 0px) and (max-device-width: 430px){
+  .login-user-section { width: 100%; padding-top: 0px;}
+  ul.loginSignup {position: relative!important; right: 0; width: auto; top: 0; display: flex; align-items: center; justify-content: center;
+    float: none; margin: 0 auto;}
+  [override] app-current-locations .ng-autocomplete-loc { float: none; margin: 0 auto; padding: 32px 0px 0px 0px;      
+      display: flex; align-items: center; justify-content: center; } 
+  [override] app-banner .app_button .nav li { margin-right: 0em; display: flex; align-items: center; justify-content: center;
+        width: 100%; margin-top: 10px; }     
+  [override] app-banner .getstarted{width: 100%; margin-top: 10px; padding: 21px 0px; border-radius: 0.438em; -webkit-border-radius: 0.438em;
+    -moz-border-radius: 0.438em; cursor: pointer;}      
+  [override] app-banner .custom_control .form-control{border-radius: 0em 0.438em 0.438em 0em; -webkit-border-radius: 0em 0.438em 0.438em 0em;
+     -moz-border-radius: 0em 0.438em 0.438em 0em; cursor: pointer;}  
+  .head_profile {padding: 0px; width: 100%; float: none; margin: 0 auto;} 
+  .location_select {float: none;} 
+  .user-account-noti {float: left; padding-top: 0px; display: flex; align-items: center; justify-content: center; width: 100%;} 
+  .social-login-row { width: 236px; padding: 0; float: none; margin: 0 auto;}
+  .social-login-inline{width: 213px}
+  .social-login-inline .btn_primary_social{width: 100%; margin-bottom: 10px;}     
+  .social-login-inline .btn_primary_social .gmr-14{margin-right: 0px;}  
+ 
+} 
+
+@media only screen and (min-device-width: 431px) and (max-device-width: 767px){
+  [override] app-home-slider .row-custom{width: 426px;}
+  [override] app-user-slider .row-custom{width: 426px;}
+  ul.loginSignup {position: absolute; right: 8px; display: inline-flex; width: 226px; top: -72px;}
+  .head_profile {padding: 0px; width: 324px; float: none; margin: 0 auto;}
+  [override] app-current-locations .ng-autocomplete-loc {margin-left: 0px;}
+  .myaccount_noti {position: absolute; top: -61px; right: -8px; width: 230px;} 
+  [override] app-addlocation .modal-body { margin: 0px 10px; }    
+} 
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 991px) {
+  .navbar > .container, .navbar > .container-fluid {display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;}
+  .primary-card-184, .primary-card-240, .primary-card-77 {width: 100%;height: auto;max-width: 100% ; min-height: auto;}
+  .add-new-shadow {background-image: none !important; height: auto!important;}
+  .scroll_spy {border-right: 0px solid #c6c6c6!important;}
+  .mobile-app-row{display: none;}
+  [override] app-offer-slider .img_resize {height: auto;width: 100%;}
+  [override] app-viewer-match-item .col-padding-0 .primary-card-77 {margin-bottom: 20px;}
+  .app_mobile {display: none;}  
+  [override] app-banner .home_banner {height: auto; padding: 50px 0px;}
+  [override] app-banner .banner_content{width: 100%;margin-top: 0em;text-align: center;}
+  [override] app-banner .register-start {margin: 40px 0px; display: flex; align-items: center; justify-content: center;}  
+  [override] app-get-products .product_slider {padding: 2.5em 0em 0em 0em;}
+  .gintaa-title-one {padding: 2em 0em 2.063em 0em;}
+  .header {min-height: auto;}
+  .logo-brand { padding: 18px 0px; }
+  [override] app-tranding-item .btn-more {margin-bottom: 25px;}
+  [override] app-profileshare .share-row { margin-top: 75px; }
+  [override] app-image-modal #modal-content-wrapper { height: auto; }
+  [override] app-image-modal .image-crop-section { height: auto; }
+  [override] app-create-offer .new_offers { padding: 3.438em 0em 9.375em 0em; }
+  [override] app-create-offer .pr-right { padding-right: 15px; }
+  [override] app-create-offer .add-new-right { padding-right: 0em; }
+  [override] app-addlocation .modal-login .close { position: relative!important; top: 0em!important; right: 0em!important; }
+  [override] app-addlocation .save_add { min-height: auto; }
+  [override] app-addlocation .others-add-input { padding: 0px 14px; }
+  [override] app-viewer-match-item .border-lefts { border-left: 0em solid #dddcdc; }
+
+  [override] app-offer-details-secondary .time-days { display: block; }
+  [override] app-offer-details-secondary .time-days .days-service { margin-top: 20px; }
+}  
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 767px){
+  .location-row, .menu-list-row, .site-map-row, .download-app-row {margin-right: 0px;width: 100%;}
+  .menu-list-row, .site-map-row, .download-app-row {margin-top: 30px;}
+  .primary-card-400{width: 100%;height: auto;max-width: 100%;}
+  [override] app-banner .app_dstore {float: left; margin-top: 0em; display: block; width: 100%;}
+  [override] app-banner .download_icon { float: none; display: flex; align-items: center; justify-content: center;}
+  [override] app-banner .app_button { width: 100%; align-items: center; justify-content: center; margin-left: 0px;}
+  .btn_app {padding-left: 0px; width: 100%; align-items: center; justify-content: center; display:flex;}  
+  .search-form {width: 100%;}
+  .btn_app img {width: 150px; height: auto;}  
+  .input_search {width: 100%;}
+  .footer_logo, .social_link {float: none; display: flex; align-items: center; justify-content: center;}
+  [override] app-tranding-item .mt-res{margin-top: 0em; margin-bottom: 1.5em;}  
+  [override] app-trading-products .mt-res{margin-top: 0em; margin-bottom: 1.5em;} 
+  .user_store {padding: 0px; margin-top: 50px;}
+  .user_store h1{display: flex; align-items: center; justify-content: center;}
+  .user_store .app-image{ width: 340px; height: auto;}
+  .my_account {float: left;}
+  [override] app-profile .prifile-title-top h2 { padding-right: 0px!important; }
+  [override] app-user-status .btn_dashboard{ margin-top: 1em; display: flex; align-items: center; justify-content: center; float: none;}
+  [override] app-user-status .title_status{display: flex; align-items: center; justify-content: center;}
+  [override] app-user-status ul.item-count li { margin-right: 0em!important; width: 100%; display: flex; border-bottom: 1px solid #ddd; padding: 5px 0px; }
+  [override] app-user-status .count h4 { width: 100px; float: right; line-height: 30px; }
+  [override] app-user-status .count span { float: left; }
+
+  [override] app-create-offer .select_radio { margin-right: 0em!important; width: 50%;}
+  [override] app-create-offer .item-qty-start{margin-right: 0em!important; width: 50%;}
+  [override] app-create-offer .document_upload { margin-right: 0em!important; width: 100%; margin-top: 40px; }
+  [override] app-create-offer .document_upload h4 { margin: 0em 0em 1.75em 0em!important; }
+  [override] app-create-offer .document_upload .mat-button{padding: 0 16px 0px 0px;}
+  [override] app-addlocation .manage_add { border-radius: 0.625em 0.625em 0em 0em; -webkit-border-radius: 0.625em 0.625em 0em 0em; -moz-border-radius: 0.625em 0.625em 0em 0em; }
+  [override] app-addlocation .save_add { border-radius: 0em 0em 0.625em 0.625em; -webkit-border-radius: 0em 0em 0.625em 0.625em; -moz-border-radius: 0em 0em 0.625em 0.625em; }
+  [override] app-owner-offer-edit-hide .hide-edit { float: left; margin-top: 15px;}  
+  [override] app-report-issue .modal-issue .close { right: 0em!important; }  
+  .primary-card-231 { height: auto; max-width: 100%; } 
+  [override] app-sub-header .title_dash h2 { text-align: center; display: flex; justify-content: center; align-items: center; }
+  [override] app-sub-header .dash_offer { display: flex; justify-content: center; align-items: center; }  
+  [override] app-sub-header ul.item-dash li { margin-right: 0em!important; width: 100%; border-bottom: 1px solid #ddd; margin-top: 10px; } 
+  [override] app-sub-header .count h4 { float: right; line-height: 30px;}
+  [override] app-sub-header .count span{ float: left; }
+  [override] app-transaction .trans_list { width: 100%; border-bottom: 1px solid #ddd; float: left; margin-bottom: 15px;}
+  [override] app-transaction .trans_list h4 { float: left; line-height: 22px!important; }
+  [override] app-transaction .trans_list h2 { float: right; font-size: 1em!important;}
+  [override] app-myoffers .main-nav a { margin: 0px 15px; border-bottom: 1px solid #ddd; padding: 10px 0px!important;}
+  [override] app-myoffers .main-nav > ul > li { width: 100%; }
+  [override] app-ongoing-offers .checkbox-hr { float: left; margin-top: 20px; width: 100%;} 
+  [override] app-deals .chec_margin { float: left; width: 100%;}
+  [override] app-dashboard .col-padding { padding-left: 15px; }
+  [override] app-deals .secondary-deal-box .deal_left { width: 100%; }
+  [override] app-deals .secondary-deal-box .deal_right { width: 100%; float:left; }
+  [override] app-deals .status-date-deal { float: left; margin-top: 0px; } 
+  .deal_details .deal_note { width: 100%; margin-left: 0px; }
+  .start-end-group { position: relative; left: 0px; margin-top: 10px; padding-left: 0px; }
+  [override] app-dashboard a.nav-link.active::before { display: none; }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 991px) {
+  .location-row, .menu-list-row, .site-map-row, .download-app-row {margin-right: 0px;width: 50%;}
+  .site-map-row, .download-app-row {margin-top: 30px;}
+  .tranding-Product .product_des .price {max-width: 50px;}
+  [override] app-banner .app_dstore {float: none; margin-top: 0em; display: flex; align-items: center; justify-content: center;}
+  [override] app-current-locations .ng-autocomplete-loc {margin-left: 0px;}  
+  ul.loginSignup { padding: 0px; position: absolute; right: 155px; top: -56px; width: 230px;}
+  .head_profile {padding: 3px 0px 0px 0px;}
+  .user_store {padding: 0px;}
+  .user_store h1 img{width: 70%;}
+  .btn_app {padding-left: 0px;}  
+  .btn_app img {width: 140px;height: auto;}  
+  .myaccount_noti {position: absolute; top: -49px; right: 70px; width: 280px;}
+  .copy_right {margin-top: 0px;}
+  .my_account {float: left;}
+  [override] app-home-slider .row-custom{width: 426px;}
+  [override] app-user-slider .row-custom{width: 426px;}
+  [override] app-user-status ul.item-count li { margin-right: 45px!important; }
+  [override] app-user-status .btn_dashboard{ margin-top: 1em; display: flex; align-items: center; justify-content: center; float: none;}
+  [override] app-user-status .title_status{display: flex; align-items: center; justify-content: center;}
+  [override] app-unpublished .offer-line { width: 77%; }
+  [override] app-sub-header ul.item-dash li { margin-right: 2.813em !important; }
+  [override] app-sub-header .title_dash h2 { text-align: center; display: flex; justify-content: center; align-items: center; }
+  [override] app-sub-header .dash_offer { display: flex; justify-content: center; align-items: center; }
+  [override] app-transaction .trans_list { margin-bottom: 20px; }
+}
+
+
+@media only screen and (min-device-width: 992px) and (max-device-width: 1024px) {
+  
+
+}
+
+@media only screen and (min-device-width: 1025px) and (max-device-width: 1199px) {
+  
+
+}
+
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1279px) {
+  [override] app-current-locations .ng-autocomplete-loc { margin: 0px 30px 0px 40px; }
+  .search-form { width: 455px; }
+
+
+}
+@media only screen and (min-device-width: 1280px) and (max-device-width: 1920px) {
+
+
+
+}
+
+
+@media (min-width: 992px) {
+	.navbar-expand-lg {
+		.navbar-collapse {
+			display: inline !important;
+		}
+	}
+}
+
+
+@media only screen and (min-device-width: 992px) and (max-device-width: 1199px) {
+  [override] app-current-locations .ng-autocomplete-loc { margin: 0px 20px 0px 30px; }
+  .search-form { width: 324px; }
+  .mobile-app-row{display: none;} 
+  .download-app-row { margin-right: 0px; }
+  .site-map-row { margin-right: 19px; }
+  [override] app-recent-items .primary-card-240 {height: auto;}
+  .recent-item-short .price, .recent-item-short .location{max-width: 75px;}
+  .get-short .price, .get-short .location{max-width: 50px;}
+  [override] app-tranding-item .primary-card-184 {height: auto;}
+  [override] app-tranding-item .primary-card-400 {height: auto;}
+  [override] app-trading-products .primary-card-184 {height: auto;}
+  [override] app-trading-products .primary-card-400 {height: auto;}
+  .head_profile { padding: 70px 0px 0px 37px; }
+  .btn_app { padding-left: 15px; }
+  [override] app-profileshare .social-tile-pro {margin-right: 20px;}
+  [override] app-profileshare .col-md-12 { flex: 0 0 100%; max-width: 100%;}
+  [override] app-home-slider .carousel-control-next { right: 15px; }
+  [override] app-home-slider .carousel-control-prev { left: 15px; }
+  [override] app-home-slider .carousel-inner img { width: auto!important; max-height: auto!important; max-width: 205px!important; }
+  [override] app-home-slider .col-lg-secondary {flex: 0 0 77%; max-width: 77%; padding-right: 0px; }
+  [override] app-home-slider .col-lg-primary {flex: 0 0 23%; max-width: 23%; padding-right: 0px; }
+  [override] app-home-slider .item { width: 60px; height: 60px;}
+  [override] app-user-slider .carousel-control-next { right: 15px; }
+  [override] app-user-slider .carousel-control-prev { left: 15px; }
+  [override] app-user-slider .carousel-inner img { width: auto!important; max-height: auto!important; max-width: 205px!important; }
+  [override] app-user-slider .col-lg-secondary {flex: 0 0 77%; max-width: 77%; padding-right: 0px; }
+  [override] app-user-slider .col-lg-primary {flex: 0 0 23%; max-width: 23%; padding-right: 0px; }
+  [override] app-user-slider .item { width: 60px; height: 60px;}
+  [override] app-banner .app_mobile { margin-top: 0em!important; margin-bottom: -45px!important; }
+  [override] app-banner .app_mobile img { max-width: 100%!important; right: 0em!important;}
+  [override] app-banner .home_banner { height: auto!important; }
+  [override] app-banner .app_dstore { display: block; margin-top: 14.375em; width: 100%;}
+  [override] app-banner .download_icon {justify-content: center; align-items: center; width: 100%;}
+  [override] app-banner .app_button { margin: 0.625em 0em 0em 0em; width: 100%; justify-content: center; align-items: center;}
+  .navbar { padding: 0rem 1rem; }
+  [override] app-profile .prifile-title-top h2 { padding-right: 100px!important; }
+  [override] app-user-status ul.item-count li { margin-right: 30px!important; }
+  .title_status h2 { font-size: 1.25em !important; }
+  [override] app-addlocation .modal-login .close { position: relative!important; top: 0em!important; right: 0em!important; }
+  [override] app-offer-details-secondary .time-days { display: block; }
+  [override] app-offer-details-secondary .time-days .days-service { margin-top: 20px; }
+  [override] app-unpublished .offer-line { width: 77%; }
+  [override] app-sub-header .pl-15{padding-left: 0px;}
+  [override] app-sub-header .dash_offer a { padding: 17px 9px 17px 6px !important; font-size: 0.875em!important;}
+  [override] app-sub-header ul.item-dash li { margin-right: 1.875em !important; }
+  [override] app-sub-header .title_dash h2 { font-size: 1.125em !important; }
+}
+
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1279px) {
+  [override] app-user-status ul.item-count li { margin-right: 3.375em!important; }
+  [override] app-profile .prifile-title-top h2{ padding-right: 190px!important;}
+  [override] app-create-offer .mat-chip.mat-standard-chip { padding: 0.625em 0.688em; } 
+  [override] app-create-offer .pr-0-time{ padding-right: 0px;}
+  [override] app-create-offer .time_arrow i { width: 25px; }
+  [override] app-sub-header ul.item-dash li { margin-right: 3.125em!important; }
+  [override] app-sub-header .title_dash h2 { font-size: 1.438em!important; }
+  [override] app-sub-header .pl-15{padding-left: 0px;}
+  [override] app-sub-header .dash_offer a { padding: 17px 14px 17px 14px!important;}
+  [override] app-unpublished .offer-line { width: 83%; }
+  [override] app-dashboard .sidebar_menu .nav-link span { padding-right: 1px!important; }
+  .location-row { margin-right: 45px; }
+  .menu-list-row { margin-right: 70px; }
+  .site-map-row { margin-right: 50px; }
+}  
+
+@media only screen and (min-device-width: 1280px) and (max-device-width: 1400px) {
+  .site-map-row {margin-right: 105px;}
+}  

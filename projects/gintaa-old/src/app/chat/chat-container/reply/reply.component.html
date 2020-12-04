@@ -1,0 +1,10 @@
+<div class="block-menu">
+    <button mat-button [matMenuTriggerFor]="beforeMenu"><span class="material-icons">
+        expand_more </span></button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item><span class="material-icons custom-icons">warning
+        </span> Report Message</button>
+      <button mat-menu-item><span class="material-icons custom-icons">
+        block </span> Block user</button>
+    </mat-menu>            
+</div>

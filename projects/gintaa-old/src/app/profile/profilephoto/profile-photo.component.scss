@@ -1,0 +1,145 @@
+.figure-img {	
+    background-position: center;
+    background-size: cover;
+	width: 90px;
+	height: 90px;
+    object-fit: cover;
+    position: relative;
+    border: 8px solid #c0bebe;
+}
+.upload_progress {
+	position: absolute;
+}
+// .upload_button {
+// 	// position: absolute;
+//     // top: 42px;
+//     // left: 17px;
+//     // z-index: 9999;
+// }
+button.mat-button.mat-button-base.mat-warn {
+    background: #e8e8e8;
+    margin: 0.625em 0em 0em 0em;
+    width: 135px;
+    // height: 2.438em;
+    padding: 0.125em;
+}
+button.mat-button.mat-button-base.mat-warn span{
+    font-size: 1.125em;
+	color: #0b2239;
+	vertical-align: sub;
+}
+.upload_progress{
+	font-size: 0.75em;
+	color: #0b2239;
+	width: 12.5em;
+}
+.profile-photo-row{
+    float: left;
+    width: 100%;
+}
+
+.user-name-profile{
+    color: #0b2239;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+}
+.btn-upload-btn{
+    border-radius: 0px 53px 0px 53px;
+    width: 45px;
+    border: 10px solid #aeadad;
+    transform: rotate(-50deg);
+    height: 55px;    
+    position: absolute;
+    top: 45px;
+    left: 34px;
+    background-color: #b7b7b7;
+}
+.btn-upload{
+    cursor: pointer;
+    background-color: transparent;
+    transform: rotate(50deg);
+    padding: 6px 0px 0px 5px;
+}
+.btn-upload .upload-text{
+    color: #010101;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.btn-upload span{
+    font-size: 22px;
+    color: #000000;
+    vertical-align: bottom;
+    // margin-right: 8px;
+}
+
+.profile_img {
+    float: left;
+    position: relative;
+}
+
+.upload_button{
+    position: absolute;  
+}
+
+.profile-rating-user{
+    float: left;
+    margin: 13px 0px 0px 22px;
+}
+
+.pro-bar{
+    position: absolute;
+    top: -11.1px;
+    left: 1px;
+}
+
+.custom_img{
+	float: left;
+    padding-left: 12.5px;
+}
+
+.profile-rating, .profile-reviewer{
+    float: left;
+    width: 100%;
+}
+
+.profile-rating h4{
+    float: left;
+    background-color: #ffffff;
+    color: #010101;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    // box-shadow: 0em 0em 1.063em #d2f3dd;
+    // -webkit-box-shadow: 0em 0em 1.063em #d2f3dd;
+    // -moz-box-shadow: 0em 0em 1.063em #d2f3dd;
+    box-shadow: 0px 0px 20px #d2f3dd, 0 6px 6px #d2f3dd;
+    -webkit-box-shadow: 0px 0px 20px #d2f3dd, 0 6px 6px #d2f3dd;
+    -moz-box-shadow: 0px 0px 20px #d2f3dd, 0 6px 6px #d2f3dd;
+    padding: 4px 6px 5px 9px;
+}
+
+.profile-rating h4 span{
+    color: #febe3b;
+    font-size: 27px;
+    vertical-align: bottom;
+}
+
+.profile-reviewer h4{
+    float: left;
+    font-size: 14px;
+    font-weight: normal;
+    color: #010101;
+    text-decoration: underline;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+.error{
+    color: red;
+}

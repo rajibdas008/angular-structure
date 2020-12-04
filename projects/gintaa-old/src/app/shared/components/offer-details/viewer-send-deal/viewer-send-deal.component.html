@@ -1,0 +1,89 @@
+<div class="viewer-senddeal-main" *ngIf="(sharedService.offerDetailsFetched$ | async) as offerDetails">
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<div class="viewer-chat-user">
+			<div class="viewer-user-area">
+				<div class="chat-now" *ngIf="offerDetails.offerType === 'Item'">
+					<button
+						class="btn_primary_icon btn-primary-bg"
+						type="button"
+						(click)="chatNow()"
+					>
+						<span class="material-icons">
+							chat_bubble_outline
+						</span>
+						Chat now
+					</button>
+				</div>
+
+				<div class="chat-now service-viewer" *ngIf="offerDetails.offerType === 'Service'">
+					<button
+						class="btn_primary_icon btn-primary-bg"
+						type="button"
+						(click)="chatNow()"
+					>
+						<span class="material-icons">
+							chat_bubble_outline
+						</span>
+						Chat now
+					</button>
+				</div>
+			   
+			  <div class="talking-group" *ngIf="offerDetails.offerType === 'Item'">	
+				<div class="viewer-talking-with">Talking with</div>
+				<div class="viewer-me-box"><h3>me</h3></div>
+				<div class="viewer-me-count"><h3>{{offerDetails.chatCount}}</h3></div>
+				<div class="viewer-talking-people">people</div>
+			  </div>
+			 
+			  <!-- service viewer details part start -->
+			  <div class="talking-group talking-group-service" *ngIf="offerDetails.offerType === 'Service'">	
+				<div class="viewer-talking-with">Talking with</div>
+				<div class="viewer-me-box"><h4>You</h4></div>
+				<div class="viewer-me-count"><h4>{{offerDetails.chatCount}}</h4></div>
+				<div class="viewer-talking-people">people</div>
+			  </div>
+			  <!-- service viewer details part start -->
+			  
+			</div>
+		   <div class="send-engage-group" *ngIf="offerDetails.offerType === 'Item'">
+			<div class="viewer-user-engage">
+				<div class="viewer-engage-with">Engage with</div>
+				<div class="viewer-me-counts"><h4>50</h4></div>
+				<div class="viewer-talking-deals">Deals</div>
+			</div>
+
+			<div class="viewer-send-deals-btn" (click)="openDeal()">
+				<img
+					src="assets/images/send-deal-hand.png"
+					alt="images"
+					class="user-hand img-fluid"
+				/>
+				<h2>send deal</h2>
+			</div>			
+		   </div> 
+
+		   <!-- service send deal viewer part start -->
+                <!-- <div class="service-send-deal" *ngIf="offerDetails.offerType === 'Service'">
+					 <div class="btn-deal-group">
+						  <h4>send deal</h4>
+						  <div class="service-user-hand" (click)="openDealModal()">
+						       <img src="assets/images/hand.png" alt="images" class="service-user-img"/>
+						  </div>
+					 </div>
+				</div> -->
+
+				<div class="viewer-send-deals-btn service-deal-send" (click)="openDeal()" *ngIf="offerDetails.offerType === 'Service'">
+					<img
+						src="assets/images/send-deal-hand.png"
+						alt="images"
+						class="user-hand img-fluid"
+					/>
+					<h2>send deal</h2>
+				</div>
+
+		   <!-- service send deal viewer part start --> 
+		</div>
+	</div>
+</div>
+</div>

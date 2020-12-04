@@ -1,0 +1,47 @@
+
+<div class="mobile-wrapper">
+
+    <div class="remove-popup">
+        <span class="material-icons" (click)="closeDialog()">close</span>
+    </div>
+
+    <div class="otp_profile plr-27">
+        <div class="profile-tile">
+            <h1>Your are just 1Step Away</h1>
+        </div>
+        <div class="profile-des">
+            <h2>Complete your basic information to upload item/service
+                and get more benefits from <span>GINTAA</span></h2>
+        </div>
+        <div class="profile-input">
+            <form class="input-form" name="form" #f="ngForm" novalidate (ngSubmit)="f.form.valid && onSubmit()">
+                <div class="secondary_group">
+                    <div class="secondary-wrap validate-input">
+                        <span class="secondary-label">Email</span>
+                        <input class="secondary-input" type="text" 
+                        name="email" [(ngModel)]="profileEmail"  placeholder="Enter your email id"
+                        #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" 
+                        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <!-- <span class="secondary-focus"></span> -->
+                        
+                    </div>
+                    <div *ngIf="f.submitted && email.invalid" class="text-danger primary-error">
+                        <div *ngIf="email.errors.required">Email is required</div>
+                        <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                        <div *ngIf="email.errors.pattern">Email must be a valid email address</div>                            
+                    </div>
+                    <div *ngIf="serverEmailError" class="text-danger primary-error">
+                        <div>{{serverEmailError}}</div>
+                    </div>
+                </div>
+                
+               <div class="next-btn-bottom">
+                   <button class="next-btn g-right">Next</button>
+               </div>
+            </form>
+            <div class="profile-bottom-bg">
+                <img src="assets/images/incom-bg.png" alt="image" class="img-fluid prolie-bg-custom" />
+           </div>
+        </div>        
+    </div>
+</div>

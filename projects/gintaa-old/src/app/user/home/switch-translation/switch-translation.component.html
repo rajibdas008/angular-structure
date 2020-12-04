@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h3>{{ 'compA.greeting' | translate:{'name': fullName} }}</h3>
+            <h5>{{ 'compA.title' | translate }}</h5>
+            <p>{{ 'compA.description' | translate }}</p>
+
+            <p>
+                {{ 'chooseLang.helper' | translate }} :
+                <select #langSelect (change)="translate.use(langSelect.value)" style="padding:5px">
+                <option *ngFor="let lang of translate.getLangs()"
+                    [value]="lang"
+                    [attr.selected]="lang === translate.currentLang ? '' : null"
+                > {{ lang }}</option>
+                </select>
+            </p>
+        </div>
+    </div>
+</div>

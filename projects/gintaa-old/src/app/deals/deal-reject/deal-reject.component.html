@@ -1,0 +1,20 @@
+<div class="reject-pop-wrapper">
+    <div class="reject-title">
+        <h2>Why you want to reject this deal?</h2>
+    </div>
+    
+    <div class="reject-msg-input">
+        <input type="text" class="primary-form-control custom-reject-control" placeholder="Type your message" #rejectComment>
+    </div>
+
+    <div class="reject-btn-group">
+       <div class="reject-inline-group">
+        <div class="cancel-reject-btn">
+            <a href="javascript:void(0);" (click)="cancel()">Cancel</a>
+        </div>
+        <div class="confirm-reject-btn">
+            <a href="javascript:void(0);" (click)="reject(rejectComment)">Confirm</a>
+        </div>
+      </div>  
+  </div>
+</div>

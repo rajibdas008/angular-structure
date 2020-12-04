@@ -1,0 +1,27 @@
+<section class="live_offers" #offerLive>
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 pr-0" >
+                    <div class="success_top" [ngClass]="{'fixed-position' : isPositionFixed}">
+                         <app-your-item>
+                            <div 
+                                [ngClass]="isSticky && categoryService.isSearchResultPresent() ? 'match-arrow' : 'match-man'"
+                                [@slideUpDownSmooth]="isSticky && categoryService.isSearchResultPresent() ? 'true': 'false'"
+                                (@slideUpDownSmooth.done)="animationDone($event)">
+                                <img [src]="isSticky && categoryService.isSearchResultPresent() ? 'assets/images/offer-success-arrow.png' : 'assets/images/offer-success-you.png'" alt="image" class="img-fluid" />
+                            </div>
+                         </app-your-item>  
+                     </div>       
+                </div>                
+                <div class="col-lg-6 col-md-6 col-sm-12 pl-0" [ngClass]="{'sticky-position' : isPositionFixed}">
+                    <div class="pot_match">
+                         <app-your-match></app-your-match>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<app-new-offer-link></app-new-offer-link>
+
+

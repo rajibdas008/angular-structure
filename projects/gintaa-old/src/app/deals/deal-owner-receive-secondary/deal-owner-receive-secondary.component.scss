@@ -1,0 +1,545 @@
+.deal-owner-wrapper-secondary {
+    float: left;
+    width: 1170px;
+    display: flex;
+    max-height: 100vh;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    border-radius: 20px 0px 0px 20px;
+    -webkit-border-radius: 20px 0px 0px 20px;
+    -moz-border-radius: 20px 0px 0px 20px;
+}
+
+.deal-owner-wrapper-secondary .deal-secondary-owner {
+    width: 96%;
+    float: left;
+    background-image: url(/assets/images/chat-bg.png);  
+    height: 100%;  
+}
+
+.deal-owner-secondarysub {
+    float: left;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 5px 0 25px -5px #c0c0c0;
+    -webkit-box-shadow: 5px 0 25px -5px #c0c0c0;
+    -moz-box-shadow: 5px 0 25px -5px #c0c0c0;
+}
+
+.deal-owner-wrapper-secondary .deal-sidebar-3 {
+    width: 4%;
+    float: right;
+    background-color: #0c2239;
+    min-width: 60px;
+}
+
+.chat-msg-owner {
+    float: left;
+    width: 100%;
+    padding: 0px 25px;
+}
+
+.chat-msg-owner .owner-msg-recall {
+    float: left;
+    width: 100%;    
+    padding-top: 20px;
+    height: 590px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.chat-msg-owner .owner-msg-recall::-webkit-scrollbar {
+    display: none;
+}
+.owner-confirm {
+    width: 100%;
+    float: left;
+    border-radius: 7px 0px 0px 0px;
+    -webkit-border-radius: 7px 0px 0px 0px;
+    -moz-border-radius: 7px 0px 0px 0px;
+    padding: 0px 30px;
+    background-color: #ffffff;
+}
+
+.owner-expire-bottom {
+    float: left;
+    width: 100%;
+    background: #ffffff;
+    padding: 63px 30px 30px 30px;
+}
+
+.deals-delivery-owner {
+    float: left;
+    width: 100%;
+}
+
+.expires-chaange-owner {
+    float: left;
+    display: inline-flex;
+    padding-top: 4px;
+}
+
+.expire-text-owner h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight:bold;
+    color: #0b2239;
+    line-height: 37px;
+}
+.expire-text-owner span{
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+.deal-accept {
+    float: left;
+}
+
+.deal-accept .btn_primary {
+    padding: 13px 35px;
+}
+
+.calendar-icon-owner {
+    margin-right: 10px;
+    line-height: 35px;
+}
+
+.choose-list {
+    float: left;
+    width: 100%;
+}
+
+.choose-title {
+    float: left;
+    width: 100%;
+    padding: 48px 0px 40px 0px;
+}
+
+.choose-confirm-title {
+    float: left;
+    width: 100%;
+}
+
+.choose-confirm-title h2 {
+    color: #0b2239;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+.choose-confirm-title h2 span{
+    cursor: pointer;
+    font-size: 35px;
+    float: left;
+    margin-right: 10px;
+    margin-top: -3px;
+}
+.local-shoping-icon span {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 25px;
+    color: #bcbcbc;
+    line-height: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #eceeef;
+}
+.jun-icon span{
+    color: #ef4941;
+}
+
+.self-icon span{
+    color: #fb9f00;
+}
+.verified-user-icon span {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 25px;
+    color: #ffdb0c;
+    line-height: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #eceeef;
+}
+
+.deli-ins {
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px 0px 15px 0px;
+    border-bottom: 1px solid #dcdcdc;
+}
+.give-title{
+    float: left;
+    width: 100%;
+}
+.delivery-options{
+    float: left;
+    width: 100%;
+    margin: 30px 0px;
+}
+.door-delivery-row{
+    float: left;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.delivery-options h6{
+    color: #8c8d8d;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+.doorstep-ins {
+    float: left;
+    display: inline-flex;
+    padding: 4px 15px 3px 3px;
+}
+
+.deli-text h2 {
+    color: #0b2239;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 22px;
+}
+
+.deli-text h4 {
+    color: #383838;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.delivery-option-row {
+    float: left;
+    width: 100%;
+}
+
+.local-shoping-icon {
+    float: left;
+}
+
+.deli-text {
+    padding-left: 15px;
+    float: left;
+    padding-top: 6px;
+}
+
+.check-custom-deli {
+    float: right;
+    margin-right: 50px;
+    margin-top: 9px;
+}
+
+
+
+
+.sent-you-deal,
+.update-request,
+.reject-deal {
+    float: left;
+    width: 100%;
+}
+
+.deal-sent-you {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-update-request {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-update-request .btn-update {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0b2239;
+    margin: 30px 0px 10px 0px;
+    padding: 13px 20px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    box-shadow: 0 0 30px #d1dbe8;
+    -webkit-box-shadow: 0 0 30px #d1dbe8;
+    -moz-box-shadow: 0 0 30px #d1dbe8;
+    cursor: pointer;
+}
+
+.deal-reject-btn {
+    float: left;   
+    margin-left: 15px; 
+}
+
+.deal-reject-btn .btn-reject {
+    color: #0b2239;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    background: transparent;
+    text-decoration: underline;
+    line-height: 46px;
+}
+
+
+.pick-deal {
+    float: left;
+    width: 100%;
+}
+
+.reject-accept-group{
+    float: right;
+}
+
+.chosen-delivery-icons span {
+    background-color: #4bdafe;
+    border: 1px solid #4bdafe;
+    color: #ffffff;
+}
+.chosen-delivery-dates {
+    background-color: #d0f3dc;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+}
+
+.mgs-text-box h2{
+    color: #EF3E36;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin: 5px 0px 10px 0px;
+}
+.mgs-text-box p{
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+}
+.mgs-text-box h4{
+    text-align: right;
+}
+.mgs-text-box h4 a{
+    font-size: 14px;
+    font-weight: bold;
+    color: #0B2239;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
+
+// input checkbox hidden group start
+
+
+.inputGroup {
+    display: block;
+    position: relative;    
+}
+
+.inputGroup label {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    -webkit-transition: color 200ms ease-in;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+
+.inputGroup label:after {
+    width: 25px;
+    height: 0px;
+    content: "✔";
+    border: 0px solid transparent;
+    background-color: transparent;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    left: 34px;
+    top: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 200ms ease-in;
+    padding: 0px 0px 24px 6px;
+}
+
+.inputGroup input:checked~label {
+    color: #fff;
+}
+
+.inputGroup input:checked~label:before {
+    -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    opacity: 1;
+}
+
+.inputGroup input:checked~label:after {
+    background-color: #d0f3dc;
+    border: 0px solid transparent;
+}
+
+.inputGroup input {
+    width: 32px;
+    height: 32px;
+    -webkit-box-ordinal-group: 2;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    left: 34px;
+    top: 15px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+}
+
+
+// input checkbox hidden group end
+
+// msg box style reuseable start
+
+.mb-24 {
+    margin-bottom: 1.5rem !important;
+}
+.justify-content-start-primary {
+    -webkit-box-pack: start !important;
+    justify-content: flex-start !important;
+}
+.justify-content-end-primary {
+    -webkit-box-pack: end !important;
+    justify-content: flex-end !important;
+}
+.g-flex {
+    display: -webkit-box !important;
+    display: flex !important;
+}
+.msg-card-body {
+    overflow-y: auto;
+}
+
+.msg-cotainer {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    background-color: #ffffff;
+    padding: 10px 8px 10px 16px;
+    position: relative;
+    color: #565656;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    box-shadow: 5px 3px 4px 2px #dfdede;
+    -webkit-box-shadow: 5px 3px 4px 2px #dfdede;
+    -moz-box-shadow: 5px 3px 4px 2px #dfdede;
+}
+.msg-cotainer p {
+    margin: 0px;
+    padding: 0px;
+}
+.msg-time {
+    color: #000000;
+    font-size: 10px;
+    margin-left: 10px;
+    align-self: flex-end;
+}
+
+.block-menu {
+    float: right;
+    height: 20px;
+    margin-left: 5px;
+}
+.block-menu button {
+    background: transparent;
+}
+
+.msg-cotainer-secondary {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    background-color: #eff5f7;
+    padding: 10px 16px 10px 8px;
+    position: relative;
+    color: #565656;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    box-shadow: -1px 3px 4px 2px #dfdede;
+    -webkit-box-shadow: -1px 3px 4px 2px #dfdede;
+    -moz-box-shadow: -1px 3px 4px 2px #dfdede;
+    max-width: 330px;
+}
+.msg-cotainer-secondary p {
+    margin: 0px;
+    padding: 0px;
+}
+.msg-time-secondary {
+    color: #000000;
+    font-size: 10px;
+}
+
+.time-user-name {
+    display: inline-flex;
+    align-self: flex-end;
+}
+.offer-qty{
+    margin-right: 10px;
+}
+.msg-user-name {
+    color: #000000;
+    font-size: 10px;
+    margin-left: 6px;
+}
+
+.msg-cotainer-secondary .block-menu {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+.msg-text span {
+    color: #51c878;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 0px 5px;
+}
+.chat-time-name {
+    float: left;
+    align-self: flex-end;
+    display: inline-flex;
+}
+.msg-group-bottom{
+    float: left;
+    width: 100%;
+    margin-top: 446px;
+}
+.block-menu .mat-button{
+    min-width: auto;
+    line-height: 16px;
+    padding: 0px;
+}

@@ -1,0 +1,219 @@
+<ng-container *ngIf="!headerMeta.hideHeader">
+    <section class="header" *ngIf="headerMeta.headerType === headerType.BEFORE_LOGIN" role="banner">
+      <nav class="navbar navbar-expand-lg gintaa-bg-1 navbar-custom" aria-label="Main Navigation">
+        <div class="container">
+          <div class="logo-brand">
+               <a class="navbar-brand" routerLink="/"><img src="assets/images/logo/Gintaa-logo.svg" alt="Gintaa" /></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="material-icons">menu</i></span>
+          </button>    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <app-current-locations></app-current-locations>
+              <app-search></app-search> 
+
+              <div class="login-user-section">
+              <ul class="loginSignup" *ngIf="!this.isAuthenticated()">
+                <li>
+                  <a class="be_singup sign-in-custom" *ngIf="!this.isAuthenticated()" routerLink="/login">Sign in</a>
+                </li>
+                <li>
+                  <a class="be_singup" *ngIf="!this.isAuthenticated()" routerLink="/login">
+                    <button class="signup btn_primary btn-free">Sign up for <span>FREE</span></button></a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="user-account-noti">
+            <div class="myaccount_noti">
+              <div class="afl-userCRL">
+                <div class="dropdown user_notification" *ngIf="this.isAuthenticated()">
+                  <a href="#" class="notification_user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">notifications_active</i>
+                  </a>
+    
+                  <div class="dropdown-menu gintaa_headerDrops" aria-label="All Notifications">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <h2 class="nftHead"><span>3 new</span> updates</h2>
+                        <ul class="gintaa_headerDrop_list">
+                          <li><a href="#">Hello! prabiran Complete your profile</a></li>
+                          <li><a href="#">Anup accept your offer</a></li>
+                          <li><a href="#">Surajit Das send you a massage
+                              <span>Hello Sir... I Like offer. I have a mobile rip
+                                me for details
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+    
+    
+                </div>
+              </div>
+    
+              <div class="my_account dropdown" *ngIf="this.isAuthenticated()">
+                <a class="account_user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span *ngIf="!profileUrl || profileUrl === 'undefined'"> <i class="material-icons-outlined">
+                      account_circle
+                    </i> Hi! <span>{{username}}</span> </span>
+    
+                    <span *ngIf="profileUrl && profileUrl != 'undefined'"> 
+                      <img [alt]="profileUrl" [src]="profileUrl" id="profile" />
+                      Hi! <span>{{username}}</span> </span>
+                </a>
+    
+                <div class="dropdown-menu gintaa_headerDrop">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <ul class="gintaa_headerDrop_list">
+    
+                        <li><a [routerLink]="['/dashboard']" fragment="transaction" routerLinkActive="router-link-active">
+                          <span class="material-icons drop-icons">dashboard</span>Dashboard</a></li>
+    
+                        <li routerLinkActive="active">
+                          <a [routerLink]="['/dashboard']" fragment="deals">
+                          <span class="material-icons drop-icons">sync_alt</span>Deals</a>
+                        </li>
+  
+                        <li><a [routerLink]="['/dashboard']" fragment="ongoing" routerLinkActive="router-link-active">
+                            <span class="material-icons drop-icons">chat_bubble_outline</span>Ongoing offers</a></li>
+  
+                        <li><a [routerLink]="['/dashboard']" fragment="offers" routerLinkActive="router-link-active">
+                              <span class="material-icons drop-icons">receipt</span>offers</a></li>
+  
+                        <li><a [routerLink]="['/profile']" routerLinkActive="router-link-active">
+                              <span class="material-icons drop-icons">account_circle</span>profile</a></li>
+    
+                        <li><a (click)="logout($event)"><span class="material-icons drop-icons">exit_to_app</span>Sign Out</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+             </div> 
+            </div>
+    
+    
+          </div>
+        </div>
+      </nav>
+    </section>
+    
+    <section class="header" *ngIf="headerMeta.headerType === headerType.AFTER_LOGIN">
+      <nav class="navbar navbar-expand-lg gintaa-bg-2 secondary-header navbar-custom" aria-label="Main Navigation">
+        <div class="container">
+          <div class="logo-brand">
+               <a class="navbar-brand" [routerLink]="['/user-home']"><img src="assets/images/logo/after-login-logo.svg" alt="Gintaa" /></a>
+        </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="material-icons">menu</i></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="location_select">
+                  <app-current-locations></app-current-locations>
+            </div>
+    
+            <div class="input_search">
+                  <app-search></app-search>
+            </div>
+          <div class="login-user-section">
+            <ul class="loginSignup" *ngIf="!this.isAuthenticated()">
+              <li>
+                <a class="be_singup sign-in-custom" *ngIf="!this.isAuthenticated()" routerLink="/login">Sign in</a>
+              </li>
+              <li>
+                <a class="be_singup" *ngIf="!this.isAuthenticated()" routerLink="/login"><button class="signup">Sign up for
+                    <span>FREE</span></button></a>
+              </li>
+            </ul>
+          </div>
+           
+          <div class="user-account-noti">
+            <div class="myaccount_noti">
+              <div class="afl-userCRL">
+                <div class="dropdown user_notification" *ngIf="this.isAuthenticated()">
+                  <a href="#" class="notification_user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">notifications_active</i>
+                  </a>
+    
+                  <div class="dropdown-menu gintaa_headerDrops" aria-label="All notifications">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <h2 class="nftHead"><span>3 new</span> updates</h2>
+                        <ul class="gintaa_headerDrop_list">
+                          <li><a href="#">Hello! prabiran Complete your profile</a></li>
+                          <li><a href="#">Anup accept your offer</a></li>
+                          <li><a href="#">Surajit Das send you a massage
+                              <span>Hello Sir... I Like offer. I have a mobile rip
+                                me for details
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+    
+    
+                </div>
+              </div>
+    
+    
+    
+              <div class="my_account dropdown" *ngIf="this.isAuthenticated()">
+                <a href="#" class="account_user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span *ngIf="!profileUrl || profileUrl === 'undefined'"> <i class="material-icons-outlined">
+                    account_circle
+                  </i> Hi! <span>{{username}}</span> </span>
+    
+                  <span *ngIf="profileUrl && profileUrl != 'undefined'" >
+                    <img [alt]="profileUrl" [src]="profileUrl" id="profile" />
+                  Hi! <span>{{username}}</span> </span>
+                </a>
+    
+                <div class="dropdown-menu gintaa_headerDrop">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <ul class="gintaa_headerDrop_list">
+    
+                        <li><a [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
+                          <span class="material-icons drop-icons">dashboard</span>Dashboard</a></li>
+    
+                        <li><a [routerLink]="['/dashboard']" fragment="deals" routerLinkActive="router-link-active">
+                          <span class="material-icons drop-icons">sync_alt</span>Deals</a></li>               
+    
+                        <li><a [routerLink]="['/dashboard']" fragment="ongoing" routerLinkActive="router-link-active">
+                          <span class="material-icons drop-icons">chat_bubble_outline</span>Ongoing offers</a></li>
+
+                        <li><a [routerLink]="['/dashboard']" fragment="offers" routerLinkActive="router-link-active">
+                          <span class="material-icons drop-icons">receipt</span>Offers</a></li>
+
+                        <li><a [routerLink]="['/profile']" routerLinkActive="router-link-active">
+                          <span class="material-icons-outlined drop-icons">account_circle</span>Profile</a></li>  
+
+                        <li><a (click)="logout($event)"><span class="material-icons drop-icons">exit_to_app</span>Sign Out</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+            </div>
+    
+    
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- <app-chat-header *ngIf="headerMeta.headerType === headerType.CHAT_HEADER"></app-chat-header> -->
+
+</ng-container>

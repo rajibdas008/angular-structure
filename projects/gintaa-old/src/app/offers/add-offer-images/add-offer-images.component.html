@@ -1,0 +1,135 @@
+<div class="add-new-right add-new-shadow"> 
+  <!-- [class.sidebar-fixed]="!sticky" -->
+<div class="upload-image-wrapper">
+
+<p class="offer_title">Add New Offer</p>
+<div class="upload-img-section" *ngIf="medialist && medialist.length == 0">
+
+  <div class="percent-left"> 
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="offer_img">
+        <img class="img-fluid" src="assets/images/no-image.svg" alt="No Image Available" />
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="percent-left">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="upload_title">Upload upto 10 photos and 2 videos</div>
+    </div>
+  </div>
+  </div>
+
+  <div class="percent-left">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <form [formGroup]="mediaForm" class="upload_progress">
+        <input type="file" #mediaUpload name="mediaUpload" accept="video/*,image/*"
+          style="display: none" multiple />
+        <input type="hidden" formControlName="fileInput" />
+        <!-- Validation Field -->
+        <div class="photo_btn">
+          <mat-card-actions *ngIf="!uploading">
+            <button mat-button color="warn" (click)="uploadMedia()">
+              <i class="material-icons">add_a_photo</i>
+              <h4>add more</h4>
+            </button>
+          </mat-card-actions>
+        </div>
+        <div *ngIf="mediaForm.controls.fileInput.invalid" class="text-danger">
+          <div class="error" *ngIf="mediaForm.controls.fileInput.errors.serverError">
+            {{ mediaForm.controls.fileInput.errors.serverError }}
+          </div>
+        </div>
+        <div *ngIf="uploading">
+          <img src="assets/images/loading.svg" alt="uploading" />
+        </div>
+      </form>
+    </div>
+  </div>
+ </div>
+
+</div>
+<ng-container *ngIf="isBrowser">
+<div class="add-slider-height" *ngIf="medialist && medialist.length">
+  <div id="carouselExampleIndicators" class="carousel slide" data-interval="3000" data-ride="carousel" pause="hover">
+    <div class="carousel-inner">
+      <div class="carousel-item" [ngClass]="{ active: i == 0 }" *ngFor="let media of medialist; let i = index">
+        <img class="offer_img img-fluid" *ngIf="media && media.type === 'image'" [src]="media?.url || ''" alt="First slide" />
+        <ng-template [ngIf]="media.type === 'video'">
+          <mat-video *ngIf="media?.url" #video [src]="media?.url">
+             <source matVideoSource [src]="media?.url"> 
+          </mat-video>
+      </ng-template>
+      </div>
+    </div>
+    <a *ngIf="medialist && medialist.length > 1" class="carousel-control-prev" href="#carouselExampleIndicators"
+      role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a *ngIf="medialist && medialist.length > 1" class="carousel-control-next" href="#carouselExampleIndicators"
+      role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+ 
+  <div class="percent-left">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="upload_title">Upload upto 10 photo and 2 video</div>
+    </div>
+  </div>
+ </div>
+
+ <div class="percent-left">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <ul class="thum_img" *ngIf="medialist?.length">
+        <li>
+          <form #form class="upload_progress">
+            <input type="file" #mediaUpload  name="mediaUpload" accept="image/*,video/*"
+              style="display: none;" multiple />
+            <div class="photo_btn">
+              <mat-card-actions *ngIf="!uploading" class="loading">
+                <button mat-button color="warn" (click)="uploadMedia()">
+                  <i class="material-icons">add_a_photo</i>
+                  <h4>add media</h4>
+                </button>
+              </mat-card-actions>
+              <div *ngIf="uploading">
+                <img src="assets/images/loading.svg" alt="uploading" />
+              </div>
+            </div>
+          </form>
+        </li>
+        <li *ngFor="let media of medialist; index as i">
+          <ng-template [ngIf]="media && media.type === 'image'">
+            <img class="img-size" [src]="media?.url || ''" alt="media" />
+            <button class="remove_button" (click)="removeImage(media, i)">
+              <i class="material-icons">clear</i>
+            </button>
+          </ng-template>
+          <ng-template [ngIf]="media.type === 'video'">
+            <mat-video *ngIf="media?.url" class="vthum-size" [src]="media?.url">
+              <source matVideoSource [src]="media?.url">
+            </mat-video>
+            <button class="remove_button" (click)="removeVideo(media, i)">
+              <i class="material-icons">clear</i>
+            </button>
+          </ng-template> 
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+</ng-container>
+
+</div>
+
+</div>

@@ -1,0 +1,195 @@
+.chat-sidebar-wrapper{
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.icon-btn-primary {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5em;
+    background-color: transparent;
+    position: relative;
+}
+
+.icon-btn-primary span{
+    color: #7f95ad;
+    vertical-align: middle;
+    font-size: 25px;
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    background-color: #0c2239;
+    padding: 2px 0px 3px 0px;
+}
+.icon-btn-primary:hover{
+    cursor: pointer;
+}
+
+// .file-attach i{
+//     color: #000000;
+// }
+
+.remove-view-page {    
+    text-align: center;
+    margin: 18px 0px 20px 0px;    
+}    
+.remove-view-page span{
+    color: #86111c;
+    font-weight: normal;
+    font-size: 34px;
+}
+.remove-view-page:hover {
+    cursor: pointer;
+}
+
+.offer-deal-box{
+    position: absolute;
+    cursor: pointer;
+}
+
+.offer-deal-box .ch-hand {
+    background-color: #7700e0;
+    padding: 15px 7px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    width: 52px;
+    height: 52px;  
+    margin: 0 auto; 
+}
+.offer-deal-box p {
+    padding: 0px;
+    margin-top:4px;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    width: 60px;
+    text-align: center;
+    line-height: 12px;
+    text-transform: uppercase;
+}
+
+
+.audio-video{
+    float: left;
+    width: 62px;
+    position: absolute;
+    bottom: 0;
+}
+.sidebar-chat-menu{
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 16px;
+}
+.sidebar-chat-menu ul li{
+    float: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #7f95ad;
+    padding: 5px 0px;
+}
+
+.sidebar-call{
+    padding: 10px 0px;
+    border-top: 1px solid #1e3954;
+}
+
+.hr-line{
+    border-top: 1px solid #1e3954;
+    width: 62px;
+    margin-bottom: -16px;
+}
+
+.sidebar-call ul li{
+    float: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #7f95ad;
+    padding: 10px 0px;
+}
+
+
+.chat-call .call-start, .call-end{
+    width: 41px;
+    height: 41px;
+    background: #1d344d;
+    border-radius: 100%;   
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.chat-call .call-start span{
+    font-size: 26px;
+    color: #ffffff;
+    line-height: 44px;
+}
+
+.video-call .vcall-on, .vcall-off{
+    width: 41px;
+    height: 41px;
+    background:#1d344d;
+    border-radius: 100%;       
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.video-call .vcall-on span{
+    font-size: 30px;
+    line-height: 40px;
+    color: #ffffff;   
+}
+
+.collec-chat span{
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.video-library span{
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.add-library span{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.chat-audio .audio-on span, .audio-off span{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.add-library{
+    width: 28px;
+    height: 28px;
+    background:#51c878;
+    border-radius: 100%;    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.add-library span{
+    font-size: 28px;
+    color: #ffffff;
+    line-height: 29px;
+}

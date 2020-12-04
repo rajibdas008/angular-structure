@@ -1,0 +1,117 @@
+
+.ng-autocomplete-loc {
+	float: left;
+    margin: 0px 60px 0px 52px;
+    min-width: 87px;
+    width: auto;
+    padding: 32px 0px 26px 0px;
+    display: inline-flex;		
+}
+.ng-autocomplete {
+	width: 165px;
+	float: left;
+}
+.autocomplete-container {
+	box-shadow: none;
+}
+
+h4.use_my {
+	float: left;
+    width: 100%;
+    background: #f1f1f1;
+    font-size: 0.875em;
+    text-align: left;
+    padding: 10px 15px;
+    color: #161616;
+    font-family: "Open Sans", sans-serif;
+	span {
+		font-size: 1.375em;
+		color: #51c878;
+		vertical-align: top;
+		padding-right: 5px;
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.loc-input{
+	background: transparent;
+	font-size: 16px;
+	color: #000000;
+	font-weight: normal;
+	font-family: "Open Sans", sans-serif;
+	float: left;
+	width: 87px;
+}
+
+.location-icon{
+	float: left;
+	margin-right: 5px;
+}
+
+.location-icon span{
+	color: #162c42;
+	vertical-align: baseline;
+    font-size: 26px;
+}
+
+.close-loc{
+	float: left;
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+.location-search-custom{
+	float: left;	
+}
+
+
+.location-search-custom input:focus::-webkit-input-placeholder { color:#000000!important; }
+.location-search-custom input:focus:-moz-placeholder { color:#000000!important; }
+.location-search-custom input:focus::-moz-placeholder { color:#000000!important; }
+.location-search-custom input:focus:-ms-input-placeholder { color:#000000!important; }
+.location-search-custom input::-webkit-input-placeholder { color: #000000!important;}
+.location-search-custom input:-moz-placeholder { color: #000000!important;}
+.location-search-custom input::-moz-placeholder { color: #000000!important;}
+.location-search-custom input:-ms-input-placeholder { color: #000000!important;}
+
+
+.history-sub{
+	float: left;
+	width: 100%;
+	padding: 5px 0px;
+}
+
+.loc-history{
+	float: left;
+}
+
+.loc-history span{
+	font-size: 18px;
+	color: #0c2239;
+}
+
+.history-text{
+	float: left;
+	margin-left: 5px;
+	color: #161616;
+	font-size: 13px;
+	font-weight: normal;
+	font-family: "Open Sans", sans-serif;
+}
+
+.test-hg{
+	padding: 0px;
+}
+
+.loc-expand-arrow{
+	float: left;
+    cursor: pointer;
+}
+
+.loc-expand-arrow span{
+	font-size: 27px;
+}
+

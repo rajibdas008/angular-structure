@@ -1,0 +1,224 @@
+.single-Products {
+	margin-bottom: 1.875em;
+	display: $display-inline;
+	&:hover {
+		cursor: $primary-cursor;
+	}
+}
+.single-Product {
+	margin-bottom: 1.875em;
+	&:hover {
+		cursor: $primary-cursor;
+	}
+}
+  
+.product_slider {
+	.product-img {
+		max-height: inherit;
+		min-height: 11.75em;
+	}
+}
+.product-img {
+	img {
+		width: $primary-width;
+		background-position: center;
+		background-size: cover;
+		background-size: cover;
+		object-fit: cover;
+		position: relative;
+		border-radius: 7px 7px 8px 8px!important;
+		-webkit-border-radius: 7px 7px 8px 8px!important;
+		-moz-border-radius: 7px 7px 8px 8px!important;
+		// height: 100%;
+	}
+	overflow: $overflow-hidden;
+	position: $position-relative;
+	box-shadow: 0.063em 0.313em 0.438em -0.188em rgba(0, 0, 0, 0.16);
+	-webkit-box-shadow: 0.063em 0.313em 0.438em -0.188em rgba(0, 0, 0, 0.16);
+	-moz-box-shadow: 0.063em 0.313em 0.438em -0.188em rgba(0, 0, 0, 0.16);	
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	// box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+.can_get {
+	.img-title {
+		transition: all 0.3s ease 0s;
+		background-color: $primary-white;
+		border-radius: 0em 0em 0.438em 0.438em;
+		-wekit-border-radius: 0em 0em 0.438em 0.438em;
+		-moz-border-radius: 0em 0em 0.438em 0.438em;
+	}
+}
+
+
+.product_des {
+	color: $primary-color;
+	display: $display-inherit;
+	text-align: $txt-left;
+	width: $primary-width;
+	float: $float-left;
+	font-size: $txt-sm-14;
+	.price {
+		text-align: $txt-left;
+		float: $float-left;
+		font-size: $txt-sm-14;
+		font-weight: $txt-regular;
+		color: #000000;
+		font-family: "Open Sans", sans-serif;
+		overflow: hidden;
+		white-space: $white-space;
+		text-overflow: ellipsis;
+		max-width: 100px;
+		// text-transform: lowercase;
+	}
+	.location {
+		text-align: $txt-right;
+		float: $float-right;
+		font-size: $txt-sm-14;
+		font-weight: $txt-regular;
+		overflow: hidden;
+		white-space: $white-space;
+		text-overflow: ellipsis;
+		max-width: 100px;
+		font-family: "Open Sans", sans-serif;
+		color: #000000;
+		// text-transform: lowercase;
+	}
+	
+}
+.primary-card-400,
+.primary-card-240,
+.primary-card-184,
+.primary-card-77{
+	overflow: hidden;
+	background: #fff;
+}
+
+
+.primary-card-240{
+	width: $primary-width;
+	height: 250px;
+}
+.primary-card-231 {
+    width: $primary-width;
+    height: 231px;
+    max-width: 231px;
+}
+.primary-card-184{
+	width: $primary-width;
+    height: 11.5em;
+    max-width: 11.5em;
+}
+
+.primary-card-155{
+	width: $primary-width;
+    height: 155px;
+	max-width: 155px;
+	min-width: 155px;
+}
+.primary-card-210{
+	width: $primary-width;
+    height: 210px;
+    max-width: 210px;
+}
+
+
+.primary-card-105{
+	width: $primary-width;
+    height: 105px;
+	max-width: 105px;
+	min-width: 105px;
+}
+
+.primary-card-400{
+	width: $primary-width;
+	height: 25em;
+	max-width: 25em;
+}
+
+.primary-card-77{
+	width: $primary-width;
+	height: 77px;
+	min-height: 77px;
+}
+
+
+.primary-card-img {
+	border-radius: $radius;
+	-webkit-order-radius: $radius;
+	-moz-order-radius: $radius;
+	&:hover {
+		cursor: $primary-cursor;
+	}
+}
+
+
+.img-title {
+	bottom: 0em;
+	overflow: $overflow-hidden;
+	padding: 0.625em;
+	position: $position-absolute;
+	text-align: $txt-left;
+	width: $primary-width;
+	h2 {
+		color: #0b2239;
+		font-size: 0.875em;
+		text-align: left;
+		font-weight: 600;
+		width: 100%;
+		margin-bottom: 0.375em;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		max-width: 170px;
+		// text-transform: lowercase;
+	}
+	h3 {
+		color: #000000;
+		font-size: $txt-sm-14;
+		text-align: $txt-left;
+		font-weight: $txt-semi-bold;
+		width: $primary-width;
+		margin-bottom: 0.375em;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		max-width: 170px;
+		font-family: "Open Sans", sans-serif;
+		// text-transform: lowercase;
+	}
+
+	h4 {
+		color: #6455c2;
+		font-size: 0.75em;
+		text-align: left;
+		font-weight: 600;
+		width: 100%;
+		margin-bottom: 0.375em;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		max-width: 170px;
+		// text-transform: lowercase;
+	}
+}
+
+
+// .product_des .price::first-letter, .product_des .location::first-letter, .img-title h2::first-letter, .img-title h3::first-letter,
+// .img-title h4::first-letter{
+// 	text-transform: capitalize;
+// }
+
+
+
+.others-offer-product {	
+	.price {		
+		max-width: 70px;		
+	}
+	.location {		
+		max-width: 70px;		
+	}
+	
+}

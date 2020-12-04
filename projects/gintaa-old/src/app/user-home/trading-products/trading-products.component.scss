@@ -1,0 +1,30 @@
+.trad_items {	
+	padding: 3.75em 0em;
+	float: left;
+    width: 100%;
+}
+.see_more {
+	a {
+		font-size: 1em;
+		text-decoration: underline;
+		color: #000000;
+	}
+}
+
+.tranding-Product {
+	position: relative;
+}
+.tranding-Product:hover {
+	cursor: pointer;
+}	
+
+.btn-more {
+    font-size: 16px;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: #000000;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}

@@ -1,0 +1,49 @@
+<div id="modal-content-wrapper" class="modal-wrapper">
+    <header id="modal-header" class="crop-header">
+        <div class="crop-title" id="modal-title" *ngIf="totalImageCount > 1">
+            Crop Image <span>{{activeImageIndex+1}} of {{totalImageCount}}</span>
+        </div> 
+        <div class="crop-title" id="modal-title" *ngIf="totalImageCount === 1">
+            Crop Image
+        </div>        
+        <div class="crop-cancel" (click)="cancel()"><span class="material-icons">close</span> Cancel</div>
+    </header>
+    <div *ngFor="let image of images">
+        <section id="modal-body" class="image-crop-section" *ngIf="image.active && image.file">
+            <image-cropper
+                [imageChangedEvent] = "imageChangedEvent"
+                [imageFile]="image.file"
+                [maintainAspectRatio]="true"
+                [aspectRatio]="1 / 1"
+                format="png"
+                [canvasRotation]="image.rotation"
+                [transform]="image.transform"
+                (imageCropped)="imageCropped($event)"
+                (imageLoaded)="imageLoaded()"
+                (cropperReady)="cropperReady()"
+                (loadImageFailed)="loadImageFailed()">
+            </image-cropper>
+        </section>
+    </div>
+    <footer id="modal-footer" class="crop-footer">
+        <button (click)="flipHorizontal()" class="flip-horizontal" title="Flip Horizontal">
+            <span class="material-icons">flip</span>
+        </button>
+        <button (click)="flipVertical()" class="flip-vertical" title="Flip Vertical">
+            <span class="material-icons">flip</span>
+        </button>
+        <button (click)="rotateLeft()" class="flip-horizontal" title="Rotate Left">
+            <span class="material-icons">rotate_left</span>
+        </button>
+        <button (click)="rotateRight()" class="flip-vertical" title="Rotate Right">
+            <span class="material-icons">rotate_right</span>
+        </button>
+        <button id="modal-cancel-button" (click)="next()" class="crop-upload-next" *ngIf="(activeImageIndex+1) < totalImageCount">
+            Next <span class="material-icons">keyboard_arrow_right</span>
+        </button>
+        <button id="modal-cancel-button" (click)="upload()" class="crop-upload" *ngIf="(activeImageIndex+1) === totalImageCount">
+            Upload Image
+        </button>
+    </footer>
+</div>
+

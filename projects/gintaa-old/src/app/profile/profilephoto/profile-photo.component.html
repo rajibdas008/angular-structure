@@ -1,0 +1,64 @@
+<div class="profile-photo-row">
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="profile_img ">
+     
+      <div class="pro-bar">
+      <circle-progress
+  [percent]="this.userInfo.profileCompletionScore*100"
+  [radius]="100"
+  [outerStrokeWidth]="16"
+  [innerStrokeWidth]="16"
+  [outerStrokeColor]="'#51c878'"
+  [innerStrokeColor]="'#ffffff'"
+  [animation]="true"
+  [animationDuration]="300"
+></circle-progress>
+</div>
+
+      <figure class="figure custom_img g-left">
+        <img [src]="profileImageUrl" class="figure-img img-fluid rounded-circle" alt="profile"/>
+      </figure>
+
+      <div class="upload_button">
+        <!-- <h4 class="user-name-profile">{{profileName}}</h4> -->
+        <form #form class="upload_progress">
+          <input type="file" #fileUpload id="profile-photo" name="fileUpload" accept="image/*" style="display:none;"/>
+
+          <div class="image-preview mb-3" *ngIf="previewUrl">
+            <img [src]="previewUrl" height="300" />
+          </div>
+          <mat-card-actions>
+
+          <div class="btn-upload-btn">  
+           <button class="btn-upload" (click)="onSubmit()">
+              <span class="material-icons-outlined">add_a_photo</span>
+                <!-- <span class="upload-text">{{uploadComplete ? 'Change Photo' : 'Upload photo'}}</span> -->
+            </button>   
+          </div> 
+            <!-- <button class="btn-upload">
+              <span class="material-icons-outlined">add_a_photo</span>
+                <span class="upload-text">Change Photo</span>
+            </button>  -->
+
+          </mat-card-actions>
+          <div *ngIf="fileUploadProgress" class="upload_progress">
+            Upload progress: {{ fileUploadProgress }}
+          </div>
+        </form>
+      </div>
+
+      <div class="profile-rating-user">
+           <div class="profile-rating"> <h4>4.5 <span class="material-icons">star</span></h4> </div>
+           <div class="profile-reviewer"><h4> <span>0</span> Reviews & <span>0</span> Reports</h4></div>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+</div>
+</div>
+<div class="error">{{imageError}}</div>

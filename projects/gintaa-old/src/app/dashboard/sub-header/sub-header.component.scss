@@ -1,0 +1,66 @@
+.dash_status{
+	background: #edeef0;
+	padding: 2.438em 0em;	
+	border-bottom: 0.063em solid #c6c6c6;
+}
+ul.item-dash {
+	li {
+		margin-right: 3.75em;
+	}
+}
+.count {
+	width: 100%;
+	line-height: 1.875em;
+	h4 {
+		font-size: 1.125em;
+		font-weight: bold;
+		font-family: 'Montserrat', sans-serif;
+		text-align: right;
+		color: #0b2239;
+	}
+	span {
+		font-size: 0.875em;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: normal;
+		color: #5c5c5c;
+	}
+}
+.title_dash{
+	h2 {
+		font-size: 1.5em;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #0b2239;
+		text-align: left;
+		line-height: 2.25em;
+		font-family: 'Montserrat', sans-serif;
+	}
+}
+.btn_dashboard {
+	margin-top: 0.625em;
+}
+
+
+.dash_offer {
+	display: inline-block;
+	margin-top: 1em;
+	a {
+		font-size: 1em;
+		color: #ffffff;
+		background: #51c878;		
+		padding: 17px 19px 17px 16px;
+		border-radius: 0.438em;
+		-webkit-border-radius: 0.438em;
+		-moz-border-radius: 0.438em;
+		font-weight: 700;
+		&:hover {
+            color: #ffffff;
+            cursor: pointer;
+		}
+		i {
+			font-size: 1.875em;
+    		vertical-align: middle;
+		}
+	}
+}
+

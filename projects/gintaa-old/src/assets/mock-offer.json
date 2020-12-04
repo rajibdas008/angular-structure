@@ -1,0 +1,86 @@
+{
+    "success": true,
+    "code": 200,
+    "message": "All offers fetched successfully",
+    "payload": [
+        {
+            "offerId": "1589548937204",
+            "seOId": "foreign-language-translation-services-oid-1589548937204",
+            "name": "Foreign Language Translation Services",
+            "description": "Falling foreign-trade barriers and improved communication technology translate into success for language translators and interpreters. An ear for multiple languages puts you at the forefront of this global movement.\nOur office deals in the service providing of Foreign Language Translation Services which are reliable and give everlasting performance.These services are known for their great coordination between the client and the industry expert. To add on, these foreign language translation services are available at competitive prices.",
+            "desire": "Mobile",
+            "exchangeMode": "Item",
+            "location": {
+                "lat": 22.90416729999999,
+                "lng": 88.3812849,
+                "zip": "712103",
+                "regionId": null,
+                "subregionId": null,
+                "cityId": null,
+                "districtId": null,
+                "stateId": null,
+                "countryId": null,
+                "annotation": "Office",
+                "addressLine": "Hooghly Station Road, Kapasdanga Colony, Krishnapur, Chinsurah R S, Chinsurah, West Bengal, India"
+            },
+            "offerType": "Service",
+            "category": {
+                "categoryId": null,
+                "type": null,
+                "label": null,
+                "description": null,
+                "leafNode": null,
+                "breadcrumbs": [],
+                "tags": [],
+                "vertical": null,
+                "synonyms": [],
+                "imagePath": null,
+                "fullSearchScore": null,
+                "completionSearchScore": null,
+                "seoId": null,
+                "url": null
+            },
+            "totalOfferValuation": null,
+            "unitOfferValuation": null,
+            "images": [
+                {
+                    "name": "1589548937705.png",
+                    "orgName": "Service 10.png",
+                    "url": "https://gintaa-dev.s3-ap-south-1.amazonaws.com/S/3/2020/5/15/1589548937204/1589548937705.png",
+                    "displayIndex": ""
+                }
+            ],
+            "videos": [],
+            "documents": [
+                {
+                    "name": "1589548938118.pdf",
+                    "orgName": "Offer.pdf",
+                    "url": "https://gintaa-dev.s3-ap-south-1.amazonaws.com/S/3/2020/5/15/1589548937204/1589548938118.pdf",
+                    "displayIndex": ""
+                }
+            ],
+            "condition": null,
+            "hiddenPeriod": null,
+            "activeSince": "Today",
+            "facets": [],
+            "user": {
+                "profileId": "5ebe966d6c4d5168c18bc526",
+                "fName": "Pradip",
+                "lName": "Sen"
+            },
+            "startTime": "12:00:00",
+            "endTime": "18:00:00",
+            "startDate": "27-02-2020",
+            "endDate": "28-02-2020",
+            "availableDays": [
+                "MONDAY",
+                "TUESDAY",
+                "WEDNESDAY",
+                "THURSDAY",
+                "FRIDAY",
+                "SATURDAY",
+                "SUNDAY"
+            ]
+        }
+    ]
+}

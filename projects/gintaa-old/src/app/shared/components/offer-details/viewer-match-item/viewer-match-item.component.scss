@@ -1,0 +1,85 @@
+.match-item-viewer {
+    float: left;
+    width: 100%;
+    border-top: 0.125em solid #dddcdc;
+    border-bottom: 0.125em solid #dddcdc;
+    
+}
+
+.match_items{
+    padding: 1.125em 0em;
+    float: left;
+    width: 100%;
+}
+.match_items h2 {
+    float: left;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: #8225e1;
+    margin-bottom: 1.25em;
+}
+.match-product-row{
+    float: left;
+    width: 100%;
+}
+.match-left img{
+    float: left;
+}
+
+.col-padding-0 {
+    padding: 0em 0.625em 0em 0em;
+}
+
+.row-margin-0 {
+    margin: 0em;
+}
+
+.desire-details{
+    padding: 1.125em 0em;
+    float: left;
+    width: 100%;
+	h2{
+		font-size: 1.125em;
+        color: #0b2239;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        padding: 0em 0em 0.625em 0em;
+        float: left;
+        width: 100%;        
+	}
+	p{
+		font-size: 14px;
+        color: #000000;
+        float: left;
+        width: 100%;        
+        font-weight: normal;
+        font-family: "Open Sans", sans-serif;
+	}
+}
+
+.col-padding-0 .primary-card-77{
+    padding: 0.625em;
+}
+
+.border-lefts{
+    border-left: 0.125em solid #dddcdc; 
+}
+
+.match-login-now{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 43px 0px;
+}
+
+.login-now-match{ 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    padding: 16px 51px;
+    cursor: pointer;
+}   

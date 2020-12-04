@@ -1,0 +1,57 @@
+.recent_items {
+	background-image: url(/assets/images/bg-pattern.png);
+	height: auto;
+	background-repeat: repeat;
+	background-origin: border-box;
+	padding: 0em 0em 3.75em 0em;
+	float: left;
+	width: 100%;
+	position: relative;
+}
+.single-Product {
+	position: relative;
+	margin-bottom: 1.875em;
+}
+.recent-shw{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-title {
+	h3 {
+		padding: 0em;
+	}
+}
+
+.btn-load{
+	text-transform: uppercase;
+	color: #000000;
+	cursor: pointer;
+	padding: 20px 36px 19px 40px;
+}
+
+.load-row, .offer-row, .recent-item-row{
+	float: left;
+	width: 100%;
+}
+
+.load-row{
+	display: inline-table;
+    align-items: center;
+	justify-content: center;
+	margin-top: 80px;
+}
+
+.recent-item-top{
+	float: left;
+    width: 100%;
+	margin-top: 30px;
+	h2{
+		float: left;
+		width: 100%;
+	}
+	p{
+		float: left;
+		width: 100%;
+	}
+}

@@ -1,0 +1,164 @@
+// dashboard ongoing offers style
+
+
+.ongoing_offers {
+	padding: 50px 0 0 0;
+	min-height: 600px;
+	float: left;
+	width: 100%;
+	padding-top: 6em;
+}
+.ongoing_title {
+	h2 {
+		color: #0b2239;
+		font-size: 24px;
+		font-weight: bold;
+		font-family: $mont;
+		text-transform: uppercase;
+	}
+}
+.offers_list {
+	margin-top: 50px;
+	ul {
+		float: left;
+		width: 100%;
+		li {
+			border-bottom: 2px solid #edeef0;;
+			padding: 4px 11px 4px 13px;
+			float: left;
+			width: 100%;
+			&:first-child {
+				border-top: 2px solid #edeef0;;
+			}
+		}
+	}
+}
+.primary-offers-list {
+	float: left;
+	width: 100%;
+	.offer_left {
+		float: left;
+		display: inline-flex;
+		.offer-send-arrow {			
+			color: #b5eac7;	
+			margin-right: 15px;	
+			span{
+				line-height: 45px;
+			}	
+		}
+		.offer-receive-arrow {			
+			color: #cba9ea;	
+			margin-right: 15px;	
+			span{
+				line-height: 45px;
+			}		
+		}
+		.offer_date {
+			font-weight: normal;
+			font-size: 13px;			
+			color: #9b9b9b;
+			line-height: 45px;
+			font-family: "Open Sans", sans-serif;
+			margin-left: 13px;
+		}
+		.offer-image{
+			width: 45px;
+			height: 45px;
+			float: left;
+			img{
+				width: 100%;
+				height: 100%;
+				border-radius: 7px;
+				-webkit-border-radius: 7px;
+				-moz-border-radius: 7px;
+				object-fit: cover;
+                position: relative;
+			}
+		}
+		.offer_des {
+			font-weight: normal;
+			font-size: 14px;
+			font-family: "Open Sans", sans-serif;
+			color: #5c5c5c;
+			margin-left: 15px;
+			line-height: 45px;
+			text-transform: lowercase;
+			&::first-letter{
+				text-transform: capitalize;
+			}
+		}
+	}
+	.offer_right {
+		float: right;		
+		.offer_chat {
+			float: left;
+			a {
+				font-weight: bold;
+				font-size: 14px;
+				font-family: "Montserrat", sans-serif;
+				color: #b7b7b7;				
+				cursor: pointer;
+				line-height: 43px;				
+			}
+		}
+		.chat-count{
+			background: #f40046;
+			border-radius: 10px;
+			font-size: 10px;
+			color: #ffffff;
+			padding: 1px 5px;
+			font-family: 'Montserrat', sans-serif;
+			float: left;
+			margin: 12px 0px 0px 8px;
+		}
+	}
+}
+.img_atch {
+	display: inline-flex;
+	font-size: 14px;
+	margin-right: 10px;
+	font-weight: normal;
+	line-height: 24px;
+	i {
+		font-size: 24px;
+		margin-right: 5px;
+		color: #a5a5a5;
+	}
+}
+
+.offer-chat-active a{
+	color: #0b2239!important;
+}
+
+
+.no-content {
+	width: 100%;
+	background: #f3f3f3;
+	padding: 40px;
+	margin-top: 180px;
+	color: #000;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	img {
+		display: inline-block;
+		width: 40px;
+		height: auto;
+		margin-right: 15px;
+	}
+	h4 {
+		display: inline-block;
+		width: auto;
+		font-size: 16px;
+	}
+}
+
+.received-arrow-check{
+	color: #cba9ea;
+}
+
+.send-arrow-check{
+	color: #b5eac7;
+}

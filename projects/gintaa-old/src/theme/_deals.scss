@@ -1,0 +1,533 @@
+// dashboard deals style
+.deals_part {
+	padding-top: 6em;
+	min-height: 37.5em;
+}
+.deals_months {
+	float: left;
+	width: 100%;
+	.deal_title {
+		float: left;
+		h2 {
+			font-size: 1.5em;
+			font-weight: bold;
+			font-family: 'Montserrat', sans-serif;
+			color: #0b2239;
+			text-transform: uppercase;
+			line-height: 2.25em;
+			margin-right: 1.25em;
+		}
+	}
+}
+.chec_margin {
+	margin-top: 1.25em;
+	display: inline-flex;
+	float: right;
+}
+.select_month {
+	float: left;
+    width: 7.813em;
+    margin-top: 0.688em;
+}
+.my-select {
+	background-color: #edeef0;
+	color: #5F6162;
+	border: 0em none;
+	border-radius: 1.25em;
+	-webkit-border-radius: 1.25em;
+	-moz-border-radius: 1.25em;
+	padding: 0.188em 0.938em;
+    font-size: 0.875em;
+    height: 2.313em;
+    // line-height: 0.75em;
+}
+.custom-select {
+	&:focus {
+		box-shadow: none;
+	}
+}
+.no-content {
+	width: 100%;
+	background: #f3f3f3;
+	padding: 2.5em;
+	margin-top: 11.25em;
+	color: #000;
+	font-size: 1em;
+	text-align: center;
+	border-radius: 0.438em;
+	-webkit-border-radius: 0.438em;
+	-moz-border-radius: 0.438em;
+	img {
+		display: inline-block;
+		width: 2.5em;
+		height: auto;
+		margin-right: 0.938em;
+	}
+	h4 {
+		display: inline-block;
+		width: auto;
+		font-size: 1em;
+	}
+}
+
+
+.border_box {
+  margin: 0em;
+  padding: 0.938em 0.625em;
+  border: 0.063em solid #edeef0;
+  border-radius: 0.438em;
+  -webkit-border-radius: 0.438em;
+  -moz-border-radius: 0.438em;
+  margin-bottom: 0.625em;
+}
+
+.primary-deal-box {
+  float: left;
+  width: 100%;
+
+  .deal_left {
+    float: left;
+    display: inline-flex;
+
+    .deal_name {
+      font-weight: bold;
+      font-size: 1em;
+      font-family: $open-sans;
+      color: #50c878;
+    }
+
+    .deal_date {
+      font-weight: normal;
+      font-size: 0.875em;
+      font-family: 'Open Sans', sans-serif;
+      color: #5c5c5c;
+      margin-left: 0.75em;
+      line-height: 1.75em;
+    }
+  }
+
+  .deal_right {
+    float: right;
+    display: inline-flex;
+
+    .deal_call {
+      font-weight: normal;
+      font-size: 0.875em;
+      font-family: 'Montserrat';
+      color: #0b2239;
+      line-height: 1.75em;
+
+      span {
+        font-weight: bold;
+        margin-left: 0.75em;
+      }
+    }
+
+    .deal_chat {
+      a {                
+        font-weight: bold;
+        font-size: 1em;
+        font-family: $mont;
+        color: #50c878;
+        margin-left: 0.938em;
+        
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.secondary-deal-box {
+  float: left;
+  width: 100%;
+
+  .deal_left {
+    float: left;
+    display: inline-flex;
+
+    .deal_name {
+      font-weight: 600;
+      font-size: 1em;
+      font-family: "Open Sans", sans-serif;
+      color: #aaabab;
+    }
+
+    
+  }
+
+  .deal_right {
+    float: right;
+    display: inline-flex;
+
+    .deal_call {
+      font-weight: normal;
+      font-size: 0.875em;
+      font-family: "Montserrat", sans-serif;
+      color: #979797;
+      line-height: 1.875em;
+
+      span {
+        font-weight: bold;
+        font-weight: normal;
+        font-size: 0.875em;
+        font-family: "Montserrat", sans-serif;
+        color: #979797;
+      }
+    }
+
+    .deal_chat {
+      a {
+        font-weight: bold;
+        font-size: 0.875em;
+        font-family: "Montserrat", sans-serif;
+        color: #aaabab;
+        margin-left: 0.938em;
+        cursor: pointer;
+        span {
+          width: 0.313em;
+          height: 0.313em;
+          background: #7700e0;
+          border-radius: 100%;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+.highlight_row {
+    margin:0em;
+    padding: 15px 10px 8px 10px;
+    background-color: #ffffff;
+    border-radius: 0.438em;
+    -webkit-border-radius: 0.438em;
+    -moz-border-radius: 0.438em;
+    margin-bottom: 0.625em;
+    float: left;
+    width: 100%;
+}
+
+.deal_details {    
+    margin-top: 15px;
+    width: 100%;
+    float: left;
+}
+
+.deal_details .deal_give{
+    float: left;
+    // width: 4.188em;
+    // height: 4.188em;
+}
+
+.deal_details .arrow_alt{
+  float: left;
+}
+.deal_details .deal_give{
+  float: left;
+}
+
+.deal_details .deal_note{
+  float: left;
+}
+.deal-take-img{
+  float: left;
+}
+.deal-take-img span{
+  float: left;
+}
+
+.deal_plus{
+  float: left;
+}
+.deal-give-img{
+  float: left;
+}
+
+
+.img-fluid-give {
+  width: 4.188em;
+  height: 4.188em;
+  border-radius: 0.438em;
+  -webkit-border-radius: 0.438em;
+  -moz-border-radius: 0.438em;
+}
+
+.arrow_alt {
+  i {
+    line-height: 2em;
+    color:#8a7fd1;
+    font-size: 2em;
+    padding: 0em 0.313em;
+  }
+}
+
+.take_details {
+  display: inline-flex;
+}
+
+.add_deals {
+  background: #ffff;
+    min-width: 4.188em;
+    height: 4.188em !important;
+    border-radius: 0.438em;
+    -webkit-border-radius: 0.438em;
+    -moz-border-radius: 0.438em;
+    padding: 0em 0.313em;
+    width: auto;
+    float: left;
+
+  span {
+    font-size: 0.875em;
+    line-height: 4.688em;
+  }
+}
+
+.deal_plus {
+  i {
+    line-height: 2em;
+    color: #000000;
+    font-size: 2.188em;
+    padding: 0em 0.313em;
+  }
+}
+
+.deal_note {
+  margin: 0.625em 0em 0em 0.938em;
+
+  .give_note {
+    text-transform: uppercase;
+    color: #0b2239;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: $mont;
+
+    span {
+      text-transform: none;
+      font-weight: normal;
+      color: #010101;
+      font-size: 0.875em;
+      font-family: 'Open Sans', sans-serif;
+      margin-left: 1.125em;
+    }
+  }
+
+  .take_note {
+    text-transform: uppercase;
+    color: #6455c2;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: $mont;
+
+    span {
+      text-transform: none;
+      font-weight: normal;
+      color: #010101;
+      font-size: 0.875em;
+      font-family: 'Open Sans', sans-serif;
+      margin-left: 0.875em;
+    }
+  }
+}
+.status-date-deal{float: right; width: 100%; margin-top: -22px;}
+.dashboard-deal-status{float: right;}
+.dashboard-deal-status .class_cancelled, .dashboard-deal-status .class_initiated,
+.dashboard-deal-status .class_accepted, .dashboard-deal-status .class_rejected,
+.dashboard-deal-status .class_updated, .dashboard-deal-status .class_update_requested,
+.dashboard-deal-status .class_partial_closed,
+.dashboard-deal-status .class_closed {
+  font-weight: 600;
+  font-size: 0.75em;
+  font-family: "Montserrat", sans-serif;  
+  background-color: #f00;
+  color: #ffffff;
+  padding: 2px 8px 2px 8px;
+  border-radius: 1.25em;
+  -webkit-border-radius: 1.25em;
+  -moz-border-radius: 1.25em;
+  margin: 0.188em 1em 0em 0em;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+
+.dashboard-deal-status .class_initiated{
+  background-color: #fbcf00;
+  color: #ffffff;
+}
+.dashboard-deal-status .class_accepted{
+   background-color: #6555c3;
+   color: #ffffff;
+}
+
+.dashboard-deal-status .class_rejected{
+  background-color: #df0002;
+   color: #ffffff;
+}
+
+.dashboard-deal-status .class_updated{
+  background-color: #5ef366;
+   color: #ffffff;
+}
+
+.dashboard-deal-status .class_partial_closed{
+  background-color: #6555c3;
+   color: #ffffff;
+}
+
+.dashboard-deal-status .class_closed{
+  background-color: #f70736;
+   color: #ffffff;
+}
+
+.dashboard-deal-status .class_update_requested{
+   background-color: #7a7e7a;
+   color: #ffffff;
+}
+
+
+.month-check-group{
+  float: left;
+  width: 100%;
+  margin-bottom: 2.5em;
+}
+
+.deal-give-img span{
+  float: left;
+}
+
+.deal-details-row, .deal-title-row, .load-more-row, .no-more-row{
+  float: left;
+  width: 100%;
+}
+.start-end-group{
+    position: absolute;
+    left: 280px;
+    display: inline-flex;
+    box-shadow: 7px 1px 21px 2px #f8f7f7;
+    -webkit-box-shadow: 7px 1px 21px 2px #f8f7f7;
+    -moz-box-shadow: 7px 1px 21px 2px #f8f7f7;
+    border-radius: 60px;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border: 1px solid #c9c9c9;
+    padding-left: 10px;
+}
+.start-date-modal .mat-form-field-wrapper, .end-date .mat-form-field-wrapper {
+  padding-bottom: 0.188em;
+}
+
+.start-date-modal .mat-form-field-infix, .end-date .mat-form-field-infix { 
+  width: 107px;
+  padding: 0px;
+  border-top: 0px solid transparent;
+}
+.datepicker-four, .datepicker-two{
+  background: #ffffff;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: transparent!important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-ripple {
+    bottom: 0;
+    height: 0px!important;
+    
+}
+
+.cstart-date, .end-date-choose{
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+
+.start-date-modal .mat-form-field-wrapper .mat-form-field-flex, .end-date-modal .mat-form-field-wrapper .mat-form-field-flex  {
+  border-radius: 0!important;
+  padding: 0 0.75em 0 0.75em!important;
+  display: -webkit-inline-box;
+}
+
+.deal-bottom-row{
+  float: left;
+  width: 100%;
+}
+
+.deal_date {
+    font-weight: normal;
+    font-size: 0.875em;
+    font-family: "Open Sans", sans-serif;
+    color: #979797;
+    margin-left: 0.75em;
+    line-height: 1.8754em;
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+// new check box change start
+
+.styled-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+.styled-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  span{
+    vertical-align: top;
+    margin-top: -3px;
+  }
+}
+.styled-checkbox + label:before {
+  content: '';
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 1px solid #000000;
+}
+
+.styled-checkbox:checked + label:before {
+  background: #000000;
+}
+.styled-checkbox:disabled + label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+.styled-checkbox:disabled + label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+.styled-checkbox:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.mr-14{
+    margin-right: 14px;
+}
+
+// new check box change end

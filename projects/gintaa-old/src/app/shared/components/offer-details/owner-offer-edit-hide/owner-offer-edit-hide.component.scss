@@ -1,0 +1,104 @@
+.edit-hide-owneroffer{
+	float: left;
+	width: 100%;
+}
+.hide-edit {
+	float: right;
+	.btn_primary_icon {
+		background: #dedede;
+		color: #0b2239;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.875em;
+		font-weight: bold;
+		text-transform: capitalize;
+	}
+	.btn-hide-bg {
+		background: transparent;
+		color: #ef3e36;
+		margin-left: 1.25em;
+		padding-right: 0px;
+		span {
+			color: #ef3e36;
+		}
+	}
+}
+.owner-hide-area {
+	padding: 1.25em 0em;
+	float: left;
+	width: 100%;	
+}
+.send-deals-btn {
+	float: left;
+    cursor: pointer;    
+	padding: 0.563em 0em;
+	line-height: 26px;
+	h2 {
+		font-size: 0.875em;
+		font-weight: bold;
+		color: #000000;
+		font-family: "Montserrat", sans-serif;
+		text-transform: capitalize;
+		line-height: inherit;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	.user-hand {
+		width: 1.5em;
+		height: 1em;
+		margin-right: 0.313em;
+	}
+}
+.owner-user-engage {
+	float: left;
+	display: inline-flex;
+	margin: 0em 0.938em;
+}
+.owner-engage-with {
+	color: #0c2239;
+	font-size: 0.875em;
+	font-weight: normal;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0em 0.75em 0em 0em;
+	line-height: 44px;
+}
+.owner-me-counts {
+	h4 {
+		width: 2.25em;
+		height: 2.25em;
+		background: #8225e1;
+		color: #ffffff;
+		border-radius: 1000%;
+		-webkit-border-radius: 1000%;
+		-moz-border-radius: 1000%;
+		font-size: 0.875em;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 2.25em;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: normal;
+		margin-top: 0.438em;
+	}
+}
+.owner-talking-deals {
+	color: #0c2239;
+    font-size: 0.875em;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0em 0.75em;
+    line-height: 3.125em;
+}
+
+.offer-price{
+	float: left;
+	margin-right: 30px;
+}
+
+.offer-price h2{
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 40px;
+	position: relative;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0em;    
+    color: #333;
+}

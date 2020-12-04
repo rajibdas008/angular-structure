@@ -1,0 +1,65 @@
+.reject-pop-wrapper{
+    background: #ffffff;
+    padding: 20px;
+    width: 400px;
+    float: left;
+}
+
+.reject-title{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.reject-title h2{
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.reject-msg-input{
+    float: left;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.reject-msg-input .custom-reject-control{
+    border: 1px solid #9d9d9d;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+.reject-btn-group{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.reject-inline-group{
+    float: right;
+    display: inline-flex;
+}
+
+.cancel-reject-btn{
+    float: left;
+    margin-right: 10px;
+}
+
+.cancel-reject-btn a{
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.confirm-reject-btn{
+    float: right;
+}
+
+.confirm-reject-btn a{
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #e10404;
+}

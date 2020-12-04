@@ -1,0 +1,23 @@
+<section class="offer_details gintaa-bg-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <app-offer-slider></app-offer-slider>
+      </div>
+      <div class="col-lg-8 col-md-12 col-sm-12">
+        <app-offer-details-primary></app-offer-details-primary>
+        <app-owner-offer-edit-hide *ngIf="isOwner()"></app-owner-offer-edit-hide>
+        <app-owner-send-deal *ngIf="isOwner()"></app-owner-send-deal>
+        <app-viewer-match-item *ngIf="isViewer()"></app-viewer-match-item>
+        <app-viewer-send-deal *ngIf="isViewer()"></app-viewer-send-deal>
+        <!-- <app-viewer-send-deal *ngIf="isViewer()" (clickedChatBtn)="chatNow($event)"></app-viewer-send-deal> -->
+        <app-owner-match-items *ngIf="isOwner()"></app-owner-match-items>
+        <app-offer-details-secondary></app-offer-details-secondary>
+        <app-owner-others-offers *ngIf="isOwner()"></app-owner-others-offers>
+        <app-viewer-others-offers *ngIf="isViewer()"></app-viewer-others-offers>
+        <app-viewer-similar-offer-others-users *ngIf="isViewer()"></app-viewer-similar-offer-others-users>
+      </div>
+    </div>
+    <app-related-products></app-related-products>
+  </div>
+</section>

@@ -1,0 +1,95 @@
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="owner-chat-header" *ngIf="chatService.getAllRoomUserDetails().length">
+                <div class="chat-user-area">                     
+                   <div class="chat-me-box"><h4>Me</h4> </div>
+                   <div class="users-boxs user-bg user-box-border" *ngIf="!chatService.chatConnect.isOfferOwner"><img [src]="chatAllUsers[chatAllUsers.length-1].ownerDisplayImage || 'assets/images/sm-dp.jpg'" alt="images" class="user-img img-fluid "> </div>  
+                   <div class="chat-all-box" *ngIf="chatService.chatConnect.isOfferOwner"><h4>All</h4> </div>
+                </div>
+    
+                <div class="chats-user">
+                    <div class="users-area">
+                     <ul class="chat-all-users"  *ngIf="chatService.chatConnect.isOfferOwner">
+                        <li *ngFor="let room of chatService.getAllRoomUserDetails()">
+                            <div class="users-boxs user-bg user-box-border">                
+                                <div class="online"></div>
+                                <div class="offline"></div>
+                                <img [src]="room.initiatorDisplayImage || 'assets/images/sm-dp.jpg'" alt="images" class="user-img img-fluid " (click)="switchRoom(room)"> 
+                                <!-- <div class="user-name">st</div>                             -->
+                             </div>
+                        </li>
+                         <!-- <li>
+                            <div class="users-boxs user-bg user-box-border">                
+                                <div class="online"></div>
+                                <div class="offline"></div>
+                                <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+                                <div class="user-name">st</div>                            
+                             </div>
+                         </li>
+                         <li>
+                            <div class="users-boxs user-bg user-box-border">                
+                                <div class="online"></div>
+                                <div class="offline"></div>
+                                <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid ">  
+                                <div class="user-name">st</div>                           
+                             </div>
+                         </li>
+                         <li>
+                            <div class="users-boxs user-bg user-box-border">                
+                                <div class="online"></div>
+                                <div class="offline"></div>
+                                <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid ">
+                                <div class="user-name">st</div>                            
+                             </div>
+                         </li>
+                         <li>
+                            <div class="users-boxs user-bg user-box-border">                
+                                <div class="online"></div>
+                                <div class="offline"></div>
+                                <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid ">
+                                <div class="user-name">st</div>                            
+                             </div>
+                         </li>
+                         <li>
+                            <div class="users-boxs user-bg user-box-border">                
+                                <div class="online"></div>
+                                <div class="offline"></div>
+                                <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid "> 
+                                <div class="user-name">st</div>
+                             </div>
+                         </li> -->
+                     </ul>                     
+                    </div>                   
+                </div>
+                
+            </div>
+           <!-- <div class="viewer-chat-header" *ngIf="chatService.isOfferViewer()">
+            <div class="chat-user-area">                     
+               <div class="chat-me-box"> <h4>Me</h4> </div>                                      
+            </div>
+
+            <div class="chats-user">
+                <div class="users-area">             
+    
+                 <ul class="chat-all-users chat-ml">
+                     <li>
+                        <div class="users-boxs user-bg user-box-border">                
+                            <div class="online"></div>
+                            <div class="offline"></div> 
+                            <img src="assets/images/sm-dp.jpg" alt="images" class="user-img img-fluid ">                                                     
+                         </div>
+                     </li>
+                    
+                 </ul>
+                 
+                </div>
+               
+            </div>
+            <div class="type-massage" *ngIf="isTyping">
+                <h2>typing...</h2>
+           </div>
+           </div> -->
+        </div>
+    </div>
+

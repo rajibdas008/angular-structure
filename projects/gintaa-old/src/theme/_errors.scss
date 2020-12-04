@@ -1,0 +1,11 @@
+.primary-error{
+    position: $position-absolute;
+    font-size: $txt-xs-13;
+    color: $secondary-red;
+    font-family: $open-sans;
+    font-weight: $txt-regular;
+    margin-top: 0.313em;
+}
+.primary-error .frmtxt-guide{
+    color: $secondary-dark;
+}

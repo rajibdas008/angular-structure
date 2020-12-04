@@ -1,0 +1,42 @@
+.user_status {
+	background: #ffffff;
+	padding: 1.75em 0em;
+	-webkit-box-shadow: 0em 0.625em 1.625em -0.375em #c8c8c8;
+       -moz-box-shadow: 0em 0.625em 1.625em -0.375em #c8c8c8;
+			box-shadow: 0em 0.625em 1.625em -0.375em #c8c8c8;
+    position: relative;
+}
+ul.item-count {
+	li {
+		margin-right: 3.75em;
+	}
+}
+.count {
+	width: 100%;
+	line-height: 1.875em;
+	h4 {
+		font-size: 1.125em;
+		font-weight: bold;
+		font-family: 'Montserrat', sans-serif;
+		text-align: right;
+	}
+	span {
+		font-size: 0.875em;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: normal;
+	}
+}
+.title_status {
+	h2 {
+		font-size: 1.5em;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #0b2239;
+		text-align: left;
+		line-height: 2.5em;
+		font-family: 'Montserrat', sans-serif;
+	}
+}
+.btn_dashboard {
+	margin-top: 0.625em;
+}

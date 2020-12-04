@@ -1,0 +1,45 @@
+<section class="dash_status">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-12 col-sm-12">
+                <div class="title_dash">
+                    <h2>Dashboard</h2>
+                </div>
+            </div>  
+
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <ul class="item-dash nav">
+                    <li class="nav-item"><div class="count"><h4>0</h4> <span>Unread Chat</span></div></li>
+                    <li class="nav-item"><div class="count"><h4>{{(dealStat$ | async)?.receivedDeals}}</h4> <span>New Deals</span></div></li>
+                    <li class="nav-item"><div class="count"><h4>{{ draftCount }}</h4> <span>Draft Offer</span></div></li>
+                    <li class="nav-item">
+                        <div class="count">
+                            <h4 *ngIf="dealStat$ | async as dealStat; else noDeal">
+                                {{ dealStat.onGoingReceivedOffers + dealStat.onGoingSentOffers }}
+                            </h4>
+                            <ng-template #noDeal>
+                                <h4>0</h4> 
+                            </ng-template>
+                            <span>Ongoing Offers</span>
+                        </div>
+                    </li>
+                    <li class="nav-item"><div class="count"><h4>Rs. 0</h4> <span>Net Transaction</span></div></li>                                       
+                </ul>
+            </div>    
+            
+            <div class="col-lg-2 col-md-12 col-sm-12 pl-15">
+                <div class="dash_offer">
+                     <!-- <a [routerLink]="['/add-new-offer']" routerLinkActive="router-link-active"><i
+                    class="material-icons"> add </i> Add new offer</a> -->
+                    <a (click)="checkUserProfile()">
+                        <i class="material-icons"> add </i> Add new offer</a>
+                </div>
+            </div>
+               
+            </div>
+        </div>
+    
+
+
+</section>

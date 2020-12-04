@@ -1,0 +1,71 @@
+<section class="head_up login-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12 order-md-1 order-sm-2 order-2">
+                <app-userappstore></app-userappstore>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12 order-md-2 order-sm-1 order-1">
+                <div class="head_profile">
+                    <div class="login-start-top">
+                        <h2 class="login-title">Excellent!</h2>
+                        <p class="login-prar lpr-custom">Please enter the one time password sent to
+                            <span>{{this.userInfo.mblNo}}</span></p>
+                    </div>
+
+                    <div class="login_form">
+                        <form #userForm="ngForm" class="login-start">
+
+                            <div class="form_group otp-verify-add">                                                         
+                                <div class="otp_box">
+                                    <ng-otp-input 
+                                        #ngOtpInput 
+                                        (onInputChange)="onOtpChange($event)" 
+                                        [config]="config" 
+                                        (keyup)="onKeyupEvent($event)"
+                                        (paste)="onPasteOtp($event)">
+                                    </ng-otp-input>                                   
+                                </div>
+                                <div class="text-danger">
+                                    <div *ngIf="!isValidOtp">Invalid OTP</div>
+                                </div>
+                            </div>                            
+                            <div id="recaptcha-container"></div>
+                            <button 
+                                type="submit"
+                                type="submit" 
+                                [disabled]="isVerifyOtp() || isProcessVerify"
+                                class="btn_primary g_width font-s18 padding-primarys verify-btn" 
+                                (click)="logIn()">
+                                <span  [@fadeAnimation]="isProcessVerify">{{isProcessVerify ? 'verifying' : 'verify'}}
+                                </span>
+                            </button>
+                        </form>
+                        <h4 class="auth_term pt-43">If you didn’t receive code! <span *ngIf="showTimer && counter!== 0">{{countDown | async | formatTimer}}</span>
+                            <button *ngIf="counter === 0" type="submit" class="btn-style-resend g-danger resend-btn" (click)="resendOtp()">
+                                Resend
+                            </button>
+                        </h4>
+                        <!-- <h3 *ngIf="counter === 0" class="bcktnumb">Entered a wrong number? <a routerLink="/login">Go back</a></h3> -->
+                        <div class="social_login">
+                            <h2 class="social-auth pt-0">or sign in with</h2>
+                            <div class="social-login-row social-login-inline">
+                                <button type="submit" class="btn_primary_social or-btn gmr-14" (click)="signInWithGoogle()">
+                                    <i class="fa fa-google"></i> Google
+                                </button>
+                                <button type="submit" class="btn_primary_social or-btn gmr-14" (click)="signInWithFacebook()">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </button>
+                                <button type="submit" class="btn_primary_social or-btn">
+                                    <i class="fa fa-envelope-o"></i> Email
+                                </button>
+                            </div>
+                            <h4 class="auth-term mt-32">by joining you agree to our <a href="#">terms &
+                                    policy</a> </h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

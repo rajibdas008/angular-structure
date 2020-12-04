@@ -1,0 +1,223 @@
+.sidebar-fixed{
+    // position: fixed;
+    width: 411px;
+}
+.add-new-shadow{
+	background-image: url(/assets/images/add-new-img-shadow.png);
+    height: 38.563em;
+    background-repeat: no-repeat;
+    background-position: right 0px top 0;
+}
+
+.add-new-right{
+	padding-right: 1.875em;
+}
+
+.pr-0{
+    padding-right: 0px;
+}
+
+.percent-left{
+    width: 100%;
+    float: left;
+}
+
+.upload-image-wrapper{
+    float: left;
+    width: 100%;
+}
+ul.thum_img {
+    float: left;
+    width: 100%;
+    // max-height: 178px;
+    // overflow-y: auto;
+
+    li {
+        float: left;       
+        margin:0em 0.875em 0.875em 0em;
+        width: 4.688em;
+        height: 4.688em;
+        overflow: hidden;
+        border-radius: 0.438em;
+        -webkit-border-radius: 0.438em;
+        -moz-border-radius: 0.438em;
+        border: 0.063em solid #c3c3c3;
+        position: relative;
+
+        .remove_button {
+            position: absolute;
+            z-index: 9;
+            top: 0;
+            right: 0;
+            background: #ff0000;
+            border-radius: 0em 0em 0em 0.875em;
+            -webkit-border-radius: 0em 0em 0em 0.875em;
+            -moz-border-radius: 0em 0em 0em 0.875em;
+            height: 1.25em;
+            width: 1.25em;
+
+            &:last-child {
+                cursor: pointer;
+            }
+
+            i {
+                border-radius: 0em 0em 0em 1.313em;
+                font-size: 1.063em;
+                color: #ffffff;
+                padding: 0.063em 0em 0em 0.188em;
+            }
+
+        }
+    }
+}
+
+ul.thum_img li:first-child {
+    border: none !important;
+}
+
+.img-size {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+
+.upload_title {
+    font-size: 13px;
+    padding: 22px 0px 18px 0px;
+    color: #0c2239;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+}
+
+.photo_btn {
+
+    .mat-warn {
+        background-color: #edeef0;
+        padding: 0.5em;
+        height: 5.375em;
+        width: 5.375em;
+    }
+
+    i {
+        font-size: 2.5em;
+        color: #000000;
+    }
+
+    h4 {
+        font-size: 0.75em;
+        text-transform: uppercase;
+        margin: 0.125em 0em 0.313em 0em;
+    }
+}
+
+
+.offer_img {
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    border-radius: 0.438em;
+    -webkit-border-radius: 0.438em;
+    -moz-border-radius: 0.438em;
+    max-height: 23.75em;
+    min-height: 23.75em;
+    background-color: #eaeaea;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.offer_title {
+    color: #010101;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1.25em;
+    float: left;
+    width: 100%;
+}
+
+
+
+.carousel-item {
+    perspective: unset;
+    height: 100%;
+
+    video {
+        width: 100%;
+        height: 100%;
+        max-height: 23.75em;
+        min-height: 23.75em;
+        background: #000000;
+        overflow: hidden;
+    }
+}
+
+.vthum-size {
+    background-position: center;
+    background-size: cover;
+    width: 5.375em;
+    height: 5.375em;
+}
+
+.add-slider-height {
+    .carousel-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        height: 23.75em;
+    }
+}
+
+.upload-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #edeef0;
+    padding: 0.5em;
+    height: 4.688em;
+    width: 4.688em;
+
+    img {
+        width: 100%;
+        margin-top: 1.625em;
+    }
+}
+
+.progress {
+    background-color: none;
+}
+
+.thum-video {
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.carousel-control-prev {
+    top: 160px;
+    bottom: 6.125em;
+}
+
+.carousel-control-next {
+    top: 160px;
+    bottom: 6.125em;
+}
+
+
+::ng-deep vg-player.native-fullscreen video {
+    height: 100% !important;
+    max-height: 100% !important;
+    width: 100% !important;
+}

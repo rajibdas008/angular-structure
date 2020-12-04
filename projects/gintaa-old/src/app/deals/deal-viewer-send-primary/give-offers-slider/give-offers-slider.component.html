@@ -1,0 +1,94 @@
+<div class="row">    
+
+    <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="modifiedOfferList">
+      <div class="pre_next" *ngIf="showSliderButtons">
+        <a class="arrow_left" (click)="owlCar.prev()"><i class="material-icons">keyboard_arrow_left</i></a>
+        <a class="arrow_right" (click)="owlCar.next()"><i class="material-icons">keyboard_arrow_right</i></a>
+      </div>
+      <owl-carousel-o [options]="customOptions" (translated)="getPassedData($event)" #owlCar>
+        <ng-template
+            carouselSlide
+            *ngFor="let offer of modifiedOfferList">
+            <div class="can_get crl-card">
+                <div class="single-Product">
+                    <div class="product-img primary-card-155">
+                        <img [src]="offer.image"
+                            class="rounded img-fluid"
+                            alt="product image"
+                            [title]="offer.name"
+                            [routerLink]="['/offer-details', 'view', offer.offerId]"
+                            (click)="onDialogClose()" />
+                        <div class="img-title">
+                            <h2>{{ offer.name }}</h2>
+                            <h4>{{ offer.description }}</h4>
+                        </div>
+                        <div class="checkbox-container">
+                            <span class="checkbox">
+                                <input class="checkbox__input" type="checkbox" 
+                                    [id]="offer.offerId"
+                                    [checked]="offer.selected ? true: false"
+                                    (change)="chooseItemQuantity($event, offer.offerId, offer.quantity, offer.offerType)" />
+                                <label for="{{ offer.offerId }}"></label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <!--
+            ADDED A HIDDEN ELEMENT WITH THE SAME WIDTH
+            SO THAT WE CAN GOTO THE LAST OFFER IN THE LIST AND CHECK THE LAST ITEM
+            NOT A GREAT SOLUTION. NEED TO REPLACE THE OWL CAROUSEL LATER.
+        -->
+        <ng-template carouselSlide>
+            <div class="can_get crl-card invisible">
+                <div class="single-Product">
+                    <div class="product-img primary-card-155">
+                        <img src="assets/images/no-image.svg"
+                            class="rounded img-fluid"
+                            alt="No Image"
+                            title="No Title" />
+                        <div class="img-title">
+                            <h2>Invisible</h2>
+                            <h4>No description</h4>
+                        </div>
+                        <div class="checkbox-container">
+                            <span class="checkbox">
+                                <input class="checkbox__input" type="checkbox" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        
+      </owl-carousel-o>
+
+    </div>
+
+</div>
+
+<div class="modal qty-modal" role="dialog" *ngIf="showItemQuantityBox" style="display: block;">
+    <div class="modal-dialog qty-modal-dialog" role="document" >
+       
+        <div class="modal-content qty-modal-content" >
+            <div class="remove-quantity-popup">
+                <span class="material-icons" (click)="onCloseQuantityPopup()">close</span>
+            </div>
+            <div class="modal-header qty-modal-header">
+                <h5 class="modal-title qty-modal-title">Select Quantity</h5>
+            </div>
+            <div class="qty-modal-body">
+                <input type="number" class="qty-input-max" id="quantity" name="quantity"
+                    min="1" [max]="updatedOfferQuantity.offerItemCount" 
+                    [placeholder]="updatedOfferQuantity.offerUpdatedCount"
+                    [(ngModel)]="updatedOfferQuantity.offerUpdatedCount"
+                    (ngModelChange)="nQuantityChange()">
+                <button type="button" class="btn-qty-custom"
+                    [ngClass]="{'btn-qty-custom-disabled': updatedOfferQuantity.invalid}"
+                    (click)="modifyOfferQuantity()"
+                    [disabled]="updatedOfferQuantity.invalid ">Done</button>
+            </div>
+        </div>
+    </div>
+</div>

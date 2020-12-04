@@ -7,12 +7,7 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
 
-declare const require: {
-  context(path: string, deep?: boolean, filter?: RegExp): {
-    keys(): string[];
-    <T>(id: string): T;
-  };
-};
+declare const require: any;
 
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(
@@ -20,6 +15,13 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-const context = require.context('./', true, /\.spec\.ts$/);
+// const context = require.context('./', true, /\.spec\.ts$/);
+
+// for running a particular file
+const context = require.context('./', true, /offer\.service\.spec\.ts$/);
+
+// Run Karma on module base
+// const context = require.context('app/module-name/', true, /\.spec\.ts$/);
+
 // And load the modules.
 context.keys().map(context);

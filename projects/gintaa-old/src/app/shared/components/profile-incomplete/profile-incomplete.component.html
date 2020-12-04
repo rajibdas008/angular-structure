@@ -1,0 +1,9 @@
+<div class="incomplete-profile-wrapper">    
+      <app-mobile-verify-otp *ngIf="profileIncomplete.openModalVal === 'profileMobileVerify'" [profileObj]="profileIncomplete"></app-mobile-verify-otp>
+      <app-email-verify-otp *ngIf="profileIncomplete.openModalVal === 'profileEmailVerify'" [profileObj]="profileIncomplete"></app-email-verify-otp>
+      <app-mob-number-verify *ngIf="profileIncomplete.openModalVal === 'profileMobile'" [profileObj]="profileIncomplete"></app-mob-number-verify>
+      <app-profile-email-verify *ngIf="profileIncomplete.openModalVal === 'profileEmail'" [profileObj]="profileIncomplete"></app-profile-email-verify>
+      <app-profile-name-verify  *ngIf="profileIncomplete.openModalVal === 'profileName'" [profileObj]="profileIncomplete"></app-profile-name-verify>
+</div>
+
+

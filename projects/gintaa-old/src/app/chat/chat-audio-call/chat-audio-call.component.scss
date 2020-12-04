@@ -1,0 +1,248 @@
+.chat-audio-wrapper{
+    width: 1170px;
+    height: 670px;
+    background: #efefef;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+
+.remove-audio-page {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 99;
+    color: #000000;
+}
+
+.remove-audio-page:hover {
+    cursor: pointer;
+}
+
+.audio-main{
+    float: left;
+    width: 100%;
+}
+
+.audio-top{
+    float: left;
+    width: 100%;
+    // background: red;
+    height: 510px;
+    border-radius: 7px 0px 0px 0px;
+    -webkit-border-radius: 7px 0px 0px 0px;
+    -moz-border-radius: 7px 0px 0px 0px;    
+    background: #e1ffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e1ffff 0%, #e1ffff 12%, #e1ffff 20%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #e1ffff 0%,#e1ffff 12%,#e1ffff 20%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #e1ffff 0%,#e1ffff 12%,#e1ffff 20%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-9 */
+
+}
+
+.audio-user{
+    float: left;
+    width: 100%;
+    margin-top: 140px;
+}
+
+.audio-user-img, .audio-user-name, .user-talk-time, .audio-icon-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-user-img img{
+    width: 180px;
+    height: 175px;
+    border: 6px solid #ffffff;
+    border-radius: 50%;
+}
+
+.audio-user-name h2{
+    margin: 25px 0px 15px 0px;
+    color: #0c2239;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+}
+
+.user-talk-time h4{
+    color: #0c2239;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+}
+
+.audio-icon-list ul{
+    display: inline-flex;
+}
+
+.audio-icon-list ul li{
+    font-size: 14px;
+    color: #101a3d;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+.audio-icon-list ul li:last-child{
+    margin-right: 0px;
+}
+
+
+
+.chat-call-end .call-start{
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #7d7d7d;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.chat-call-end .call-end{
+    width: 44px;
+    height: 44px;
+    background: #f15049;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+
+.chat-audio-call .audio-on{
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #7d7d7d;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.chat-audio-call .audio-off{
+    width: 44px;
+    height: 44px;
+    background: #1d344d;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+
+.video-call-end .vcall-on{
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #7d7d7d;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.video-call-end .vcall-off{
+    width: 44px;
+    height: 44px;
+    background: #1d344d;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.chat-outline .chat-bubble{
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #7d7d7d;
+    line-height: 44px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.audio-deal .deal-hand-icon{
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #7d7d7d;
+    line-height: 39px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.audio-bottom{
+    float: left;
+    width: 100%;
+    padding: 58px 0px;
+}

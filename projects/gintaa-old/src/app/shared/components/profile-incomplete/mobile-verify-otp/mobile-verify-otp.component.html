@@ -1,0 +1,49 @@
+<div class="mobile-wrapper">
+
+  <div class="remove-popup">
+    <span class="material-icons" (click)="closeDialog()">close</span>
+  </div>
+
+  <div class="otp_profile">
+    <div class="otp-top-bg">
+      <img src="assets/images/otp-mobile-bg.png" alt="image" class="img-fluid" />
+    </div>
+    <div class="otp_Title">
+      <h4>We have send the otp at <span> {{profileObj.phone}} </span></h4>
+    </div>
+    <div class="otp_form">
+      <form #OtpForm="ngForm" class="otp-start" (ngSubmit)="verifyPhoneOtp()">
+        <div class="form_group">
+          <div class="otp_box">
+            <ng-otp-input 
+              (onInputChange)="onOtpChange($event)" 
+              [config]="config"
+              #ngOtpInputPhone
+              (paste)="onPastePhoneOtp($event)">
+            </ng-otp-input>
+            <div *ngIf="serverPhoneError" class="text-danger primary-error">
+              <div>{{ serverPhoneError }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="otp_button">
+          <button type="submit" class="verify_otp">
+            Verify OTP
+          </button>
+        </div>
+      </form>
+      <div class="otp_term">
+        <div class="otp_resend">
+          <p>If you didn't receive code!</p>
+          <span *ngIf="showTimer && counter !== 0">
+            {{ countDown | async | formatTimer }}
+          </span>
+          <button *ngIf="counter === 0" type="button" class="resend_otp" (click)="resendOtpForPhone()">
+            Resend
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

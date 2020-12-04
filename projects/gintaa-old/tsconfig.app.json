@@ -2,7 +2,14 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@gintaa/*": ["projecs/gintaa-old/src/app/*"],
+      "@gintaa/service/*": ["projecs/gintaa-old/src/app/common/service/*"],
+      "@gintaa/model/*": ["projecs/gintaa-old/src/app/model/*"],
+      "@gintaa/shared/*": ["projecs/gintaa-old/src/app/shared/*"],
+      "@gintaa/env": ["projecs/gintaa-old/src/environments/environment"],
+    },
   },
   "files": [
     "src/main.ts",

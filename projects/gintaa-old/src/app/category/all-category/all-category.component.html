@@ -1,0 +1,143 @@
+
+<div class="cat-wrapper-section">
+
+<div class="clear-search-history" *ngIf="categoryService.paramList.length || categoryService.leafNodeCategoryId">
+  <a (click)="resetAllFilter()"><span class="material-icons">clear</span>Clear All</a> 
+</div>
+<div class="all-category"><h2 class="cate_Title">All Category</h2></div>
+
+<div class="cate_type" *ngIf="(categoryService.categoryDetails$ | async) as categoryDetails">
+    <!-- <ul class="nav flex-column"> -->
+        <!-- <li class="nav-item"><a [routerLink]="['/category']" [queryParams]="{'test':'value'}" queryParamsHandling="merge">Used Car</a></li>
+        <li class="nav-item"><a href="#">House & Apartments</a></li>
+        <li class="nav-item"><a href="#">Car</a></li>
+        <li class="nav-item"><a href="#">Commercial Vehicles</a></li>
+        <li class="nav-item"><a href="#">Spare Parts</a></li>
+        <li class="nav-item"><a href="#">Other Vehicles</a></li>
+        <li class="nav-item"><a href="#">Mobile Phones</a></li>
+        <li class="nav-item"><a href="#">Tablets</a></li>
+        <li class="nav-item"><a href="#">Used Car</a></li>
+        <li class="nav-item"><a href="#">House & Apartments</a></li> -->
+        <!-- <li class="category-list" (click)="subCategory()" *ngFor="let category of categoryDetails.categories">
+            {{category.label}}
+        </li>
+    </ul>     -->
+    <!-- <ul class="nav flex-column">
+        <li class="category-list" *ngFor="let primaryFacet of categoryDetails.primaryFacets">
+            {{primaryFacet.key}} -->
+            <!-- <ul>
+                
+                <li
+                    (click)="selectedItem(primaryFacet.key, secondaryFacet, $event)" 
+                    *ngFor="let secondaryFacet of primaryFacet.secondaryFacets"
+                    [ngClass]="{'highlighted': secondaryFacet['highlight']}"
+                    class="sub-category-list">
+                        {{secondaryFacet.key}}({{secondaryFacet.value}})                 
+                </li>
+            </ul> -->
+        <!-- </li>
+    </ul> -->
+    <!-- category populate start -->
+   <div class="cat-list-tree"> 
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+      <ul>
+        <!-- This is the tree node template for leaf nodes -->
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+          <li id="mat-tree-node" class="mat-tree-node" (click)="itemSelectionLeafNode(node)">
+            <!-- use a disabled button to provide padding for tree leaf -->
+            <button mat-icon-button disabled aria-labelledby="mat-tree-node"></button>
+            {{node.label}}
+          </li>
+        </mat-tree-node>
+        <!-- This is the tree node template for expandable nodes -->
+        <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+          <li>
+            <div class="mat-tree-node">
+              <button mat-icon-button matTreeNodeToggle
+                      [attr.aria-label]="'toggle ' + node.label" (click)="itemSelectionToggle(node)">
+                <mat-icon class="mat-icon-rtl-mirror">
+                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+                  <!-- {{treeControl.isExpanded(node) ? 'chevron_right' : 'expand_more'}} -->
+                </mat-icon>
+              </button>
+              {{node.label}}
+            </div>
+            <!-- <ul [class.example-tree-invisible]="treeControl.isExpanded(node)" style="padding-left: 20px;"> -->
+            <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)" style="padding-left: 20px;">
+              <ng-container matTreeNodeOutlet></ng-container>
+            </ul>
+          </li>
+        </mat-nested-tree-node>
+      </ul>
+    </mat-tree>
+  </div>
+
+
+  <div class="cat-search-list">
+
+    <div class="cat-filter">
+         <h2>Filters</h2>
+         <h3>clear all</h3>
+    </div>
+
+    <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+               [removable]="removable" (removed)="remove(fruit)">
+        {{fruit.name}}
+        <mat-icon matChipRemove *ngIf="removable">close</mat-icon>
+      </mat-chip>      
+    </mat-chip-list>
+  </div>
+
+
+
+
+
+    <!-- !treeControl.isExpanded(node) category populate end -->
+    <div class="price-slider" *ngIf="isBrowser && categoryDetails.minPrice">
+      <div class="price-slider-title">
+        <h2>Value</h2>
+        <h3>clear</h3>
+      </div>
+     <div class="price-slider-range"> 
+      <ng5-slider [(value)]="categoryService.priceMin"
+          [(highValue)]="categoryService.priceMax"
+          [options]="{
+            floor: categoryService.priceMin,
+            ceil: categoryService.priceMax,
+            draggableRange: true,
+            ariaLabel: 'Choose price range',
+            ariaLabelHigh: 'Max price available'
+          }"
+          (userChangeStart)="onUserChangeStart($event)"
+          (userChange)="onUserChange($event)"
+          (userChangeEnd)="onUserChangeEnd($event)">
+      </ng5-slider>
+    </div>
+    </div>
+
+   
+    <mat-list class="listhead">
+        <ng-container *ngFor="let primaryFacet of categoryDetails.primaryFacets">
+            <mat-list-item [ngClass]="{'exchnge-mode': primaryFacet.key === 'Exchange Mode'}">
+              {{primaryFacet.key === 'Exchange Mode' ? 'Barter Type' : primaryFacet.key | titlecase}}
+              <div class="clear-item">clear</div>
+            </mat-list-item>
+
+            <mat-list class="list-item">
+                    <mat-list-item *ngFor="let secondaryFacet of primaryFacet.secondaryFacets">
+                        <mat-checkbox
+                            (click)="$event.stopPropagation()"
+                            (change)="$event ? toggleItem(primaryFacet.key, secondaryFacet, $event) : null"
+                            [checked]="exists(primaryFacet.key, secondaryFacet)">
+                            <!-- [checked]="secondaryFacet['highlight'] || false"> -->
+                            {{secondaryFacet.key | titlecase}}({{secondaryFacet.value || 0}})
+                        </mat-checkbox>
+                    </mat-list-item>
+            </mat-list>
+        </ng-container>
+    </mat-list>  
+</div>
+
+
+</div>

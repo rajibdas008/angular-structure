@@ -1,0 +1,44 @@
+<div class="mobile-wrapper">
+
+    <div class="remove-popup">
+        <span class="material-icons" (click)="closeDialog()">close</span>
+    </div>
+
+    <div class="otp_profile plr-27">
+        <div class="profile-tile">
+            <h1>Your are just 1Step Away</h1>
+        </div>
+        <div class="profile-des">
+            <h2>Complete your basic information to upload item/service
+                and get more benefits from <span>GINTAA</span></h2>
+        </div>
+        <div class="profile-input">
+            <form class="input-form" name="form" #f="ngForm" novalidate (ngSubmit)="f.form.valid && onSubmit()">
+                <div class="secondary_group">
+                    <div class="secondary-wrap validate-input">
+                        <span class="secondary-label">Phone Number</span>
+                        <input class="secondary-input" type="text" 
+                        name="profileMobile" [(ngModel)]="profileMobile"  placeholder="Enter your Phone number"
+                        #userMobile="ngModel" [ngClass]="{ 'is-invalid': f.submitted && userMobile.invalid }" pattern="^[7-9][0-9]{9}$"
+                        maxLength="10" minlength="10" (keyup)="serverPhoneError = null" numbersOnly required>
+                       
+                    </div>
+                    <div *ngIf="f.submitted && userMobile.invalid" class="text-danger primary-error">
+                        <div *ngIf="userMobile.errors.required">Phone is required</div>
+                        <div *ngIf="userMobile.errors.maxLength || userMobile.errors.minlength">Phone number must be 10 digits</div>
+                        <div *ngIf="userMobile.errors.pattern">Phone number is invalid</div>
+                    </div>
+                    <div class="text-danger primary-error" *ngIf="!userMobile.invalid && serverPhoneError">{{ serverPhoneError }}</div>
+                </div>
+                
+               <div class="next-btn-bottom">
+                   <button class="next-btn g-right">Next</button>
+               </div>
+            </form>
+            <div class="profile-bottom-bg">
+                <img src="assets/images/incom-bg.png" alt="image" class="img-fluid prolie-bg-custom" />
+           </div>
+        </div>        
+    </div>
+</div>
+

@@ -1,0 +1,222 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <h2 class="address_title">Address</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="user_addpop">
+      <div class="form_group user_address">
+        <label For="input" class="add_type">{{ defaultAddress.annotation }}</label>
+        <div class="input-group">
+          <input
+            type="text"
+            name="address"
+            class="form-control pro_custom"
+            placeholder="Add new address"
+            disabled
+            [(ngModel)]="offerAddress.addressLine"
+          />
+        </div>
+      </div>
+
+      <div class="add_pop">
+        <a
+          href="#myModal"
+          class="trigger-btn"
+          data-toggle="modal"
+          (click)="openAddressModal()"
+          ><i class="material-icons">gps_fixed</i> Add or manage address
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="!offerAddress.addressLine">
+  <ng-content select="div.text-danger.add-address"></ng-content>
+</ng-container>
+<div id="myModal" class="modal fade custom_model">
+  <div class="modal-dialog modal-login">
+    <div class="modal-content">
+      <div class="modal-header custom_header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          #closeModalBtn
+          aria-hidden="true"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-12 order-md-1 order-sm-2 order-2 save_add">
+            <h2>My saved address</h2>
+            <div class="address_noinput" *ngIf="addresses.length == 0">
+              <img
+                src="assets/images/no-address.svg"
+                class="rounded img-fluid"
+                alt="product img"
+              />
+              <p>There don't have any saved address yet</p>
+            </div>
+            <div
+              class="form_group mb-20"
+              *ngFor="let address of addresses; index as i"
+            >
+              <div class="top_title">
+                <div class="check-input">
+                  <mat-radio-button
+                    [checked]="isCheckedOnAL(address, offerAddress)"
+                    (click)="changeOfferDefaultAddress(address.addressId)"
+                  ></mat-radio-button>
+                </div>
+                <label htmlFor="input">{{ address.annotation }}</label>
+                <div class="icon_menus">
+                  <button mat-button [matMenuTriggerFor]="beforeMenu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #beforeMenu="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="preEditAddress(address)">
+                      Edit
+                    </button>
+                    <button
+                      mat-menu-item
+                      (click)="deleteAddress(address.addressId)"
+                    >
+                      Delete
+                    </button>
+                  </mat-menu>
+                </div>
+              </div>
+              <div class="input-group add_input">
+                <input
+                  type="text"
+                  name="address"
+                  class="form-control custom_add"
+                  placeholder="Add new address"
+                  disabled
+                  [(ngModel)]="address.addressLine"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-7 col-sm-12 order-md-2 order-sm-1 order-1 manage_add">
+            <h2>Manage address</h2>
+
+            <div class="enter_address" *ngIf="!isAddressTypeEnabled">
+              <div class="input-group search_input">
+                <span class="material-icons-outlined">
+                  location_on
+                </span>
+                <input placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off"
+                       type="text" class="form-control" #search [readonly]="isReadonly" (keyup)="onSearch(search.value)"
+                       [(ngModel)]="addressInput.addressLine"/>
+                <button class="btn_primary_link" type="submit"
+                  *ngIf="addressInput.addressLine != null && addressInput.addressLine != '' && isAddressSelected"
+                  (click)="enableAddressType()"
+                >Save Address</button>
+              </div>
+              <div (click)="useMyLoc()">
+                <h4 class="use_my">
+                  <i class="material-icons">gps_fixed</i> Use my location
+                </h4>
+              </div>
+
+              <ul class="loc_list">
+                <li *ngFor="let prediction of googlePlacesResults" class="place-suggestion" (click)="suggestionSelected(prediction)">
+                  <i class="material-icons">search</i>{{ prediction.description }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="save_address" *ngIf="isAddressTypeEnabled">
+              <div class="addresstype-row">
+              <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                  <div class="choose-type-add">
+                    <mat-radio-group aria-label="Select an option" [(ngModel)]="selection" >
+                      <mat-radio-button value="Home" (change)="addressTypeChange($event)">Home</mat-radio-button>
+                      <mat-radio-button value="Office" (change)="addressTypeChange($event)">Office</mat-radio-button>
+                      <mat-radio-button value="Others" (change)="addressTypeChange($event)">Others</mat-radio-button>
+                    </mat-radio-group>                    
+                  </div>
+                </div>
+                <div
+                  *ngIf="selection === 'Others'"
+                  class="col-lg-5 col-md-12 col-sm-12"
+                >
+                  <div class="others-add-input">
+                    <input
+                      type="text"
+                      name="address type"
+                      class="control-others"
+                      [(ngModel)]="customOption"
+                      placeholder="Type others Address title"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div *ngIf="serverError" class="text-danger radioiput-error">
+                {{ serverError }}
+              </div>
+              
+
+              <div class="address_edit">
+                <div class="your_address">
+                  <span class="material-icons">location_on</span
+                  >{{ addressInput.addressLine }}
+                </div>
+                <button
+                  class="btn_primary_link g-right text-capita"
+                  type="submit"
+                  (click)="disableAddressType()"
+                >
+                  edit
+                </button>
+              </div>
+
+              <div (click)="useMyLoc()">
+                <h4 class="use_my">
+                  <i class="material-icons">gps_fixed</i> Use my location
+                </h4>
+              </div>
+
+              <ul class="loc_list">
+                <li
+                  *ngFor="let prediction of googlePlacesResults"
+                  class="place-suggestion"
+                  (click)="suggestionSelected(prediction)"
+                >
+                  <i class="material-icons">search</i
+                  >{{ prediction.description }}
+                </li>
+              </ul>
+              <div class="save_addtype">
+                <button
+                  class="btn_primary g_width mb-g"
+                  type="submit"
+                  *ngIf="isAddressTypeEnabled && !isAEProgress"
+                  (click)="addAddress()"
+                >
+                  Add to My Saved Address
+                </button>
+                <button
+                  class="btn_primary g_width mb-g"
+                  type="submit"
+                  *ngIf="isAddressTypeEnabled && isAEProgress"
+                  (click)="editAddress()"
+                >
+                  Add to My Saved Address
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<section class="ongoing_offers">
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">           
+           <div class="ongoing_title">
+               <h2>ongoing offers</h2>
+           </div>     
+        </div>  
+
+        <div class="col-lg-6 col-md-6 col-sm-12">            
+            <form class="checked_deals checkbox-hr">  
+                <div class="custom-check-box mr-14">
+                <input class="styled-checkbox" id="styled-checkbox-7" type="checkbox" value="Received" [checked]="isCheckedReceivedOffers" (click)="filterOffers('RECEIVED',$event)">
+                <label for="styled-checkbox-7"><span class="material-icons received-arrow-check">south_west</span> Received offers</label>
+                </div>
+                <div class="custom-check-box">
+                <input class="styled-checkbox" id="styled-checkbox-8" type="checkbox" value="Sent" [checked]="isCheckedSentOffers" (click)="filterOffers('SENT',$event)">
+                <label for="styled-checkbox-8"> <span class="material-icons send-arrow-check">north_east</span> Send offers</label>
+                </div>
+            </form>              
+        </div>
+    </div>
+    
+    <div class="row" *ngIf="showOfferCommunications.length else noChat">
+        <div class="col-lg-12 col-md-12 col-sm-12">            
+             <div class="offers_list">
+                  <ul>
+                      <li *ngFor="let communication of showOfferCommunications">
+                        <div class="primary-offers-list ">                      
+                            <div class="offer_left">
+                                 <div class="offer-send-arrow" *ngIf="!communication.owner"><span class="material-icons">north_east</span></div>
+                                 <div class="offer-receive-arrow"><span class="material-icons" *ngIf="communication.owner">south_west</span></div>
+                                 <!-- <div class="offer-receive-arrow"><span class="material-icons">south_west</span></div> -->
+                                 <div class="offer-image"><img [src]="communication.offerImage || 'assets/images/1.jpg'" alt="image" class="img-fluid"/></div>
+                                 <div class="offer_des">{{communication.offerName}}</div>
+                                 <!-- <div class="offer_date">12/02/2020</div> -->
+                            </div>
+                            <div class="offer_right">                              
+                              <!-- <div class="offer_chat offer-chat-active"><a href="#">Chat</a></div> -->
+                              <div class="offer_chat"><a (click)="chatNowOwner(communication);$event.preventDefault();">Chat</a></div>
+                              <!-- <div class="chat-count">123</div> -->
+                            </div>
+                       </div> 
+                      </li>
+                      
+                      <!-- <li *ngFor="let communication of offerCommunications">
+                        <span>{{communication}}</span>
+                        <a (click)="chatNowOwner(communication);$event.preventDefault();">Chat <span></span></a>
+                      </li> -->
+                  </ul>
+             </div>                 
+        </div>
+    </div>
+    <div class="load-more-row">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 mb-4 text-center">
+            <button *ngIf="isShowLoadMore()" type="button" class="btn_primary_border" (click)="loadMoreItems()">Load more</button>
+          </div>
+        </div>
+    </div>
+    <ng-template #noChat>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="no-content">You don't have ongoing offers yet. <strong><a href="#">Search offers</a></strong></div>        
+            </div>  
+        </div>
+    </ng-template>    
+</section>

@@ -1,0 +1,74 @@
+
+  <form class="search-form" action="#" [formGroup]="searchForm" #searchFormWrap>    
+    <input type="text" 
+           [placeholder]="searchPlaceholder"
+           formControlName="searchBox"
+           [matAutocomplete]="auto"
+           #trigger="matAutocompleteTrigger"
+           (keyup.enter)="search(); trigger.closePanel()"
+           (focus)="addClass(searchFormWrap)"
+           (blur)="removeClass(searchFormWrap)"
+           #searchInput />
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event)">
+      <ng-container *ngIf="(filteredOptions | async) as filterResults">
+        <div class="search-title" *ngIf="filterResults?.length">Are you looking for...</div>
+        <mat-option *ngFor="let suggestion of filterResults | slice:0:7" #matOption [value]="suggestion">
+
+          <div class="search-history">
+               <div class="history-sub" *ngIf="suggestion.searchText">
+                 <i class="material-icons history-icon">history</i>
+                
+                <div class="history-secondary-group"> 
+                      <div class="history-text">{{suggestion.searchText.trim()}}</div>
+                      <div class="history-west"><span class="material-icons">north_west</span></div>
+                </div>
+
+               </div>
+          </div>
+
+          <div class="sugg-main" *ngIf="suggestion.title">
+           
+          <div class="suggest-part"> 
+               <div class="search-res" *ngIf="!suggestion.thumbnail">
+                 <i class="material-icons custom-icon">search</i>
+
+               <div class="suggest-secondary-part">  
+                <div class="title-suggest">{{ suggestion.title }}</div> 
+                <div class="suggest-west"><span class="material-icons">north_west</span></div> 
+               </div>
+
+               </div>
+          </div> 
+
+
+            <div class="custom-result" *ngIf="suggestion.thumbnail">
+                <div class="search-img">
+                 <img [src]="suggestion.thumbnail" class="rounded img-fluid custom-srarch-img" alt="images" />
+                </div>
+              
+              <div class="search-result-secondary">  
+                <div class="search-group-result">
+                     <div class="search-pro-name">{{ suggestion.title }}</div>
+                     <div *ngIf="suggestion.categoryName" class="search-pro-des">{{'in ' + suggestion.categoryName + (suggestion.verticalName ? ' | ' + suggestion.verticalName : '') }} </div>
+                 </div>
+                <div class="sugg-west"><span class="material-icons">north_west</span></div>
+               </div>
+
+                </div>
+          </div>
+        </mat-option>
+      </ng-container>    
+    </mat-autocomplete>
+    <button 
+      appGtagEvent
+      trackOn="click"
+      type="button" 
+      class="btn-search-icon"
+      (click)="navigateToCategoryPage()" [disabled]="isSearchDisabled">
+      <i class="material-icons">search</i>
+    </button>
+  </form>
+  
+  
+  
+  

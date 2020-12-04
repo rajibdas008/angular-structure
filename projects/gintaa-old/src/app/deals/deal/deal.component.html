@@ -1,0 +1,80 @@
+<section class="content-wrapper">
+
+    <ng-container 
+        *ngIf="
+            (pageSource === 'VIEW_OFFER' && dealStatus === 'INITIATE_DEAL') 
+            || 
+            (pageSource === 'UPDATE_DEAL' && dealStatus === 'DEAL_UPDATE_REQ')">
+        <app-deal-viewer-send-primary
+            [data]="injectDialogData"
+            (dialogClosed)="onHideDialog($event)"
+            (initiateDealSuccess)="onInitiateDealSuccess($event)"></app-deal-viewer-send-primary>
+    </ng-container>
+    <ng-container *ngIf="
+            (pageSource === 'INITIATE_DEAL' && dealStatus === 'DEAL_CREATED')
+            ||
+            (pageSource === 'VIEW_OFFER' && dealStatus === 'DEAL_CREATED')">
+        <app-deal-viewer-send-secondary
+            [data]="injectDialogData"
+            (dealUpdateSuccess)="onUpdateDealSuccess($event)"
+            (dialogClosed)="onHideDialog($event)"></app-deal-viewer-send-secondary>
+    </ng-container>
+    <ng-container *ngIf="pageSource === 'DASHBOARD'">
+        <app-deal-viewer-attach-offers></app-deal-viewer-attach-offers>
+        <app-deal-owner-receive-primary></app-deal-owner-receive-primary>
+        <app-deal-owner-receive-secondary></app-deal-owner-receive-secondary>
+        <app-deal-owner-receive-tertiary></app-deal-owner-receive-tertiary>
+    </ng-container>    
+
+    <ng-container *ngIf="(pageSource === 'VIEW_OFFER' && dealStatus === 'DEAL_RECEIVED')">
+        <app-deal-owner-receive-primary 
+            [data]="injectDialogData"
+            (dealAcceptStatus)="onAcceptDealStatus($event)"
+            (dialogClosed)="onHideDialog($event)"
+            (dealUpdateRequested)="onDealUpdateRequested($event)"></app-deal-owner-receive-primary>
+    </ng-container>
+
+    <ng-container *ngIf="
+    (pageSource === 'ACCEPT_DEAL' && dealStatus === 'DEAL_ACCEPTED')">
+    <app-deal-owner-receive-secondary [data]="injectDialogData"
+    (dealConfirmStatus)="onDealConfirmStatus($event)" (dealAcceptStatus)="onAcceptDealStatus($event)" (dialogClosed)="onHideDialog($event)"></app-deal-owner-receive-secondary>
+    </ng-container>
+
+    <ng-container *ngIf="
+        (pageSource === 'CONFIRM_DEAL' && dealStatus === 'DEAL_CONFIRMED')">
+        <app-deal-owner-receive-tertiary
+            [data]="injectDialogData"
+            (dealConfirmationInitiated)="onDealConfirmationInitiated($event)"
+            (dialogClosed)="onHideDialog($event)"></app-deal-owner-receive-tertiary>
+    </ng-container>
+
+    <ng-container *ngIf="((pageSource === 'CLOSE_DEAL' || pageSource === 'DASHBOARD_CLOSE_DEAL') && dealStatus === 'DEAL_CLOSE_INITIATED')">
+        <app-close-deal
+            [data]="injectDialogData"
+            (dialogClosed)="onHideDialog($event)"
+            (showUserRating)="onShowUserRating($event)"></app-close-deal>
+    </ng-container>
+
+    <ng-container *ngIf="(pageSource === 'CLOSE_DEAL' && dealStatus === 'DEAL_CLOSED')">
+        <app-user-rating
+            [data]="injectDialogData"
+            dealId="c6e2f0a9-4cbe-495d-a4c3-5c95a98ba07f"
+            (dialogClosed)="onHideDialog($event)"></app-user-rating>
+    </ng-container>
+
+    <!-- <app-close-deal *ngIf="(dealStatus !== 'DEAL_CLOSED')"
+        (dialogClosed)="onHideDialog($event)"
+        (showUserRating)="onShowUserRating($event)"></app-close-deal> -->
+
+        <!-- <app-deal-viewer-send-primary></app-deal-viewer-send-primary>   -->
+        <!-- <app-deal-viewer-send-secondary></app-deal-viewer-send-secondary> -->
+        <!-- <app-deal-viewer-attach-offers></app-deal-viewer-attach-offers> -->
+
+        <!-- <app-deal-owner-receive-primary></app-deal-owner-receive-primary> -->
+        <!-- <app-deal-owner-receive-secondary></app-deal-owner-receive-secondary> -->
+        <!-- <app-deal-owner-receive-tertiary></app-deal-owner-receive-tertiary> -->
+        <!-- <app-close-deal></app-close-deal> -->
+        <!-- <app-junctions-meet></app-junctions-meet> -->
+        
+
+</section>

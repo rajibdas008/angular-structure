@@ -1,0 +1,340 @@
+.attach-offer-main{
+    width: 1170px;
+    max-height: 100vh;
+    overflow-y: auto;
+    background: #ffffff;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    border-radius: 20px 0px 0px 20px;
+    -webkit-border-radius: 20px 0px 0px 20px;
+    -moz-border-radius: 20px 0px 0px 20px;
+}
+
+.remove-offerattach-page {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 99;
+    color: #ffb2b4;
+}
+
+.remove-offerattach-page:hover {
+    cursor: pointer;
+}
+
+.attach-offer{
+    float: left;
+    width: 100%;
+    height: 575px;
+}
+
+.att-header{
+    float: left;
+    width: 100%;
+    padding: 25px 0px 25px 30px;
+}
+
+.att-header h4{
+    color: #7700e0;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif; 
+    text-transform: uppercase;
+}
+
+.att-offer-title{
+    float: left;
+    width: 100%;
+    display: inline-flex;
+    padding: 25px 0px 38px 72px;
+}
+
+.att-offer-title h2{
+    color: #0b2239;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.att-offer-title .mat-toggle-offer{
+    padding: 0px 10px;
+    line-height: 30px;
+}
+
+.att-offer-title h4{
+    font-size: 14px;
+    color: #0b2239;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 27px;
+}
+
+.offer-list{
+    float: left;
+    width: 100%;
+    padding: 0px 80px;
+    max-height: 431px;
+    overflow-y: auto;
+}
+.padding-rl{
+	padding-right: 8px;
+    padding-left: 8px;
+}
+
+.chat-msg-offeratt{
+    float: left;
+    width: 100%;
+    padding: 50px 80px;
+}
+
+.chat-send-btn{
+    float: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.chat-send-btn .send-icon-btn{
+    width: 26px;
+    height: 22px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// reuseable style chat bottom component start
+
+//  custom input btn icon group
+.primary-input-group {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+
+.primary-input-group > .primary-form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.primary-input-group > .primary-form-control{
+    position: relative;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.primary-form-control {
+    display: block;
+    width: 100%;
+    padding: 12px 12px 12px 15px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: transparent;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    height: 47px;
+}
+
+.primary-group-append {
+    margin-left: -1px;
+    display: flex;
+}
+
+
+
+.icon-btn-primary {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+.icon-btn-primary i{
+    color: #51c878;
+    vertical-align: middle;
+    font-size: 25px;
+}
+.icon-btn-primary:hover{
+    cursor: pointer;
+}
+//  custom input btn icon group end 
+
+.chat-input{    
+    // padding: 17px 80px;
+    float: left;
+    width: 100%;
+}
+.input-group-bg{
+    background-color: #ffffff;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    box-shadow: -2px 0px 7px 4px #c6c6c6;
+    -moz-box-shadow: -2px 0px 7px 4px #c6c6c6;
+    -webkit-box-shadow: -2px 0px 7px 4px #c6c6c6;
+}
+.input-upload-group{
+    display: inline-flex;
+    width: 100%;
+}
+
+.file-attach i{
+    color: #000000;
+}
+
+
+// chat audio part style
+
+
+.audio-record-group{
+    float: left;
+    width: 100%;
+}
+
+ .audio-component-group{
+    position: relative;   
+    display: flex;
+    flex-wrap: wrap;    
+    align-items: stretch;
+    width: 100%;  
+    padding: 10px;
+}
+
+
+.record-icon-prepend, .record-component-append {    
+    display: flex;
+}
+
+.record-icon-prepend span{
+    color: #ef3e36;
+}
+.record-icon-prepend{
+    margin-right: 10px;
+}
+.record-component-append{
+    margin-left: 10px;
+}
+// .record-component-append {
+//     margin-left: -1px;
+// }
+// .record-icon-prepend {
+//     margin-right: -1px;
+// }
+
+.audio-component-group .record-box-group{
+    position: relative;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.record-control, .record-status{
+    display: inline-flex;
+    width: 100%;    
+}
+
+.record-status img{
+    margin: 0px;
+    width: 100%;
+    padding: 0px 10px; 
+}
+
+.record-btn .btn-record{
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif; 
+    color: #ef3e36;
+}
+
+.record-control .record-time-start, .record-time-end{
+    font-size: 16px;
+    color: #000000;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.record-btn-group, .record-send{
+    display: inline-flex;
+}
+
+.record-btn-group .btn-record-pause, .btn-record-stop{
+    margin: 0px;
+    padding: 0px;
+    background: transparent;
+    height: 24px;
+    cursor: pointer;
+}
+
+.padding-o{
+    padding: 0px;
+}
+
+.record-send .btn-record-cancel{
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif; 
+    color: #ef3e36;
+    margin-right: 10px;
+    border-right: 1px solid #b3b3b3;
+    padding-right: 10px;
+}
+
+
+// reuseable style chat bottom component end

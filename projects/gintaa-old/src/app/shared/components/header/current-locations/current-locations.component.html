@@ -1,0 +1,61 @@
+<div class="ng-autocomplete-loc">
+  
+ 
+  
+  <div class="location-search-custom">
+    <div class="location-icon"><span class="material-icons-outlined">room</span></div>
+    
+  <input type="text" class="loc-input"
+    [placeholder]="'Select City'"
+    aria-label="Location"
+    [formControl]="currentAddr"
+    [matAutocomplete]="auto"
+    #trigger="matAutocompleteTrigger"/>  
+
+    <div class="loc-expand-arrow"> <span class="material-icons" (click)="openPanel($event, trigger)">expand_more</span> </div>
+  </div>
+  <div class="loc-auto-custom"> 
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectEvent($event)">
+      <h4 class="use_my" (click)="useMyLoc($event, trigger)">
+        <span class="material-icons">gps_fixed</span> Use my location
+      </h4>
+      <div class="search-title">
+        <mat-option *ngFor="let suggestion of filteredOptions  | async" [value]="suggestion">          
+            <div class="history-sub">
+                 <div class="loc-history"><span class="material-icons history-icon">history</span></div>      
+                  <div class="history-text">{{ suggestion }}</div>              
+            </div>         
+        </mat-option>
+      </div>      
+    </mat-autocomplete>
+   </div>
+   
+    <!-- <button type="button" class="close-loc">
+      <span class="material-icons">close</span>
+    </button> -->
+  <!-- <ng-autocomplete
+    aria-label="Address Autocomplete"
+    [data]="suggestions"
+    [placeHolder]="'Kolkata'"
+    [searchKeyword]="keyword"
+    (selected)='selectEvent($event)'
+    (inputChanged)='onChangeSearch($event)'
+    (inputFocused)='onFocused($event)'
+    historyIdentifier="city"
+    [formControl]="currentAddr"
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate">
+  </ng-autocomplete>
+
+  <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item.name"></a>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+  </ng-template> -->
+</div>
+
+
+
+

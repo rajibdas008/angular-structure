@@ -1,0 +1,66 @@
+
+    ul.nav-pills {
+        top: 150px;
+        position: sticky;
+        }
+        div.col-8 div {
+        height: auto;
+        
+        }
+        a.nav-link.active {
+            position: relative;
+        }
+        a.nav-link.active:before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            position: absolute;
+            right: -23px;
+            top: 20px;
+            transform: rotate(45deg);
+            border-right: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+       
+        .scroll_spy{
+            padding-top: 50px;
+            border-right: 1px solid #c6c6c6;
+        }
+        .sidebar_menu .nav-link{        
+            font-size: 16px;
+            color: #0b2239;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            padding: 15px 0px;
+        }
+    
+        .sidebar_menu .nav-link span{
+            font-size: 24px;
+            vertical-align: middle;
+            padding-right: 10px;
+            color: #b7b7b7;
+        }
+    
+    
+        .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+            color: #51c878!important;
+            background-color: transparent!important;
+        }
+    
+            
+        // .nav-pills .nav-link.active::after {          
+        //     content: "\f105";
+        //     font-family: FontAwesome;
+        //     background: #ffffff;
+        //     height: 1.25em;
+        //     width: 1.25em;
+        //     display: block;
+        //     position: absolute;        
+        //     -webkit-transform: rotate(45deg);
+        //     transform: rotate(45deg);        
+        //     right: -25px;        
+        // }
+    
+        .col-padding{padding-left: 35px;}
+        .isActive { padding-top: 40px;}
