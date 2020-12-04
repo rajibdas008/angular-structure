@@ -1,35 +1,36 @@
-# Angular9
+## Projects Structure
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
+Here in the root there is a projects folder. In that folder we will be keeping different application. For now there are two applications one is gintaa-old and other one gintaa. gintaa-old is our old application and gintaa is new application where we will work. To keep gintaa-old application, we will be helpful to copy some code from that application and paste it in our gintaa application.
 
-## Development server
+# About gintaa application folder structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In the gintaa/src/app folder there are only 4 main folders are there. configs, core, modules and shared.
 
-## Code scaffolding
+# configs
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This folder will contain all the configuration of our application like enums, api-urls, constants etc.
 
-## Build
+# core
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+This folder is basically hold the core functionlities of the application. This folder contain some folders like guards,interceptors, services etc. 
+In the service folder we will keeping only core/architectural services like authenticaion service, logger service etc.
 
-## Running unit tests
+# Modules
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In this folder all the modules will be containing of our application like offer, deal, dashboard etc. And each of the modules will contain components, services, models folders. Which will be tighty coupled with this module only.
 
-## Running end-to-end tests
+# Shared
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+In the shared module component, directives, services folder will be there. This folder will have only sharable functionalites..
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Generate module in angular-new application
+### Commands 
+## Generate module in angular application
 
-ng g module modules/{moduleName} --routing --project gintaa-new
+ng g module modules/{moduleName} --routing --project gintaa
 
 ## Generate component in angular-new application
 
-ng g c components/{componentName} --module modules/{moduleName} --project gintaa-new
+ng g c components/{componentName} --module modules/{moduleName} --project gintaa
+
