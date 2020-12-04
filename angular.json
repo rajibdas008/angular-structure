@@ -239,7 +239,11 @@
     },
     "gintaa-old": {
       "projectType": "application",
-      "schematics": {},
+      "schematics":  {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/gintaa-old",
       "sourceRoot": "projects/gintaa-old/src",
       "prefix": "app",
@@ -255,15 +259,113 @@
             "aot": true,
             "assets": [
               "projects/gintaa-old/src/favicon.ico",
-              "projects/gintaa-old/src/assets"
+              "projects/gintaa-old/src/assets",
+              "projects/gintaa-old/src/theme"
             ],
             "styles": [
-              "projects/gintaa-old/src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",              
+              "projects/gintaa-old/src/gintaa-library/css/font-awesome.css",
+              "projects/gintaa-old/src/gintaa-library/css/bootstrap.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "projects/gintaa-old/src/theme/styles.scss",
+              "projects/gintaa-old/src/theme/responsive.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "projects/gintaa-old/src/gintaa-library/js/jquery.min.js",
+              "projects/gintaa-old/src/gintaa-library/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
-            "production": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/gintaa-old/src/environments/environment.ts",
+                  "with": "projects/gintaa-old/src/environments/environment.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "alpha": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/gintaa-old/src/environments/environment.ts",
+                  "with": "projects/gintaa-old/src/environments/environment.alpha.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "beta": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/gintaa-old/src/environments/environment.ts",
+                  "with": "projects/gintaa-old/src/environments/environment.beta.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "prod": {
               "fileReplacements": [
                 {
                   "replace": "projects/gintaa-old/src/environments/environment.ts",
@@ -275,6 +377,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -299,8 +402,17 @@
             "browserTarget": "gintaa-old:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "gintaa-old:build:production"
+            "dev": {
+              "browserTarget": "gintaa-old:build:dev"
+            },
+            "alpha": {
+              "browserTarget": "gintaa-old:build:alpha"
+            },
+            "beta": {
+              "browserTarget": "gintaa-old:build:beta"
+            },
+            "prod": {
+              "browserTarget": "gintaa-old:build:prod"
             }
           }
         },
@@ -319,10 +431,18 @@
             "karmaConfig": "projects/gintaa-old/karma.conf.js",
             "assets": [
               "projects/gintaa-old/src/favicon.ico",
-              "projects/gintaa-old/src/assets"
+              "projects/gintaa-old/src/assets",
+              "projects/gintaa-old/src/theme"
             ],
             "styles": [
-              "projects/gintaa-old/src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",              
+              "projects/gintaa-old/src/gintaa-library/css/font-awesome.css",
+              "projects/gintaa-old/src/gintaa-library/css/bootstrap.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "projects/gintaa-old/src/theme/styles.scss",
+              "projects/gintaa-old/src/theme/responsive.scss"
             ],
             "scripts": []
           }
@@ -347,8 +467,17 @@
             "devServerTarget": "gintaa-old:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "gintaa-old:serve:production"
+            "dev": {
+              "devServerTarget": "gintaa-old:serve:dev"
+            },
+            "alpha": {
+              "devServerTarget": "gintaa-old:serve:alpha"
+            },
+            "beta": {
+              "devServerTarget": "gintaa-old:serve:beta"
+            },
+            "prod": {
+              "devServerTarget": "gintaa-old:serve:prod"
             }
           }
         }
