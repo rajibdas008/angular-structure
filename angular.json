@@ -3,28 +3,28 @@
   "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "gintaa-new": {
+    "gintaa": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/gintaa-new",
-      "sourceRoot": "projects/gintaa-new/src",
+      "root": "projects/gintaa",
+      "sourceRoot": "projects/gintaa/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gintaa-new",
-            "index": "projects/gintaa-new/src/index.html",
-            "main": "projects/gintaa-new/src/main.ts",
-            "polyfills": "projects/gintaa-new/src/polyfills.ts",
-            "tsConfig": "projects/gintaa-new/tsconfig.app.json",
+            "outputPath": "dist/gintaa",
+            "index": "projects/gintaa/src/index.html",
+            "main": "projects/gintaa/src/main.ts",
+            "polyfills": "projects/gintaa/src/polyfills.ts",
+            "tsConfig": "projects/gintaa/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/gintaa-new/src/favicon.ico",
-              "projects/gintaa-new/src/assets"
+              "projects/gintaa/src/favicon.ico",
+              "projects/gintaa/src/assets"
             ],
             "styles": [
-              "projects/gintaa-new/src/styles.css"
+              "projects/gintaa/src/styles.css"
             ],
             "scripts": []
           },
@@ -32,8 +32,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/gintaa-new/src/environments/environment.ts",
-                  "with": "projects/gintaa-new/src/environments/environment.prod.ts"
+                  "replace": "projects/gintaa/src/environments/environment.ts",
+                  "with": "projects/gintaa/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -62,33 +62,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gintaa-new:build"
+            "browserTarget": "gintaa:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gintaa-new:build:production"
+              "browserTarget": "gintaa:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gintaa-new:build"
+            "browserTarget": "gintaa:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/gintaa-new/src/test.ts",
-            "polyfills": "projects/gintaa-new/src/polyfills.ts",
-            "tsConfig": "projects/gintaa-new/tsconfig.spec.json",
-            "karmaConfig": "projects/gintaa-new/karma.conf.js",
+            "main": "projects/gintaa/src/test.ts",
+            "polyfills": "projects/gintaa/src/polyfills.ts",
+            "tsConfig": "projects/gintaa/tsconfig.spec.json",
+            "karmaConfig": "projects/gintaa/karma.conf.js",
             "assets": [
-              "projects/gintaa-new/src/favicon.ico",
-              "projects/gintaa-new/src/assets"
+              "projects/gintaa/src/favicon.ico",
+              "projects/gintaa/src/assets"
             ],
             "styles": [
-              "projects/gintaa-new/src/styles.css"
+              "projects/gintaa/src/styles.css"
             ],
             "scripts": []
           }
@@ -97,9 +97,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/gintaa-new/tsconfig.app.json",
-              "projects/gintaa-new/tsconfig.spec.json",
-              "projects/gintaa-new/e2e/tsconfig.json"
+              "projects/gintaa/tsconfig.app.json",
+              "projects/gintaa/tsconfig.spec.json",
+              "projects/gintaa/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -109,12 +109,12 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/gintaa-new/e2e/protractor.conf.js",
-            "devServerTarget": "gintaa-new:serve"
+            "protractorConfig": "projects/gintaa/e2e/protractor.conf.js",
+            "devServerTarget": "gintaa:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "gintaa-new:serve:production"
+              "devServerTarget": "gintaa:serve:production"
             }
           }
         }
@@ -366,5 +366,5 @@
         }
       }
     }},
-  "defaultProject": "gintaa-new"
+  "defaultProject": "gintaa"
 }
