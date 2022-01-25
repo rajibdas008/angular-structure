@@ -1,1 +1,1 @@
-# angular-structure
+Best strucure to follow
