@@ -1,1 +1,1 @@
-Best strucure to follow
+Best structure to follow
